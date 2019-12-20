@@ -50,5 +50,5 @@ test:
 production:
   <<: *default
   database: mercari_1_production
-  username: mercari_1
+  username: root
   password: <%= ENV['DATABASE_PASSWORD'] %>
