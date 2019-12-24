@@ -1,0 +1,20 @@
+.sell-main
+  .sell-container
+    .sell-contents
+      %h2.sell-contents__head 商品の情報を入力
+      .sell-contents__form
+        .sell-photo-text
+          %h3.sell-photo-head 
+            出品画像
+            %span.sell-photo-required 必須
+        %p 最大10枚までアップロードできます
+        .sell-photo-box
+          .sell-photo-box__image
+
+          .sell-photo-box__message
+            -# nameは変動するように設定
+            %input.sell-photo-box__message__file{multiple: "", name: "image1", style: "display: none;", type: "file"}
+            %pre.sell-photo-box__message__text
+              :preserve
+                ドラッグアンドドロップ
+                またはクリックしてファイルをアップロード
