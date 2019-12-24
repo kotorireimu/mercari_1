@@ -78,7 +78,7 @@
                       -# %option{value: "5"} 傷や汚れあり
                       -# %option{value: "6"} 全体的に状態が悪い
 
-                      
+
             .sell-content.clearfix
               %h3.sell-sub-head 配送について
               = link_to "?" ,"#" ,class: "form-question"
@@ -161,3 +161,58 @@
                       -# %option{value: "1"} 1~2日で発送
                       -# %option{value: "2"} 2~3日で発送
                       -# %option{value: "3"} 4~7日で発送
+
+
+            .sell-content.clearfix
+              %h3.sell-sub-head 販売価格(300〜9,999,999)
+              = link_to "?" ,"#" ,class: "form-question"
+              -# %a.form-question{:href => "/jp/help_center/article/64/", :target => "_blank"} ?
+              .sell-form-box
+                %ul.sell-price
+                  %li.form-group
+                    .clearfix
+                      %label.l-left
+                        価格
+                        %span.form-require 必須
+                      .l-right.sell-price-input
+                        ¥
+                        %div
+                          %input.input-default{placeholder: "例）300", value: ""}/
+                  %li.clearfix
+                    .l-left
+                      販売手数料 (10%)
+                    .l-right -
+                  %li.clearfix.bold
+                    .l-left 販売利益
+                    .l-right -
+
+
+            .sell-content.sell-btn-box
+              %div
+                %p
+                  = link_to "禁止されている出品" ,"#" 
+                  -# %a{:href => "/jp/help_center/getting_started/prohibited_items/", :target => "_blank"} 禁止されている出品
+                  、
+                  = link_to "行為" ,"#"
+                  -# %a{:href => "/jp/help_center/getting_started/prohibited_conduct/", :target => "_blank"} 行為
+                  を必ずご確認ください。
+
+                %p
+                  またブランド品でシリアルナンバー等がある場合はご記載ください。
+                  = link_to "偽ブランドの販売" ,"#"
+                  -# %a{:href => "/jp/help_center/getting_started/counterfeit_goods/", :target => "_blank"} 偽ブランドの販売
+                  は犯罪であり処罰される可能性があります。
+
+                %p
+                  また、出品をもちまして
+                  = link_to "加盟店規約" ,"#"
+                  -# %a{:href => "/jp/seller_terms/"} 加盟店規約
+                  に同意したことになります。
+
+              %button.btn-default.btn-red{type: "submit"}
+                出品する
+
+              = link_to "もどる" ,"#" ,class: "btn-default.btn-gray"
+              -# %a.btn-default.btn-gray もどる
+
+
