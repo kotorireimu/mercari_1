@@ -1,54 +1,53 @@
-%main.sell-main
-  .sell-information
-    %h2.sell-information__head 商品の情報を入力
-    %form.sell-form
+%main.sell-page__main
+  .sell-page__main__information
+    %h2.sell-page__main__information__head 商品の情報を入力
+    %form.sell-page__main__information__form
 
-
-      .sell-photo
-        %h3.sell-Photo__head
+      .sell-page__main__information__form__photo
+        %h3.sell-page__main__information__form__photo__head
           出品画像
-          %span.sell-require 必須
+          = render "sell_require"
         %p 最大10枚までアップロードできます
-        .sell-photo-box.clearfix.limit-image-number-10
-          .sell-photo-items-box
+        .sell-page__main__information__form__photo__box.clearfix.limit-image-number-10
+          .sell-page__main__information__form__photo__box__items
             -# item の写真を入れたら sell-item-0 の番号が変わる
-            .sell-photo-items.sell-item-0
+            .sell-page__main__information__form__photo__box__items__list.sell-item-0
               %ul
           -# item の写真を入れたら sell-item-0 の番号が変わる
-          .sell-photo-upload-box.sell-item-0
-            %input.sell-photo-upload-file{multiple: "multiple", name: "image1", style: "display: none;", type: "file"}
-            %pre.visible-photo
+          .sell-page__main__information__form__photo__box__area.sell-item-0
+            %input.sell-page__main__information__form__photo__box__area__file{multiple: "multiple", name: "image1", style: "display: none;", type: "file"}
+            %pre.sell-page__main__information__form__photo__box__area__visible
               :preserve
                 ドラッグアンドドロップ
                 またはクリックしてファイルをアップロード
 
-
-      .sell-content
-        .sell-group
+      .sell-page__main__information__form__content
+        .sell-page__main__information__form__content__group
           %label
             商品名
-            %span.sell-require 必須
+            = render "sell_require"
           %div
-            %input.sell-input{placeholder: "商品名（必須 40文字まで)", value: ""}
-        .sell-group
+            %input.sell-page__main__information__form__content__group__input{placeholder: "商品名（必須 40文字まで)", value: ""}
+        .sell-page__main__information__form__content__group
           %label
             商品の説明
-            %span.sell-require 必須
-          %textarea.sell-textarea{placeholder: "商品の説明（必須 1,000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。", rows: "5"}
+            = render "sell_require"
+          %textarea.sell-page__main__information__form__content__group__textarea{placeholder: "商品の説明（必須 1,000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。", rows: "5"}
 
 
-      .sell-content.clearfix
-        %h3.sell-commentary-head 商品の詳細
-        .sell-status-box
-          .sell-group
+      .sell-page__main__information__form__content.clearfix
+        %h3.sell-page__main__information__form__content__head 商品の詳細
+        .sell-page__main__information__form__content__status
+          .sell-page__main__information__form__content__status__group
             %label
               カテゴリー
-              %span.sell-require 必須
+              = render "sell_require"
             %div
-              .select-status-box
-                %i.icon-arrow-bottom
-                %select.status-select
-                  %option{value: ""} ---
+              .sell-page__main__information__form__content__status__group__select
+                = render "status_box"
+                -# %i.icon-arrow-bottom
+                -# %select.status-select
+                  -# %option{value: ""} ---
                   -# %option{value: "1"} レディース
                   -# %option{value: "2"} メンズ
                   -# %option{value: "3"} ベビー・キッズ
@@ -62,14 +61,15 @@
                   -# %option{value: "1027"} チケット
                   -# %option{value: "1318"} 自動車・オートバイ
                   -# %option{value: "10"} その他
-          .sell-group
+          .sell-page__main__information__form__content__status__group
             %label
               商品の状態
-              %span.sell-require 必須
-            .select-status-box
-              %i.icon-arrow-bottom
-              %select.status-select
-                %option{value: ""} ---
+              = render "sell_require"
+            = render "status_box"
+            -# .select-status-box
+              -# %i.icon-arrow-bottom
+              -# %select.status-select
+                -# %option{value: ""} ---
                 -# %option{value: "1"} 新品、未使用
                 -# %option{value: "2"} 未使用に近い
                 -# %option{value: "3"} 目立った傷や汚れなし
@@ -78,29 +78,30 @@
                 -# %option{value: "6"} 全体的に状態が悪い
 
 
-      .sell-content.clearfix
-        %h3.sell-commentary-head 配送について
+      .sell-page__main__information__form__content.clearfix
+        %h3.sell-page__main__information__form__content__head 配送について
         = link_to "?" ,"#" ,class: "form-question"
         -# %a.form-question{:href => "/jp/help_center/article/68/", :target => "_blank"} ?
-        .sell-status-box
-          .sell-group
+        .sell-page__main__information__form__content__status
+          .sell-page__main__information__form__content__status__group
             %label
               配送料の負担
-              %span.sell-require 必須
-            .select-status-box
-              %i.icon-arrow-bottom
-              %select.status-select
-                %option{value: ""} ---
+              = render "sell_require"
+            -# .select-status-box
+              -# %i.icon-arrow-bottom
+              -# %select.status-select
+                -# %option{value: ""} ---
                 -# %option{value: "2"} 送料込み(出品者負担)
                 -# %option{value: "1"} 着払い(購入者負担)
-          .sell-group
+          .sell-page__main__information__form__content__status__group
             %label
               発送元の地域
-              %span.sell-require 必須
-            .select-status-box
-              %i.icon-arrow-bottom
-              %select.status-select
-                %option{value: ""} ---
+              = render "sell_require"
+            = render "status_box"
+            -# .select-status-box
+              -# %i.icon-arrow-bottom
+              -# %select.status-select
+                -# %option{value: ""} ---
                 -# %option{value: "1"} 北海道
                 -# %option{value: "2"} 青森県
                 -# %option{value: "3"} 岩手県
@@ -149,44 +150,45 @@
                 -# %option{value: "46"} 鹿児島県
                 -# %option{value: "47"} 沖縄県
                 -# %option{value: "99"} 未定
-          .sell-group
+          .sell-page__main__information__form__content__status__group
             %label
               発送までの日数
-              %span.sell-require 必須
-            .select-status-box
-              %i.icon-arrow-bottom
-              %select.status-select
-                %option{value: ""} ---
+              = render "sell_require"
+            = render "status_box"
+            -# .select-status-box
+              -# %i.icon-arrow-bottom
+              -# %select.status-select
+                -# %option{value: ""} ---
                 -# %option{value: "1"} 1~2日で発送
                 -# %option{value: "2"} 2~3日で発送
                 -# %option{value: "3"} 4~7日で発送
 
 
-      .sell-content.clearfix
-        %h3.sell-commentary-head 販売価格(300〜9,999,999)
+      .sell-page__main__information__form__content.clearfix
+        %h3.sell-page__main__information__form__content__head 販売価格(300〜9,999,999)
         = link_to "?" ,"#" ,class: "form-question"
         -# %a.form-question{:href => "/jp/help_center/article/64/", :target => "_blank"} ?
-        .sell-status-box
-          %ul.sell-price
-            %li.sell-group
-              .clearfix
-                %label.left-text
+        .sell-page__main__information__form__content__status
+          %ul.sell-page__main__information__form__content__status__price
+            %li.sell-page__main__information__form__content__status__price__group
+              .sell-page__main__information__form__content__status__price__group__clearfix
+                %label.sell-page__main__information__form__content__status__price__group__clearfix__left-text
                   価格
-                  %span.sell-require 必須
-                .right-text.sell-price-input
+                  = render "sell_require"
+                .sell-page__main__information__form__content__status__price__group__clearfix__right-text.sell-price-input
                   ¥
                   %div
-                    %input.sell-input{placeholder: "例）300", value: ""}/
-            %li.clearfix
-              .left-text
+                    %input.sell-page__main__information__form__content__status__price__group__clearfix__right-text__input{placeholder: "例）300", value: ""}/
+            %li.sell-page__main__information__form__content__status__price__clearfix
+              .sell-page__main__information__form__content__status__price__clearfix__left-text
                 販売手数料 (10%)
-              .right-text -
-            %li.clearfix.bold
-              .left-text 販売利益
-              .right-text -
+              .sell-page__main__information__form__content__status__price__clearfix__right-text -
+            %li.sell-page__main__information__form__content__status__price__clearfix.bold
+              .sell-page__main__information__form__content__status__price__clearfix__left-text 販売利益
+              .sell-page__main__information__form__content__status__price__clearfix__right-text -
 
 
-      .sell-content.sell-btn-box
+      .sell-page__main__information__form__content.sell-btn-box
         %div
           %p
             = link_to "禁止されている出品" ,"#" 
@@ -208,10 +210,10 @@
             -# %a{:href => "/jp/seller_terms/"} 加盟店規約
             に同意したことになります。
 
-        %button.sell-btn.btn-red{type: "submit"}
+        %button.sell-page__main__information__form__content__btn.btn-red{type: "submit"}
           出品する
 
-        = link_to "もどる" ,"#" ,class: "sell-btn btn-gray"
+        = link_to "もどる" ,"#" ,class: "sell-page__main__information__form__content__btn btn-gray"
         -# %a.btn-default.btn-gray もどる
 
 
