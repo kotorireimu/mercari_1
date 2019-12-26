@@ -10,5 +10,154 @@
   box-sizing: inherit;
 }
 
+ul{
+  list-style: none;
+}
+
+pre{
+  font-family: monospace,monospace;
+  overflow: auto;
+}
+
+input{
+  touch-action: manipulation;
+  color: inherit;
+  font-family: inherit;
+  font-style: inherit;
+  font-weight: inherit;
+  background-color: transparent;
+}
+
+label{
+  font-weight: 600;
+  display: inline-block;
+  touch-action: manipulation;
+}
 
 
+.sell-require{
+  background: #ea352d;
+  margin: 0 0 0 8px;
+  padding: 2px 4px;
+  border-radius: 2px;
+  color: #fff;
+  font-size: 12px;
+  vertical-align: top;
+}
+
+.sell-page{
+  padding: 0 0 220px;
+  background: #f5f5f5;
+  &__header{
+    height: 128px;
+    text-align: center;
+  +h1{
+    margin: 40px 0 0;
+  }
+  }
+
+  &__main{
+    display: block;
+    &__information{
+      width: 700px;
+      margin: 0 auto;
+      background: #fff;
+      &__head{
+        padding: 32px 16px;
+        font-size: 22px;
+        line-height: 1.5;
+        text-align: center;
+      }
+      &__form{
+        border-top: 1px solid #eee;
+        &__photo{
+          width: 620px;
+          padding: 40px;
+          &__head{
+            font-size: 16px;
+          +p{
+            font-size: 0.8rem;
+            margin: 8px 0 0;
+            line-height: 1.5;
+          }
+          }
+
+          &__box{
+            display: block;
+            width: 620px;
+            margin: 16px auto 0;
+            &__items{
+              display: inline;
+              display: flex;
+              &__list{
+                display: block;
+                +ul{
+                  display: block;
+                  width: 100%;
+                }
+              }
+            }
+
+            &__area{
+              width: 620px;
+              position: relative;
+              min-height: 162px;
+              background: #f5f5f5;
+              border: 1px dashed #ccc;
+              font-size: 0;
+              text-align: center;
+              -webkit-transition: -webkit-box-shadow ease-out .3s;
+              transition: -webkit-box-shadow ease-out .3s;
+              transition: box-shadow ease-out .3s;
+              transition: box-shadow ease-out .3s, -webkit-box-shadow ease-out .3s;
+              cursor: pointer;
+              &__file{
+              +input{
+                border: 0;
+                outline: 0;
+                font-family: inherit;
+                -webkit-appearance: none;
+              }
+              }
+
+              &__visible{
+                position: absolute;
+                top: 50%;
+                left: 16px;
+                right: 16px;
+                text-align: center;
+                font-size: 14px;
+                line-height: 1.5;
+                -webkit-transform: translate(0, -50%);
+                transform: translate(0, -50%);
+                pointer-events: none;
+                white-space: pre-wrap;
+                word-wrap: break-word;
+              }
+            }
+          }
+        }
+        
+        &__content{
+          padding: 40px;
+          border-top: 1px solid #eee
+          // &__group{
+          //   width: 100%;
+          //   margin: 8px 0 0;
+          //   &__input{
+          //     height: 48px;
+          //     padding: 10px 16px 8px;
+          //     border-radius: 4px;
+          //     border: 1px solid #ccc;
+          //     background: #fff;
+          //     line-height: 1.5;
+          //     font-size: 16px;
+          //   }
+          // }
+
+        }
+
+      }
+    }
+  }
+}
