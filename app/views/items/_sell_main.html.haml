@@ -7,10 +7,10 @@
         %h3.sell-page__main__information__form__photo__head
           出品画像
           = render "sell_require"
-        %p 最大10枚までアップロードできます
+          %p 最大10枚までアップロードできます
 
         .sell-page__main__information__form__photo__box.clearfix.limit-image-number-10
-          .sell-page__main__information__form__photo__box__items
+          .sell-page__main__information__form__photo__box__items.clearfix
             -# item の写真を入れたら sell-item-0 の番号が変わる
             .sell-page__main__information__form__photo__box__items__list.sell-item-0
               %ul
@@ -27,17 +27,17 @@
       .sell-page__main__information__form__content
         = render partial:"sell_group" ,locals:{text: "商品名"}
         %div
-          %input.sell-page__main__information__form__content__group__input{placeholder: "商品名（必須 40文字まで)", value: ""}
+          %input.sell-page__main__information__form__content__input{placeholder: "商品名（必須 40文字まで)", value: ""}
         = render partial:"sell_group" ,locals:{text: "商品の説明"}
-        %textarea.sell-page__main__information__form__content__group__textarea{placeholder: "商品の説明（必須 1,000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。", rows: "5"}
+        %textarea.sell-page__main__information__form__content__textarea{placeholder: "商品の説明（必須 1,000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。", rows: "5"}
 
 
       .sell-page__main__information__form__content.clearfix
-        %h3.sell-page__main__information__form__content__head 商品の詳細
+        = render partial:"sell_form_head" ,locals:{text: "商品の詳細"}
         .sell-page__main__information__form__content__status
           = render partial:"sell_group" ,locals:{text: "カテゴリー"}
           %div
-            .sell-page__main__information__form__content__status__group__select
+            .sell-page__main__information__form__content__status__select
               = render "status_box"
               -# %i.icon-arrow-bottom
               -# %select.status-select
@@ -70,8 +70,9 @@
 
 
       .sell-page__main__information__form__content.clearfix
-        %h3.sell-page__main__information__form__content__head 配送について
-        = link_to "?" ,"#" ,class: "form-question"
+        = render partial:"sell_form_head" ,locals:{text: "配送について"}
+        -#  ？マークの部分テンプレート
+        = render "sell_question"
         -# %a.form-question{:href => "/jp/help_center/article/68/", :target => "_blank"} ?
         .sell-page__main__information__form__content__status
           = render partial:"sell_group" ,locals:{text: "配送料の負担"}
@@ -148,25 +149,26 @@
 
 
       .sell-page__main__information__form__content.clearfix
-        %h3.sell-page__main__information__form__content__head 販売価格(300〜9,999,999)
-        = link_to "?" ,"#" ,class: "form-question"
+        = render partial:"sell_form_head" ,locals:{text: "販売価格(300〜9,999,999)"}
+        -# ？マークの部分テンプレート
+        = render "sell_question"
         -# %a.form-question{:href => "/jp/help_center/article/64/", :target => "_blank"} ?
         .sell-page__main__information__form__content__status
           %ul.sell-page__main__information__form__content__status__price
             %li.sell-page__main__information__form__content__status__price__group
-              .sell-page__main__information__form__content__status__price__group__clearfix
+              .sell-page__main__information__form__content__status__price__group__right.clearfix
                 = render partial:"sell_group" ,locals:{text: "価格"}
-                .sell-page__main__information__form__content__status__price__group__clearfix__right-text.sell-price-input
+                .sell-page__main__information__form__content__status__price__group__right__text.sell-price-input.clearfix
                   ¥
                   %div
-                    %input.sell-page__main__information__form__content__status__price__group__clearfix__right-text__input{placeholder: "例）300", value: ""}/
-            %li.sell-page__main__information__form__content__status__price__clearfix
-              .sell-page__main__information__form__content__status__price__clearfix__left-text
+                    %input.sell-page__main__information__form__content__status__price__group__right__input{placeholder: "例）300", value: ""}/
+            %li.sell-page__main__information__form__content__status__price__group.clearfix
+              .sell-page__main__information__form__content__status__price__group__left
                 販売手数料 (10%)
-              .sell-page__main__information__form__content__status__price__clearfix__right-text -
-            %li.sell-page__main__information__form__content__status__price__clearfix.bold
-              .sell-page__main__information__form__content__status__price__clearfix__left-text 販売利益
-              .sell-page__main__information__form__content__status__price__clearfix__right-text -
+              .sell-page__main__information__form__content__status__price__group__percent -
+            %li.sell-page__main__information__form__content__status__price__group.clearfix
+              .sell-page__main__information__form__content__status__price__clearfix__left 販売利益
+              .sell-page__main__information__form__content__status__price__clearfix__right -
 
 
       .sell-page__main__information__form__content.sell-btn-box
@@ -191,8 +193,11 @@
             -# %a{:href => "/jp/seller_terms/"} 加盟店規約
             に同意したことになります。
 
-        %button.sell-page__main__information__form__content__btn.btn-red{type: "submit"}
-          出品する
+        -# f 作成してない。　作成したら置き換え
+        -# = f.submit '出品する', class: '.sell-page__main__information__form__content__btn.btn-red'
+        = link_to "出品する" ,"#" ,class: "sell-page__main__information__form__content__btn.btn-red"
+        -# %button.sell-page__main__information__form__content__btn.btn-red{type: "submit"}
+          -# 出品する
 
         = link_to "もどる" ,"#" ,class: "sell-page__main__information__form__content__btn btn-gray"
         -# %a.btn-default.btn-gray もどる
