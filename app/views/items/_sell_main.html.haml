@@ -21,7 +21,7 @@
               :preserve
                 ドラッグアンドドロップ
                 またはクリックしてファイルをアップロード
-            -# 写真の追加
+            -# 写真の追加できるように
             -# %i.icon-camera
 
       .sell-page__main__information__form__content
@@ -41,6 +41,7 @@
               = render "status_box"
               -# %i.icon-arrow-bottom
               -# %select.status-select
+              -# 表示する内容はこんな感じに
                 -# %option{value: ""} ---
                 -# %option{value: "1"} レディース
                 -# %option{value: "2"} メンズ
@@ -59,6 +60,7 @@
           = render "status_box"
           -# .select-status-box
             -# %i.icon-arrow-bottom
+            -# 表示する内容はこんな感じに
             -# %select.status-select
               -# %option{value: ""} ---
               -# %option{value: "1"} 新品、未使用
@@ -80,6 +82,7 @@
           -# .select-status-box
             -# %i.icon-arrow-bottom
             -# %select.status-select
+            -# 表示する内容はこんな感じに
               -# %option{value: ""} ---
               -# %option{value: "2"} 送料込み(出品者負担)
               -# %option{value: "1"} 着払い(購入者負担)
@@ -88,6 +91,7 @@
           -# .select-status-box
             -# %i.icon-arrow-bottom
             -# %select.status-select
+            -# 表示する内容はこんな感じに
               -# %option{value: ""} ---
               -# %option{value: "1"} 北海道
               -# %option{value: "2"} 青森県
@@ -142,6 +146,7 @@
           -# .select-status-box
             -# %i.icon-arrow-bottom
             -# %select.status-select
+            -# 表示する内容はこんな感じに
               -# %option{value: ""} ---
               -# %option{value: "1"} 1~2日で発送
               -# %option{value: "2"} 2~3日で発送
@@ -193,7 +198,7 @@
             -# %a{:href => "/jp/seller_terms/"} 加盟店規約
             に同意したことになります。
 
-        -# f 作成してない。　作成したら置き換え
+        -# f 作成してない。 作成したら置き換え
         -# = f.submit '出品する', class: '.sell-page__main__information__form__content__btn.btn-red'
         = link_to "出品する" ,"#" ,class: "sell-page__main__information__form__content__btn.btn-red"
         -# %button.sell-page__main__information__form__content__btn.btn-red{type: "submit"}
