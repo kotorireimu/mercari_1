@@ -28,5 +28,5 @@ class User < ApplicationRecord
   #     tell                  {"08012345677"}
   #   end
 
-  end
+  # end
 end
