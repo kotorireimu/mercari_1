@@ -1,1 +1,56 @@
+.UP__contents__right
+  %section.UP__contents__right__icon
+    %a{href: "#"}
+      -# 顔写真を表示させるコード
+      -# %figure
+      -#   %img{:alt => "", :height => "60", :src => "//static.mercdn.net/images/member_photo_noimage_thumb.png", :width => "60"}/
+      %h2.UP__contents__right__icon__name
+        登録した名前
+        -# 古都璃
+      -# .mypage-number
+      -#   %div
+      -#     評価
+      -#     %span.bold 9
+      -#   %div
+      -#     出品数
+      -#     %span.bold 2
+  %section.UP__contents__right__tab
+    %ul.UP__contents__right__tab__board
+      %li.active
+        %h3
+          %a{"data-toggle" => "tab", :href => "#mypage-tab-notification"}
+            お知らせ
+      %li
+        %h3
+          %a{"data-toggle" => "tab", :href => "#mypage-tab-todo"}
+            やることリスト
+    .UP__contents__right__tab__content
+      %ul#mypage-tab-notification.mypage-item-list.tab-pane.active
+        %li
+          .mypage-news-not-found 現在、お知らせはありません
+        -# = render partial: "UP_news", locals:{text: "表示したいニュースを反映"}
+
+        -# %li.mypage-go-list
+        -#   %a{:href => "/jp/mypage/notification/"} 一覧を見る
+      %ul#mypage-tab-todo.mypage-item-list.tab-pane
+        %li.mypage-item-not-found.bold 現在、やることリストはありません
+
+  %section.mypage-tab-container
+    %h2.mypage-tab-head 購入した商品
+    %ul.mypage-tabs
+      %li.active
+        %h3
+          %a{"data-toggle" => "tab", :href => "#mypage-tab-transaction-now"}
+            取引中
+      %li
+        %h3
+          %a{"data-toggle" => "tab", :href => "#mypage-tab-transaction-old"}
+            過去の取引
+    .tab-content
+      %ul#mypage-tab-transaction-now.mypage-item-list.tab-pane.active
+        %li.mypage-item-not-found.bold 取引中の商品がありません
+      %ul#mypage-tab-transaction-old.mypage-item-list.tab-pane
+        = render partial: "UP_old_transaction", locals:{text: "販売した商品の名前を変数にして反映させる"}
+        %li.mypage-go-list
+          %a{href: "#"} 一覧を見る
 
