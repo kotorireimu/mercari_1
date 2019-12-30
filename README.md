@@ -16,7 +16,7 @@
 |birth_year|string|null: false|
 |birth_month|string|null: false|
 |birth_day|string|null: false|
-|salse|integer|null: false|
+|sales|integer|null: false|
 |image|text||
 |deleted_at|datetime|null:false|
 

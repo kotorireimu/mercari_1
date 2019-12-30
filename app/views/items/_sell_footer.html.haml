@@ -1,0 +1,18 @@
+%footer.sell-page__footer
+  %nav
+    %ul.sell-page__footer__link.clearfix
+      %li
+        = link_to "プライバシーポリシー", "#"
+        -# %a{:href => "https://www.mercari.com/jp/privacy/"} プライバシーポリシー
+      %li
+        = link_to "メルカリ利用規約", "#"
+        -# %a{:href => "https://www.mercari.com/jp/tos/"} メルカリ利用規約
+      %li
+        = link_to "特定商取引に関する表記", "#"
+        -# %a{:href => "https://www.mercari.com/jp/tokutei/"} 特定商取引に関する表記
+  -# TOPページに戻る
+  = link_to "イメージアイコン", "#", class: "sell-page__footer__link__logo"
+  -# %a.single-footer-logo{:href => "https://www.mercari.com/jp/"}
+  -#   %img{:alt => "mercari", :height => "65", :src => "//www-mercari-jp.akamaized.net/assets/img/common/common/logo-gray.svg?1714804574", :width => "80"}/
+  %p
+    %small © Mercari, Inc.
