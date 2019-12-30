@@ -1,0 +1,66 @@
+body{
+  position: relative;
+  min-height: 100%;
+  font-family: "Source Sans Pro", Helvetica, Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
+  font-size: 14px;
+  color: rgb(51, 51, 51);
+  line-height: 1;
+  background: rgb(245, 245, 245);
+}
+
+ul{
+  list-style: none;
+  display: block;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+}
+
+li{
+  display: list-item;
+  text-align: -webkit-match-parent;
+}
+
+.icon-arrow-right{
+  position: absolute;
+  top: 50%;
+  right: 16px;
+  color: #ccc;
+  -webkit-transform: translate(0, -50%);
+  transform: translate(0, -50%);
+  -webkit-transition: all ease-out .2s;
+  transition: all ease-out .2s;
+}
+
+
+.UP{
+  &__contents{
+    display: flex;
+    margin: 40px auto 0;
+    width: 1020px;
+    &__left{
+      width: 280px;
+      margin: 0 40px 0 0;
+      &__nav{
+        &__head{
+          margin: 40px 0 0;
+        }
+        
+        &__list{
+          border: 0;
+          &__item{
+            border-top: 1px solid #eee;
+            position: relative;
+            display: block;
+            min-height: 48px;
+            padding: 16px;
+            background: #fff;
+            font-size: 14px;
+            color: #333;
+          }
+        }
+      }
+    }
+  }
+}
