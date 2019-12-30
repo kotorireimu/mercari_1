@@ -30,6 +30,12 @@ pre{
   color: #fff;
 }
 
+.btn-gray{
+  background: #aaa;
+  border: 1px solid #aaa;
+  color: #fff;
+}
+
 input{
   touch-action: manipulation;
   color: inherit;
@@ -78,9 +84,9 @@ input{
   &__header{
     height: 128px;
     text-align: center;
-  +h1{
-    margin: 40px 0 0;
-  }
+    &__logo{
+      padding: 40px 0 0;
+    }
   }
 
   &__main{
@@ -160,7 +166,7 @@ input{
         }
         
         &__content{
-          padding: 40px 40Px 0 40px;
+          padding: 40px 40Px 20px 40px;
           border-top: 1px solid #eee;
           &__input{
             width: 100%;
@@ -191,7 +197,6 @@ input{
             width: 400px;
             margin: 0;
             &__price{
-              padding-bottom: 48px;
               &__group{
                 width: 100%;
                 line-height: 4rem;
@@ -217,19 +222,29 @@ input{
               }
             }
           }
-        }
 
-        &__btn{
-          margin: 40px 0 0;
-          display: block;
-          width: 100%;
-          line-height: 48px;
-          font-size: 14px;
-          border: 1px solid transparent;
-          -webkit-transition: all ease-out .3s;
-          transition: all ease-out .3s;
-          cursor: pointer;
-          text-align: center;
+          &__btn{
+            margin: 40px 0 0;
+            display: block;
+            width: 100%;
+            line-height: 48px;
+            font-size: 14px;
+            border: 1px solid transparent;
+            -webkit-transition: all ease-out .3s;
+            transition: all ease-out .3s;
+            cursor: pointer;
+            text-align: center;
+          }
+
+          &__box{
+            text-align: center;
+            display: block;
+            font-size: 1rem;
+            line-height: 50px;
+            height: 50px;
+            width: 45%;
+            margin: 24px auto;
+          }
         }
       }
     }
@@ -237,15 +252,16 @@ input{
 
   &__footer{
     width: 456px;
-    height: 220px;
+    height: 180px;
     margin: 0 auto;
     &__link{
       font-size: 12px;
-      &__logo{
-        width: 80px;
-        height: 65px;
-        margin: 40px auto 0;
-      }
+    }
+    &__logo{
+      width: 80px;
+      height: 65px;
+      margin: 40px auto 0;
     }
   }
 }
+
