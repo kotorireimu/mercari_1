@@ -8,6 +8,10 @@ body{
   background: rgb(245, 245, 245);
 }
 
+h3{
+  font-size: 22px;
+}
+
 ul{
   list-style: none;
   display: block;
@@ -45,6 +49,9 @@ figure{
   transition: all ease-out .2s;
 }
 
+input[type="radio"] {
+  display: none;
+}
 
 .UP{
   &__contents{
@@ -117,6 +124,142 @@ figure{
           }
         }
       }
+
+      
+      &__tab{
+        margin: 0;
+        background: #fff;
+        &__titel{
+          display: inline-block;
+          text-align: center;
+          vertical-align: top;
+          border: 0;
+          background: #eee;
+          font-size: 0;
+          display: flex;
+          label {
+            width: 50%;
+            color: #333;
+            background: #ddd;
+            text-align: center;
+            font-size: 16px;
+            line-height: 72px;
+            cursor: pointer;
+            transition: ease 0.2s opacity;
+          }
+        }
+
+        &__board{
+          &__message{
+            width: 100%;
+            padding: 80px 0;
+            display: none;
+            p {
+              font-size: 16px;
+              letter-spacing: 1px;
+              text-align: center;
+            }
+
+          }
+        }
+      }
+
+      &__BuyGoods{
+        margin: 40px 0 0;
+        background: #fff;
+        h2{
+          padding: 0 16px;
+          background: #fafafa;
+          font-size: 16px;
+          line-height: 72px;
+        }
+        
+        &__tab{
+          margin: 0;
+          background: #fff;
+          &__titel{
+            display: inline-block;
+            text-align: center;
+            vertical-align: top;
+            border: 0;
+            background: #eee;
+            font-size: 0;
+            display: flex;
+            label {
+              width: 50%;
+              color: #333;
+              background: #ddd;
+              text-align: center;
+              font-size: 16px;
+              line-height: 72px;
+              cursor: pointer;
+              transition: ease 0.2s opacity;
+            }
+          }
+        
+          &__board{
+            &__message{
+              width: 100%;
+              padding: 80px 0;
+              display: none;
+              p {
+                font-size: 16px;
+                letter-spacing: 1px;
+                text-align: center;
+              }
+            }
+          }
+        }
+      }
     }
+  }
+}
+
+
+#tab1:checked ~ {
+  .UP__contents__right__tab__titel .UP__contents__right__tab__titel__label1 {
+    background: #fff;
+    color: #000;
+    border-top: 2px solid #ea352d;
+  }
+
+  .UP__contents__right__tab__board #panel1 {
+    display: block;
+  }
+}
+
+#tab2:checked ~ {
+  .UP__contents__right__tab__titel .UP__contents__right__tab__titel__label2 {
+    background: #fff;
+    color: #000;
+    border-top: 2px solid #ea352d;
+  }
+
+  .UP__contents__right__tab__board #panel2 {
+    display: block;
+  }
+}
+
+#tab3:checked ~ {
+  .UP__contents__right__BuyGoods__tab__titel .UP__contents__right__BuyGoods__tab__titel__label3 {
+    background: #fff;
+    color: #000;
+    border-top: 2px solid #ea352d;
+  }
+
+  .UP__contents__right__BuyGoods__tab__board #panel3 {
+    display: block;
+  }
+}
+
+#tab4:checked ~ {
+  .UP__contents__right__BuyGoods__tab__titel .UP__contents__right__BuyGoods__tab__titel__label4 {
+    background: #fff;
+    color: #000;
+    border-top: 2px solid #ea352d;
+  }
+
+  .UP__contents__right__BuyGoods__tab__board #panel4 {
+    display: block;
   }
 }
