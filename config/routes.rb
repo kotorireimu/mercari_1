@@ -4,9 +4,9 @@ Rails.application.routes.draw do
   devise_for :users
   get 'items/index'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  root 'homes#index'
+  root 'homes#destroy'
   
   resources :items, except: :show
   resources :homes, except: :show
-  
+
 end
