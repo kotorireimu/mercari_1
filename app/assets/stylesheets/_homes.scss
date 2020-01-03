@@ -38,7 +38,6 @@ figure{
   border-radius: 50%;
 }
 
-
 .bold{
   font-weight: 600;
 }
@@ -90,6 +89,77 @@ input[type="radio"] {
     &__right{
       width: 700px;
       margin-top: 33px;
+
+      &__edit{
+        margin: 0;
+        background: #fff;
+        &__head{
+          font-size: 24px;
+          padding: 8px 24px;
+          border-bottom: 1px solid #f5f5f5;
+          text-align: center;
+          line-height: 1.4;
+        }
+        &__profile{
+          padding: 72px 16px 24px;
+          background: olivedrab;
+          background-repeat: no-repeat;
+          background-size: cover;
+          text-align: center;
+          font-size: 0;
+          figure{
+            display: inline-block;
+            overflow: hidden;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            vertical-align: middle;
+          }
+          input{
+            width: 220px;
+            margin: 0 0 0 8px;
+            vertical-align: middle;
+            height: 48px;
+            padding: 10px 16px 8px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+            background: #fff;
+            line-height: 1.5;
+            font-size: 16px;
+          }
+        }
+        &__content{
+          padding: 40px 16px;
+          &__textarea{
+            display: block;
+            width: 100%;
+            max-width: 100%;
+            min-height: 216px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            background: #fff;
+            font-size: 16px;
+            line-height: 1.5;
+            border-radius: 0;
+            outline: 0;
+            -webkit-appearance: none;
+          }
+          &__btn{
+            margin: 16px 0 0;
+            display: block;
+            width: 100%;
+            line-height: 48px;
+            font-size: 14px;
+            border: 1px solid transparent;
+            -webkit-transition: all ease-out .3s;
+            transition: all ease-out .3s;
+            cursor: pointer;
+            text-align: center;
+
+          }
+        }
+      }
+    
 
       &__logout{
         margin: 0;
@@ -245,6 +315,7 @@ input[type="radio"] {
     }
   }
 }
+
 
 
 #tab1:checked ~ {
