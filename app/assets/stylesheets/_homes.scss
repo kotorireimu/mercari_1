@@ -12,6 +12,10 @@ h3{
   font-size: 22px;
 }
 
+a{
+  text-decoration: none;
+}
+
 ul{
   list-style: none;
   display: block;
@@ -54,6 +58,7 @@ input[type="radio"] {
 }
 
 .UP{
+
   &__contents{
     display: flex;
     margin: 40px auto 0;
