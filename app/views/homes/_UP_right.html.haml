@@ -1,0 +1,45 @@
+.UP__contents__right
+  %section.UP__contents__right__icon
+    %a.UP__contents__right__icon__box{href: "#"}
+      %figure
+        %img{alt: "", height: "60", src: "/assets/oldman_84.png", width: "60"}/
+      %h2.UP__contents__right__icon__box__name.bold ダンブルドア
+      .UP__contents__right__icon__box__number
+        %div
+          評価
+          %span.bold 0
+        %div
+          出品数
+          %span.bold 0
+  .UP__contents__right__tab
+    %input#tab1{checked: "checked", name: "tab_btn1", type: "radio"}
+    %input#tab2{name: "tab_btn1", type: "radio"}
+    
+    .UP__contents__right__tab__titel
+      %label.UP__contents__right__tab__titel__label1{for: "tab1"} お知らせ
+      %label.UP__contents__right__tab__titel__label2{for: "tab2"} やることリスト
+      
+    .UP__contents__right__tab__board
+      #panel1.UP__contents__right__tab__board__message
+        %p 現在、お知らせはありません
+      #panel2.UP__contents__right__tab__board__message
+        %p 現在、やることリストはありません
+        
+  .UP__contents__right__BuyGoods 
+    %h2 購入した商品
+    .UP__contents__right__BuyGoods__tab
+      %input#tab3{checked: "checked", name: "tab_btn2", type: "radio"}
+      %input#tab4{name: "tab_btn2", type: "radio"}
+      
+      .UP__contents__right__BuyGoods__tab__titel
+        %label.UP__contents__right__BuyGoods__tab__titel__label3{for: "tab3"} 取引中
+        %label.UP__contents__right__BuyGoods__tab__titel__label4{for: "tab4"} 過去の取引
+        
+      .UP__contents__right__BuyGoods__tab__board
+        #panel3.UP__contents__right__BuyGoods__tab__board__message
+          %p 現在、取引中の商品はありません。
+        #panel4.UP__contents__right__BuyGoods__tab__board__message
+          %p 過去に取引した商品はありません。
+
+
+
