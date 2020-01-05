@@ -1,0 +1,135 @@
+.tP-element__header
+  .header__content
+    .content__top
+      .content-top__campanylogo
+        %link_to.top-campanylogo{href:"#"}
+          %img.campanylogo--image{alt:"mercari",src:"#"}
+      .content-top__searchform  
+        %input.searchformelement{type:"search",name:"kyeword",placeholder:"何かお探しですか？",autocomplete:"off",value:" "} 
+          %button.search-btn
+            %i.fas.fa-search
+    .content__bottom
+      .content-bottom__tag
+        = render'shared/tag-list.html.haml',title:"カテゴリーから探す"
+        = render'shared/tag-list.html.haml',title:"ブランドから探す"
+      %ul.content-bottom__list
+        %li.list__likehistory
+          %link_to.likehistory__element{href:"#"}
+            %i.far.fa-heart
+            いいね！一覧
+        %li.list__notification
+          %link_to.notification__element{href:"#"}
+            %i.far.fa-bell
+            お知らせ
+        %li.list__todo
+          %link_to.todo__element
+            %i.fas.fa-check
+            やることリスト
+        %li.list__mypage
+          %link_to.mypage__element
+            %i.fas.fa-user-circle
+            マイページ
+.tp-element__main
+  .main__advertising
+    %link_to{href:"#"}
+      .main-content__ad
+  .main__content
+    .content__poplarcategory
+      .item-tag.item-tag-a
+        %h2.style_heading__3qSF6.common_fontFamily__3-3Si.style_responsiveLv1__3ygH4.tag-style.tagstyle-a
+          人気のカテゴリー
+        %ul.popularcategory__list.popularcategory__list-a
+          %li.category-list.category-list-a
+            %a.category-name.category-name-a.category-name-b レディース
+          %li.category-list.category-list-a
+            %a.category-name.category-name-a.category-name-b メンズ
+          %li.category-list.category-list-a
+            %a.category-name.category-name-a.category-name-b 家電・スマホ・カメラ
+          %li.category-list.category-list-a
+            %a.category-name.category-name-a.category-name-b おもちゃ・ホビー・グッズ
+      = render'shared/item-list.html.haml', title:"レディース新着アイテム"
+      = render'shared/item-list.html.haml', title:"メンズ新着アイテム"
+      = render'shared/item-list.html.haml', title:"家電・スマホ・カメラ新着アイテム"
+      = render'shared/item-list.html.haml', title:"おもちゃ・ホビー・グッズ新着アイテム"
+    .content__popularbrand
+      .item-tag.item-tag-a
+        %h2.style_heading__3qSF6.common_fontFamily__3-3Si.style_responsiveLv1__3ygH4.tag-style.tagstyle-a
+          人気のブランド
+        %ul.popularburand__list.popularburand__list-a
+          %li.burand-list.burand-list-a
+            %a.burand-name.burand-name-a.burand-name-b シャネル
+          %li.burand-list.burand-list-a
+            %a.burand-name.burand-name-a.burand-name-b ルイヴィトン
+          %li.burand-list.burand-list-a
+            %a.burand-name.burand-name-a.burand-name-b シュプリーム                
+          %li.burand-list.burand-list-a
+            %a.burand-name.burand-name-a.burand-name-b ナイキ
+      = render'shared/item-list.html.haml', title:"シャネル新着アイテム"
+      = render'shared/item-list.html.haml', title:"ルイヴィトン新着アイテム"
+      = render'shared/item-list.html.haml', title:"シュプリーム新着アイテム"
+      = render'shared/item-list.html.haml', title:"ナイキ新着アイテム"
+    .exhibition
+      %link_to.sell_button{herf:"#"}
+        .sell_button_element
+          .exhibition_content 
+            出品
+            %i.fas.fa-camera
+.tp-element__mercari-ad
+  .ad__content
+    .ad__space
+      .ad__left
+        .left__element スマホでかんたんフリマアプリ
+        .element__bottom 
+          今すぐ無料ダウンロード
+          .element__logo
+            %img.mercari-logo{href:"#"}
+            %link_to.ad_logo_apple{href:"#", target:"_brank"}
+              -# %img.appstore_logo{src:"/Download_on_the_App_Store_Badge_JP_RGB_blk_100317.svg", art}
+            %link_to.ad_logo_google{herf:"#", target:"_brank"}
+              -# %img.googleplay_logo{src:"/google-play-badge.png", art}
+      %figure.ad__right
+        -# %img.right__imeage{src:"/mercari-ad.jpg" art}
+      
+.tp-element__footer
+  .footer__element
+    .element__companyinformation
+      %h2.companyinformation__title メルカリについて
+      %ul.companyinformation_list
+        %li.companyinformation__list-1
+          %link_to.tp_footer_companysoutline{href:"#"}会社概要（運営会社)
+        %li.companyinformation__list-2 
+          %link_to.tp_footer_employmentinformation{href:"#"}採用情報
+        %li.companyinformation__list-3
+          %link_to.tp_footer_pressrelease{href:"#"}プレリリース
+        %li.companyinformation__list-4
+          %link_to.tp_footer_officalblog{href:"#"}公式ブログ
+        %li.companyinformation__list-5
+          %link_to.logoguidelines{href:"#"}メルカリロゴ使用ガイドライン
+        %link_to.footer__social-link{href:"#",target:"_blank"}
+          %i.fab.fa-twitter
+        %link_to.footer_social-link{href:"#",target:"_blank"}
+          %i.fab.fa-facebook-square
+    .element__help-guide
+      %h2.help-guide__title ヘルプ＆ガイド
+      %ul.help-guide__list
+        %li.help-guide__list-1
+          %link_to.mercari-guide{href:"#"}メルカリガイド
+        %li.help-guide__list-2
+          %link_to.rakuraku-delivery{href:"#"}らくらくメルカリ便
+        %li.help-guide__list-3
+          %link_to.yuyu-delivery{href:"#"}ゆうゆうメルカリ便
+        %li.help-guide__list-4
+          %link_to.big-delivery{href:"#"}大型メルカリ便
+        %li.help-guide__list-5
+          %link_to.cartrade-guide{href:"#"}車体取引ガイド
+        %li.help-guide__list-6
+          %link_to.safetydeclaration{href:"#"}メルカリあんしん・あんぜん宣言
+        %li.help-guide__list-7
+          %link_to.fakebrand_eradication{href:"#"}偽ブランド撲滅への取り組み
+        %li.help-guide__list-8
+          %link_to.merucari-box{href:"#"}メルカリボックス
+    .footer__logo
+      %a.logo__company
+        %img.footer__mercari-logo{src:"#", art:"mercari"}
+      %span.copyright ©️Mercari,inc
+      

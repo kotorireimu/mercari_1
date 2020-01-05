@@ -1,0 +1,30 @@
+.tp-element__footer{
+  background-color: rgb(34, 34, 34);
+  color: rgb(255, 255, 255);
+  font-size: 12px;
+  padding: 0px 20px 10px;
+  .footer__element{
+    width: 700px;
+    margin: 0px auto;
+    .element__companyinformation{
+      display: inline-block;
+      margin-top: 18px;
+      vertical-align: top;
+      width: 50%;
+      padding: 0px 10px;
+    }
+    .element__help-guide{
+      display: inline-block;
+    margin-top: 18px;
+    vertical-align: top;
+    width: 50%;
+    padding: 0px 10px;
+    }
+  }
+  .footer__logo{
+    -webkit-box-align: center;
+    align-items: center;
+    display: flex;
+    margin-top: 55px;
+  }
+}
