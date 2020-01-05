@@ -52,16 +52,6 @@ input{
   -webkit-appearance: none;
 }
 
-label{
-  position: relative;
-  z-index: 2;
-  padding: 0 0 0 28px;
-  font-size: 14px;
-  font-weight: 400;
-  vertical-align: middle;
-  cursor: pointer;
-}
-
 button{
   -webkit-appearance: button;
   overflow: visible;
@@ -181,6 +171,15 @@ button{
             &__have{
               &__use{
                 text-align: left;
+                label{
+                  position: relative;
+                  z-index: 2;
+                  padding: 0 0 0 28px;
+                  font-size: 14px;
+                  font-weight: 400;
+                  vertical-align: middle;
+                  cursor: pointer;
+                }
               }
             }
           }
