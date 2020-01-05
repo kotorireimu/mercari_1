@@ -1,0 +1,44 @@
+.buy-page__main
+  .buy-page__main__contents
+    %h2.buy-page__main__contents__head 購入内容の確認
+    .buy-page__main__contents__item
+      .buy-page__main__contents__item__inner
+        .buy-page__main__contents__item__inner__box
+          %h3.buy-page__main__contents__item__inner__box__image
+            %img.buy-page__main__contents__item__inner__box__image__photo{alt: "", src: "/assets/logo_white.png", height: "80", width: "80"}
+          .buy-page__main__contents__item__inner__box__text
+            %p.buy-page__main__contents__item__inner__box__text__name 箱デザイン
+            %p.buy-page__main__contents__item__inner__box__text__price
+              %span ¥ 888
+              %span.buy-page__main__contents__item__inner__box__text__price__postage （税込）送料込み
+    .buy-page__main__contents__item
+      .buy-page__main__contents__item__inner
+        .buy-page__main__contents__item__inner__table
+          .buy-page__main__contents__item__inner__table__label 支払い金額
+          .buy-page__main__contents__item__inner__table__price
+            %span ¥888
+        .buy-page__main__contents__item__inner__point
+          .buy-page__main__contents__item__inner__point__have
+            .buy-page__main__contents__item__inner__point__have__use.checkbox-default
+              %input{disabled: "disabled", type: "checkbox"}
+              %i.icon-check
+              %label ポイントを使用 (所持ポイント: P0)
+        %section.buy-page__main__contents__item__inner__pay
+          .buy-page__main__contents__item__inner__pay__selection
+            %h3 支払い方法
+            = link_to('登録してください', "#")
+        %section.buy-page__main__contents__item__inner__delivery
+          .buy-page__main__contents__item__inner__delivery__header
+            %h3 配送先
+            = link_to('登録する', "#")
+          .buy-page__main__contents__item__inner__delivery__addres
+            %p
+              〒000-0000
+              %br/
+              ロンドン県 ダイアゴン横丁市
+              ホグワーツ魔法学校1ー2ー3
+              ダンブルドア校長室
+              %br/
+              ダンブルドア
+        %section.buy-page__main__contents__item__inner__decision
+          %button.buy-page__main__contents__item__inner__decision__btn{type: "submit"} 購入する
