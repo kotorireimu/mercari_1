@@ -26,15 +26,11 @@
         %section.buy-page__main__contents__item__inner__pay
           .buy-page__main__contents__item__inner__pay__selection
             %h3 支払い方法
-            %a{href: "#"}
-              %p.buy-page__main__contents__item__inner__pay__selection__info
-                %i.icon-plus-circle
-                %span.buy-page__main__contents__item__inner__pay__selection__info__text 登録してください
+            = link_to('登録してください', "#")
         %section.buy-page__main__contents__item__inner__delivery
           .buy-page__main__contents__item__inner__delivery__header
             %h3 配送先
-            %a.buy-page__main__contents__item__inner__delivery__header__fix{href: "#"}
-              %span 変更する
+            = link_to('登録する', "#")
           .buy-page__main__contents__item__inner__delivery__addres
             %p
               〒000-0000
