@@ -1,0 +1,92 @@
+.su_header {
+  width: 100%;
+  height: 128px;
+  color: rgb(51, 51, 51);
+  background-color: rgb(245, 245, 245);
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  .top-logo-svg {
+    margin: 40px 0 0;
+    width: 185px;
+    height: 49px;
+  }
+  .progress-bar {
+    padding: 40px 0 0 44px;
+    border: 0;
+    display: inline-block;
+    vertical-align: top;
+    .clearfix {
+      li {
+        position: relative;
+        z-index: 1;
+        display: inline-block;
+        min-width: 50px;
+        margin: 0 40px 0 0;
+        font-size: 12px;
+        color: #888;
+        white-space: nowrap;
+        .place {
+          z-index: -1;
+          display: block;
+          content: '';
+          width: 100%;
+          height: 2px;
+          background: #ccc;
+          width: 12px;
+          height: 12px;
+          margin: 8px auto 0;
+          border-radius: 50%;
+        }
+        .place::before {
+          position: absolute;
+          bottom: 5px;
+          z-index: -1;
+          display: block;
+          content: '';
+          width: 100%;
+          height: 2px;
+          background: #ccc;
+          right: 50%;
+        }
+        .place::after {
+          position: absolute;
+          bottom: 5px;
+          z-index: -1;
+          display: block;
+          content: '';
+          width: 100%;
+          height: 2px;
+          background: #ccc;
+          left: 50%;
+        }
+        .t_place::before {
+          content: none;
+        }
+        .e_place::after {
+          content: none;
+        }
+      } 
+      .active {
+        color: #ea352d;
+        margin: 0 40px 0 0;
+        position: relative;
+        z-index: 1;
+        display: inline-block;
+        min-width: 40px;
+        font-size: 12px;
+        white-space: nowrap;
+        .place {
+          background-color: #ea352d;
+          width: 12px;
+          height: 12px;
+          margin: 8px auto 0;
+          border-radius: 50%;
+        }
+      }
+    }
+  }
+}
+.t_place::after {
+  content: none;
+}
