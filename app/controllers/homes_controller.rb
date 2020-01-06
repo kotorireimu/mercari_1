@@ -16,4 +16,8 @@ class HomesController < ApplicationController
 
   def destroy
   end
+
+  def identification
+  end
+  
 end
