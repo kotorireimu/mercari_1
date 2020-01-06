@@ -1,0 +1,40 @@
+.TP__footer
+  .TP__footer__content
+    .TP__footer__content__element
+      %h2.TP__footer__content__element__title メルカリについて
+      %ul.TP__footer__content__element__list
+        = render partial:"shared/TP_footer_list" ,locals:{text: "会社概要（運営会社)", link_to:"#"}
+        = render partial:"shared/TP_footer_list" ,locals:{text: "採用情報", link_to:"#"}
+        = render partial:"shared/TP_footer_list" ,locals:{text: "プレリリース", link_to:"#"}
+        = render partial:"shared/TP_footer_list" ,locals:{text: "公式ブログ", link_to:"#"}
+        = render partial:"shared/TP_footer_list" ,locals:{text: "メルカリロゴ使用ガイドライン", link_to:"#"}
+        %a.footer__social-link{href:"#",target:"_blank"}
+          %i.fab.fa-twitter
+        %a.footer_social-link{href:"#",target:"_blank"}
+          %i.fab.fa-facebook-square
+    .TP__footer__content__element
+      %h2.TP__footer__content__element__title ヘルプ＆ガイド
+      %ul.TP__footer__content__element__list
+        = render partial:"shared/TP_footer_list" ,locals:{text: "メルカリガイド", link_to:"#"}
+        = render partial:"shared/TP_footer_list" ,locals:{text: "らくらくメルカリ便", link_to:"#"}
+        = render partial:"shared/TP_footer_list" ,locals:{text: "ゆうゆうメルカリ便", link_to:"#"}
+        = render partial:"shared/TP_footer_list" ,locals:{text: "大型メルカリ便", link_to:"#"}
+        = render partial:"shared/TP_footer_list" ,locals:{text: "車体取引ガイド", link_to:"#"}
+        = render partial:"shared/TP_footer_list" ,locals:{text: "メルカリあんしん・あんぜん宣言", link_to:"#"}
+        = render partial:"shared/TP_footer_list" ,locals:{text: "偽ブランド撲滅への取り組み", link_to:"#"}
+        = render partial:"shared/TP_footer_list" ,locals:{text: "メルカリボックス", link_to:"#"}
+    .TP__footer__content__privacy
+      %h2.TP__footer__content__privacy__title プライバシーと利用規則
+      %ul.TP__footer__content__privacy__list-1
+        = render partial:"shared/TP_footer_list" ,locals:{text: "プライバシーポリシー", link_to:"#"}
+        = render partial:"shared/TP_footer_list" ,locals:{text: "メルカリ利用規約", link_to:"#"}
+        = render partial:"shared/TP_footer_list" ,locals:{text: "あんしんスマホサポート制度に関する利用特約", link_to:"#"}
+        = render partial:"shared/TP_footer_list" ,locals:{text: "コンプライアンスポリシー", link_to:"#"}
+      %ul.TP__footer__content__privacy__list-2
+        = render partial:"shared/TP_footer_list" ,locals:{text: "個人データの安全管理に係る基本方針", link_to:"#"}
+        = render partial:"shared/TP_footer_list" ,locals:{text: "特定商取引に関する表記", link_to:"#"}
+        = render partial:"shared/TP_footer_list" ,locals:{text: "資金決済法に基づく表示", link_to:"#"}
+        = render partial:"shared/TP_footer_list" ,locals:{text: "法令順守と犯罪抑止のために", link_to:"#"}
+      %a.logo__company
+        %img.footer__mercari-logo{alt: "Fmarket",src:"/assets/fmarket_logo_white.png", height: "50", width: "150"}
+      %span.copyright ©️Mercari,inc
