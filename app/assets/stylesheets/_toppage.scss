@@ -179,6 +179,13 @@ div{
     margin: 0px auto;
     &__content{
       position: relative;
+      &__ad1{
+        height: 200px;
+        position: relative;
+        padding: 20px;
+        background: olivedrab;
+      }
+
       &__category{
         padding: 56px 0px 30px;
         background-color: rgb(255, 255, 255);
@@ -329,6 +336,13 @@ div{
             }
           }
         }
+      }
+
+      &__ad2{
+        height: 200px;
+        position: relative;
+        padding: 20px;
+        background: olivedrab;
       }
     }
   }

@@ -1,8 +1,8 @@
 .TP__main
   .TP__main__content
-    -# トップページの画像挿入
-    -# .TP__main__content__img
-
+    -# 広告入れる場所
+    .TP__main__content__ad1
+      
     .TP__main__content__category
       %h2.TP__main__content__category__title
         人気のカテゴリー
@@ -17,4 +17,6 @@
       = render partial:'shared/item-list', locals:{title: "メンズ新着アイテム" ,text: "鞄", price: "¥2000"}
       = render partial:'shared/item-list', locals:{title: "家電・スマホ・カメラ新着アイテム" ,text: "カメラ", price: "¥5000"}
       = render partial:'shared/item-list', locals:{title: "おもちゃ・ホビー・グッズ新着アイテム" ,text: "MTG", price: "¥200"}
-        
+    
+    -# 広告入れる場所
+    .TP__main__content__ad2
