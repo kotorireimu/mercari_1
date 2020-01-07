@@ -25,16 +25,17 @@
         = render partial:"shared/TP_footer_list" ,locals:{text: "メルカリボックス", link_to:"#"}
     .TP__footer__content__privacy
       %h2.TP__footer__content__privacy__title プライバシーと利用規則
-      %ul.TP__footer__content__privacy__list-1
-        = render partial:"shared/TP_footer_list" ,locals:{text: "プライバシーポリシー", link_to:"#"}
-        = render partial:"shared/TP_footer_list" ,locals:{text: "メルカリ利用規約", link_to:"#"}
-        = render partial:"shared/TP_footer_list" ,locals:{text: "あんしんスマホサポート制度に関する利用特約", link_to:"#"}
-        = render partial:"shared/TP_footer_list" ,locals:{text: "コンプライアンスポリシー", link_to:"#"}
-      %ul.TP__footer__content__privacy__list-2
-        = render partial:"shared/TP_footer_list" ,locals:{text: "個人データの安全管理に係る基本方針", link_to:"#"}
-        = render partial:"shared/TP_footer_list" ,locals:{text: "特定商取引に関する表記", link_to:"#"}
-        = render partial:"shared/TP_footer_list" ,locals:{text: "資金決済法に基づく表示", link_to:"#"}
-        = render partial:"shared/TP_footer_list" ,locals:{text: "法令順守と犯罪抑止のために", link_to:"#"}
-      %a.logo__company
-        %img.footer__mercari-logo{alt: "Fmarket",src:"/assets/fmarket_logo_white.png", height: "50", width: "150"}
-      %span.copyright ©️Mercari,inc
+      .TP__footer__content__privacy__list
+        %ul.TP__footer__content__privacy__list__group
+          = render partial:"shared/TP_footer_list" ,locals:{text: "プライバシーポリシー", link_to:"#"}
+          = render partial:"shared/TP_footer_list" ,locals:{text: "メルカリ利用規約", link_to:"#"}
+          = render partial:"shared/TP_footer_list" ,locals:{text: "あんしんスマホサポート制度に関する利用特約", link_to:"#"}
+          = render partial:"shared/TP_footer_list" ,locals:{text: "コンプライアンスポリシー", link_to:"#"}
+        %ul.TP__footer__content__privacy__list__group
+          = render partial:"shared/TP_footer_list" ,locals:{text: "個人データの安全管理に係る基本方針", link_to:"#"}
+          = render partial:"shared/TP_footer_list" ,locals:{text: "特定商取引に関する表記", link_to:"#"}
+          = render partial:"shared/TP_footer_list" ,locals:{text: "資金決済法に基づく表示", link_to:"#"}
+          = render partial:"shared/TP_footer_list" ,locals:{text: "法令順守と犯罪抑止のために", link_to:"#"}
+  %a.TP__footer__logo
+    %img.TP__footer__logo__img{alt: "Fmarket",src:"/assets/fmarket_logo_white.png", height: "50", width: "150"}
+    %span.TP__footer__logo__copyright ©️Fmarket,inc

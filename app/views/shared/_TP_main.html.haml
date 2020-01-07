@@ -1,0 +1,20 @@
+.TP__main
+  .TP__main__content
+    -# トップページの画像挿入
+    -# .TP__main__content__img
+
+    .TP__main__content__category
+      %h2.TP__main__content__category__title
+        人気のカテゴリー
+      .TP__main__content__category__tag
+        = render partial:'shared/item-tag', locals:{name: "レディース" ,link_to: "#"}
+        = render partial:'shared/item-tag', locals:{name: "メンズ" ,link_to: "#"}
+        = render partial:'shared/item-tag', locals:{name: "家電・スマホ・カメラ" ,link_to: "#"}
+        = render partial:'shared/item-tag', locals:{name: "おもちゃ・ホビー・グッズ" ,link_to: "#"}
+
+    .TP__main__content__list
+      = render partial:'shared/item-list', locals:{title: "レディース新着アイテム" ,text: "カバン", price: "¥1000"}
+      = render partial:'shared/item-list', locals:{title: "メンズ新着アイテム" ,text: "鞄", price: "¥2000"}
+      = render partial:'shared/item-list', locals:{title: "家電・スマホ・カメラ新着アイテム" ,text: "カメラ", price: "¥5000"}
+      = render partial:'shared/item-list', locals:{title: "おもちゃ・ホビー・グッズ新着アイテム" ,text: "MTG", price: "¥200"}
+        
