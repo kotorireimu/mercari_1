@@ -34,6 +34,16 @@ li{
   font-weight: 600;
 }
 
+.form-arbitrary {
+  background: #ccc;
+  margin: 0 0 0 8px;
+  padding: 2px 4px;
+  border-radius: 2px;
+  color: #fff;
+  font-size: 12px;
+  vertical-align: top;
+}
+
 .icon-arrow-right{
   position: absolute;
   top: 50%;
@@ -50,14 +60,13 @@ input[type="radio"] {
 }
 
 .UP{
-
   &__contents{
     display: flex;
-    margin: 40px auto 0;
+    margin: 0 auto 0;
     width: 1020px;
     &__left{
       width: 280px;
-      margin: 0 40px 0 0;
+      margin: 20px 40px 0 0;
       &__nav{
         &__head{
           margin: 40px 0 0;
@@ -69,10 +78,9 @@ input[type="radio"] {
             border-top: 1px solid #eee;
             position: relative;
             display: block;
-            min-height: 48px;
             padding: 16px;
             background: #fff;
-            font-size: 14px;
+            font-size: 15px;
             color: #333;
           }
         }
@@ -81,6 +89,103 @@ input[type="radio"] {
   
     &__right{
       width: 700px;
+      margin-top: 33px;
+
+      &__edit{
+        margin: 0;
+        background: #fff;
+        &__head{
+          font-size: 24px;
+          padding: 8px 24px;
+          border-bottom: 1px solid #f5f5f5;
+          text-align: center;
+          line-height: 1.4;
+        }
+        &__profile{
+          padding: 72px 16px 24px;
+          background: olivedrab;
+          background-repeat: no-repeat;
+          background-size: cover;
+          text-align: center;
+          font-size: 0;
+          figure{
+            display: inline-block;
+            overflow: hidden;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            vertical-align: middle;
+          }
+          input{
+            width: 220px;
+            margin: 0 0 0 8px;
+            vertical-align: middle;
+            height: 48px;
+            padding: 10px 16px 8px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+            background: #fff;
+            line-height: 1.5;
+            font-size: 16px;
+          }
+        }
+        &__content{
+          padding: 40px 16px;
+          &__textarea{
+            display: block;
+            width: 100%;
+            max-width: 100%;
+            min-height: 216px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            background: #fff;
+            font-size: 16px;
+            line-height: 1.5;
+            border-radius: 0;
+            outline: 0;
+            -webkit-appearance: none;
+          }
+          &__btn{
+            margin: 16px 0 0;
+            display: block;
+            width: 100%;
+            line-height: 48px;
+            font-size: 14px;
+            border: 1px solid transparent;
+            -webkit-transition: all ease-out .3s;
+            transition: all ease-out .3s;
+            cursor: pointer;
+            text-align: center;
+
+          }
+        }
+      }
+    
+
+      &__logout{
+        margin: 0;
+        background: #fff;
+        &__inner{
+          padding: 64px;
+          border-top: 1px solid #f5f5f5;
+          &__content{
+            max-width: 320px;
+            margin: 0 auto;
+            &__btn{
+              display: block;
+              width: 100%;
+              line-height: 48px;
+              font-size: 14px;
+              border: 1px solid transparent;
+              -webkit-transition: all ease-out .3s;
+              transition: all ease-out .3s;
+              cursor: pointer;
+              text-align: center;
+            }
+          }
+        }
+      }
+
       &__icon{
         height: 200px;
         position: relative;
@@ -208,9 +313,68 @@ input[type="radio"] {
           }
         }
       }
+
+      &__identification{
+        background: #fff;
+        &__head{
+          font-size: 24px;
+          padding: 8px 24px;
+          border-bottom: 1px solid #f5f5f5;
+          text-align: center;
+          line-height: 1.4;
+        }
+        &__single{
+          padding: 64px;
+          border-top: 1px solid #f5f5f5;
+          div{
+            p{
+              margin: 8px 0 0;
+              line-height: 1.5;
+            }
+          }
+          &__text{
+            text-align: right;
+          }
+
+          &__group{
+            margin: 40px 0 0;
+            label{
+              font-weight: 600;
+              display: inline-block;
+              touch-action: manipulation;
+              cursor: default;
+            }
+            &__input{
+              width: 95%;
+              margin: 8px 0 0;
+              height: 28px;
+              padding: 10px 16px 8px;
+              border-radius: 4px;
+              border: 1px solid #ccc;
+              background: #fff;
+              line-height: 1.5;
+              font-size: 16px;
+              min-height: 1.5em;
+            }
+          }
+          &__btn{
+            margin: 40px 0 0 0;
+            display: block;
+            width: 100%;
+            line-height: 48px;
+            font-size: 14px;
+            border: 1px solid transparent;
+            -webkit-transition: all ease-out .3s;
+            transition: all ease-out .3s;
+            cursor: pointer;
+            text-align: center;
+          }
+        }
+      }
     }
   }
 }
+
 
 
 #tab1:checked ~ {
