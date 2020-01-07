@@ -22,7 +22,11 @@
         %input.UP__contents__right__identification__single__group__input{name: "zip_code", placeholder: "例）1234567", type: "text", value: ""}
       .UP__contents__right__identification__single__group
         = render partial: "UP_identification_change", locals:{header: "都道府県",column: "prefecture"}
-        = render "items/status_box"
+        .UP__contents__right__identification__single__group__select
+          %i.icon-arrow-bottom
+          %select.UP__contents__right__identification__single__group__select__box{name: "prefecture"}
+            %option --
+
       .UP__contents__right__identification__single__group
         = render partial: "UP_identification_change", locals:{header: "市区町村",column: "city"}
         %input.UP__contents__right__identification__single__group__input{name: "city", placeholder: "例) 横浜市緑区", type: "text", value: ""}

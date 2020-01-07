@@ -14,18 +14,19 @@
         = render partial:'shared/tag-list',locals:{title:"ブランドから探す"}
       %ul.TP__header__content__bottom__list
         %li.TP__header__content__bottom__list__likehistory
-          %a.TP__header__content__bottom__list__likehistory__element{href:"#"}
+          = link_to "#" , class: "TP__header__content__bottom__list__likehistory__element" do
             %i.far.fa-heart
             いいね！一覧
         %li.TP__header__content__bottom__list__notification
-          %a.TP__header__content__bottom__list__notification__element{href:"#"}
+          = link_to "#" , class: "TP__header__content__bottom__list__notification__element" do
             %i.far.fa-bell
-            お知らせ
+              お知らせ
         %li.TP__header__content__bottom__list__todo
-          %a.TP__header__content__bottom__list__todo__element{href:"#"}
+          = link_to "#" , class: "TP__header__content__bottom__list__todo__element" do
             %i.fas.fa-check
-            やることリスト
+              やることリスト
         %li.TP__header__content__bottom__list__mypage
-          %a.TP__header__content__bottom__list__mypage__element{href:"#"}
+          = link_to "homes/index" , class: "TP__header__content__bottom__list__mypage__element" do
             %i.fas.fa-user-circle
-            マイページ
+              マイページ
+
