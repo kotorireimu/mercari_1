@@ -1,0 +1,88 @@
+%section.product-details
+  .product-details__main
+    %h1.product-details__main__item-name COACH コーチ ショルダーバッグ
+    .product-details__main__content 
+      .product-details__main__content__image
+        .product-details__main__content__image__main
+          = image_tag "https://3.bp.blogspot.com/-itNZS93p4h4/UgsrvyfQtzI/AAAAAAAAXJ4/NXi_fofGUSg/s400/travel_bag.png", width: "300", heiget:"300"
+        .product-details__main__content__image__sub
+          = image_tag "https://4.bp.blogspot.com/-N-uz3mt68fA/U55IzPpReyI/AAAAAAAAheE/M7XZJUicHL4/s400/pyoko5_goldenweek.png", width: "60", height: "60"
+          = image_tag "https://2.bp.blogspot.com/-3Gecu9nO-ro/WRaTLxZEE_I/AAAAAAABEO4/VD54AW0An9kvea0f4yxSdsT62kUoPaS9wCLcB/s400/ita_bag_cover.png", width: "60",heiget: "60"
+          = image_tag "https://4.bp.blogspot.com/-8AmLMy5IC-Q/Ws2wUvhSkcI/AAAAAAABLcM/YAEjOigiMLwKxWmiEN0StwYVKlmUWcYhwCLcBGAs/s400/travel_suitcase_sticker.png", width: "60",heiget: "60"
+          
+      %table.product-details__main__content__table
+        %tbody
+          %tr
+            %th.product-details__main__content__table__th  出品者
+            %td.product-details__main__content__table__td  テスト
+          %tr
+            %th.product-details__main__content__table__th  カテゴリー
+            %td.product-details__main__content__table__td  レディース
+          %tr
+            %th.product-details__main__content__table__th  ブランド
+            %td.product-details__main__content__table__td  コーチ
+          %tr
+            %th.product-details__main__content__table__th  商品の状態
+            %td.product-details__main__content__table__td  やや傷や汚れあり
+          %tr
+            %th.product-details__main__content__table__th  配送料の負担
+            %td.product-details__main__content__table__td  送料込み(出品者負担)
+          %tr
+            %th.product-details__main__content__table__th  配送の方法
+            %td.product-details__main__content__table__td  らくらくメルカリ便
+          %tr
+            %th.product-details__main__content__table__th  配送元地域
+            %td.product-details__main__content__table__td  福岡県
+          %tr
+            %th.product-details__main__content__table__th  発送日の目安
+            %td.product-details__main__content__table__td  1~2日で発送
+    .product-details__main__buttom
+      .product-details__main__buttom__price-box
+        %span.product-details__main__buttom__price-box__item-price ¥1,900
+        %span.product-details__main__buttom__price-box__item-consumptiontax (税込)
+        %span.product-details__main__buttom__price-box__item-postage 送料込み
+      = link_to "#", class:"product-details__main__buttom__purchase-btn" do
+        購入画面に進む
+      .product-details__main__buttom__item-description
+        %p.product-details__main__buttom__item-description__element
+          COACHのショルダーバッグです。
+          %br 割と使っていたのでバッグの下の方が擦れてしまっていますが、それ以外には傷や汚れないと思います。
+          宜しくお願いします。
+    .product-details__main__button
+      .product-details__main__button__left
+        %button.product-details__main__button__left__item-button--like{name:"like!", type:"button"}
+          %i.far.fa-heart
+          %span いいね!
+        %a.product-details__main__button__left__item-button--report{"data-modal": "report-item", "data-open": "modal", href: ""}
+          %i.far.fa-flag
+          %span 不適切な商品の報告
+      .product-details__main__button__right
+        = link_to "#",target:"_blank"  do
+          %i.far.fa-lock-open
+          %span あんしん・あんぜんへの取り組み
+  .product-details__message
+    .product-details__message__content
+      %form.product-details__message__content__form{action:"#", method:"POST"}
+        %input{type:"hidden", value:""}
+        %p.product-details__message__content__form__text 相手のことを考え丁寧なコメントを心がけましょう。不快な言葉遣いなどは利用制限や退会処分となることがあります。
+        %input{name:"item-id", type:"hidden", value:"#"}
+        %input{name:"redirect-urlkey", type:"hidden", value:"item_detail"}
+        %textarea.product-details__message__content__form__defaultvalue{name:"body", type:"text"}
+        %button.product-details__message__content__form__message-btn{type:"submit"}
+          %span コメントする
+  .product-details__media
+    %ul.product-details__media__list
+      %li.product-details__media__list__element 
+        = link_to "https://www.facebook.com/" ,target:"_blank",class:"sns-btn" do
+          %i.fab.fa-facebook-square.fa-4x.fecebook-icon
+      %li.product-details__media__list__element
+        = link_to "https://twitter.com/",target:"_blank",class:"sns-btn" do
+          %i.fab.fa-twitter-square.fa-4x.twitter-icon
+      %li.product-details__media__list__element
+        = link_to "https://line.me/ja/",target:"_blank",class:"sns-btn" do
+          %i.fab.fa-line.fa-4x.line-icon
+      %li.product-details__media__list__element
+        = link_to "https://www.pinterest.jp/",target:"_blank",class:"sns-btn" do
+          %i.fab.fa-pinterest-square.fa-4x.pinterest-icon
+          
+
