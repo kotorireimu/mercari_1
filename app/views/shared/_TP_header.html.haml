@@ -1,0 +1,32 @@
+.TP__header
+  .TP__header__content
+    .TP__header__content__top
+      .TP__header__content__top__campany
+        %a.TP__header__content__top__campany__logo{href:"#"}
+          = image_tag("fmarket_logo_red.svg", height: "49", width: "185", alt: "Fmarket")
+      .TP__header__content__top__search 
+        %input.TP__header__content__top__search__form{type: "search", name: "kyeword", placeholder: "何かお探しですか？", autocomplete: "off", value: ""} 
+          %button.TP__header__content__top__search__form__btn
+            %i.fas.fa-search
+    .TP__header__content__bottom
+      .TP__header__content__bottom__tag
+        = render partial:'shared/tag-list',locals:{title:"カテゴリーから探す"}
+        = render partial:'shared/tag-list',locals:{title:"ブランドから探す"}
+      %ul.TP__header__content__bottom__list
+        %li.TP__header__content__bottom__list__likehistory
+          = link_to "#" , class: "TP__header__content__bottom__list__likehistory__element" do
+            %i.far.fa-heart
+            いいね！一覧
+        %li.TP__header__content__bottom__list__notification
+          = link_to "#" , class: "TP__header__content__bottom__list__notification__element" do
+            %i.far.fa-bell
+              お知らせ
+        %li.TP__header__content__bottom__list__todo
+          = link_to "#" , class: "TP__header__content__bottom__list__todo__element" do
+            %i.fas.fa-check
+              やることリスト
+        %li.TP__header__content__bottom__list__mypage
+          = link_to "homes/index" , class: "TP__header__content__bottom__list__mypage__element" do
+            %i.fas.fa-user-circle
+              マイページ
+

@@ -1,0 +1,44 @@
+.UP__contents__right
+  %section.UP__contents__right__identification
+    %h2.UP__contents__right__identification__head 本人情報の登録
+    %form.UP__contents__right__identification__single{action: "#", method: "POST", novalidate: ""}
+      %div
+        %p
+          お客さまの本人情報をご登録ください。
+          %br>/
+          登録されたお名前・生年月日を変更する場合、本人確認書類の提出が必要になります。
+        %p.UP__contents__right__identification__single__text
+          %a{href: "#", target: "#"}
+            本人確認書類のアップロードについて
+            %i.icon-arrow-right
+      .UP__contents__right__identification__single__group
+        = render partial: "UP_identification_list", locals:{header: "お名前", info: "ダンブルドア"}
+      .UP__contents__right__identification__single__group
+        = render partial: "UP_identification_list", locals:{header: "お名前カナ", info: "ダンブルドア"}
+      .UP__contents__right__identification__single__group
+        = render partial: "UP_identification_list", locals:{header: "生年月日", info: "1234/5/6"}
+      .UP__contents__right__identification__single__group
+        = render partial: "UP_identification_change", locals:{header: "郵便番号", column: "zip_code"}
+        %input.UP__contents__right__identification__single__group__input{name: "zip_code", placeholder: "例）1234567", type: "text", value: ""}
+      .UP__contents__right__identification__single__group
+        = render partial: "UP_identification_change", locals:{header: "都道府県",column: "prefecture"}
+        .UP__contents__right__identification__single__group__select
+          %i.icon-arrow-bottom
+          %select.UP__contents__right__identification__single__group__select__box{name: "prefecture"}
+            %option --
+
+      .UP__contents__right__identification__single__group
+        = render partial: "UP_identification_change", locals:{header: "市区町村",column: "city"}
+        %input.UP__contents__right__identification__single__group__input{name: "city", placeholder: "例) 横浜市緑区", type: "text", value: ""}
+      .UP__contents__right__identification__single__group
+        = render partial: "UP_identification_change", locals:{header: "番地",column: "address1_label"}
+        %input.UP__contents__right__identification__single__group__input{name: "address1", placeholder: "例) 青山1−1−1", type: "text", value: ""}
+      .UP__contents__right__identification__single__group
+        = render partial: "UP_identification_change", locals:{header: "建物名",column: "address2_label"}
+        %input.UP__contents__right__identification__single__group__input{name: "address2", placeholder: "例) 柳ビル103", type: "text", value: ""}
+      %button.UP__contents__right__identification__single__btn.btn-red{type: "submit"} 登録する
+      .UP__contents__right__identification__single__group
+        %p.UP__contents__right__identification__single__text
+          %a{href: "#", target: "#"}
+            本人情報の登録について
+            %i.icon-arrow-right

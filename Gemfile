@@ -82,4 +82,4 @@ gem 'devise'
 gem 'carrierwave'
 gem 'fog-aws'
 
-gem 'font-awesome-rails'
+gem "font-awesome-sass"
