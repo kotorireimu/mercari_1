@@ -83,3 +83,7 @@ gem 'carrierwave'
 gem 'fog-aws'
 
 gem "font-awesome-sass"
+
+gem "pry-rails"
+
+gem 'jquery-rails'
