@@ -1,0 +1,29 @@
+.bredcrumbs {
+  width: 1280px;
+  height: 49px;
+  position: relative;
+  border-top: 1px solid #eee;
+  box-shadow: 0 3px 3px 0 rgba(0,0,0,0.16);
+  background: #fff;
+  ul {
+    width: 1020px;
+    height: 48px;
+    overflow: visible;
+    margin: 0 auto;
+    padding: 16px 0;
+    white-space: normal;
+    li {
+      display: inline-block;
+      font-size: 14px;
+      line-height: 1.2;
+      a {
+        color: #333333;
+        span {
+          font-weight: bold;
+        }
+      }
+    }
+
+  }
+  
+}
