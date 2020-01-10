@@ -1,5 +1,6 @@
 class HomesController < ApplicationController
   def index
+    
   end
 
   def new
@@ -19,5 +20,5 @@ class HomesController < ApplicationController
 
   def identification
   end
-  
+
 end
