@@ -10,6 +10,7 @@ $(document).on('turbolinks:load', ()=> {
     return html;
   }
 
+    // プレビュー用のimgタグを生成する関数
   const buildImg = (index, url)=> {
     const html = `<img data-index="${index}" src="${url}" width="100px" height="100px">`;
     return html;
@@ -17,14 +18,11 @@ $(document).on('turbolinks:load', ()=> {
 
   // file_fieldのnameに動的なindexをつける為の配列
   let fileIndex = [1,2,3,4,5,6,7,8,9,10];
+  // 既に使われているindexを除外
+  lastIndex = $('.js-file_group:last').data('index');
+  fileIndex.splice(0, lastIndex);
 
-  // $('.sell-item').on('change', '.js-file', function(e) {
-  //   // fileIndexの先頭の数字を使ってinputを作る
-  //   $('.sell-item').append(buildFileField(fileIndex[0]));
-  //   fileIndex.shift();
-  //   // 末尾の数に1足した数を追加する
-  //   fileIndex.push(fileIndex[fileIndex.length - 1] + 1)
-  // });
+  $('.hidden-destroy').hide();
 
   $('.sell-item').on('change', '.js-file', function(e) {
     const targetIndex = $(this).parent().data('index');
@@ -47,6 +45,11 @@ $(document).on('turbolinks:load', ()=> {
 
 
   $('.sell-item').on('click', '.js-remove', function() {
+    const targetIndex = $(this).parent().data('index');
+    // 該当indexを振られているチェックボックスを取得する
+    const hiddenCheck = $(`input[data-index="${targetIndex}"].hidden-destroy`);
+    // もしチェックボックスが存在すればチェックを入れる
+    if (hiddenCheck) hiddenCheck.prop('checked', true);
     $(this).parent().remove();
     $(`img[data-index="${targetIndex}"]`).remove();
     // 画像入力欄が0個にならないようにしておく

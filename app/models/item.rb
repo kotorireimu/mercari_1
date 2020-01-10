@@ -1,6 +1,10 @@
 class Item < ApplicationRecord
   belongs_to :user , optional: true
-  # belongs_to :category
+  belongs_to :category , optional: true
+  belongs_to :condition , optional: true
+  belongs_to :feeburden , optional: true
+  belongs_to :handingtime , optional: true
+  belongs_to :region , optional: true
   # belongs_to :brand
   # has_many :comments dependent: :destroy
   # has_many :messages dependent: :destroy
