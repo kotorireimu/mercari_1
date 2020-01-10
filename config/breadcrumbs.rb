@@ -21,4 +21,3 @@ crumb :logout do
   link "ログアウト", logout_homes_path
   parent :homes
 end
-

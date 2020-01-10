@@ -15,6 +15,4 @@ Rails.application.routes.draw do
   resources :items, except: :show
   resources :homes, except: :show
   resources :toppage, except: :show
-
-
 end
