@@ -197,6 +197,7 @@ p {
     margin: 8px auto;
     width: 700px;
     height: 262px;
+    box-sizing: border-box;
 
     &__content {
       color: #333333;
