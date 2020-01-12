@@ -99,7 +99,9 @@
 |shipping_id|references|null: false, foreign_key: true|
 |saller_id|references|null: false, foreign_key: true|
 |buyer_id|references|null: false, foreign_key: true|
+|category|null: false|
 |category_id|references|null: false, foreign_key: true|
+|brand|null: false|
 |brand_id|references|null: false, foreign_key: true|
 
 
