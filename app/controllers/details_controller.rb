@@ -5,4 +5,6 @@ class DetailsController < ApplicationController
     @item_image = ItemImage.all
     @user = User.find(1)
   end
+  
+  
 end
