@@ -49,11 +49,11 @@ RSpec.describe Item, type: :model do
       expect(item.errors[:text]).to include("is too long (maximum is 1000 characters)")
     end
 
-    it "category_idデータ0" do
-      item = build(:item, category_id: 0)
-      item.valid?
-      expect(item.errors[:category_id]).to include("選択してください")
-    end
+    # it "category_idデータ0" do
+    #   item = build(:item, category_id: 0)
+    #   item.valid?
+    #   expect(item.errors[:category_id]).to include("選択してください")
+    # end
 
     it "handingtime_idデータ0" do
       item = build(:item, handingtime_id: 0)
