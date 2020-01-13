@@ -66,6 +66,7 @@ ActiveRecord::Schema.define(version: 2021_01_07_100908) do
     t.string "name", null: false
     t.integer "price", null: false
     t.string "text", null: false
+    t.bigint "category_id", null: false
     t.bigint "condition_id", null: false
     t.bigint "feeburden_id", null: false
     t.bigint "region_id", null: false
@@ -73,6 +74,7 @@ ActiveRecord::Schema.define(version: 2021_01_07_100908) do
     t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["category_id"], name: "index_items_on_category_id"
     t.index ["condition_id"], name: "index_items_on_condition_id"
     t.index ["feeburden_id"], name: "index_items_on_feeburden_id"
     t.index ["handingtime_id"], name: "index_items_on_handingtime_id"
@@ -158,6 +160,7 @@ ActiveRecord::Schema.define(version: 2021_01_07_100908) do
 
   add_foreign_key "comments", "items"
   add_foreign_key "comments", "users"
+  add_foreign_key "items", "categories"
   add_foreign_key "items", "conditions"
   add_foreign_key "items", "feeburdens"
   add_foreign_key "items", "handingtimes"
