@@ -8,17 +8,17 @@ crumb :homes do
 end
 
 crumb :profile do
-  link "プロフィール"
+  link "プロフィール", profile_homes_path
   parent :homes
 end
 
 crumb :identification do
-  link "本人情報の登録"
+  link "本人情報の登録", identification_homes_path
   parent :homes
 end
 
 crumb :logout do
-  link "ログアウト"
+  link "ログアウト", logout_homes_path
   parent :homes
 end
 
