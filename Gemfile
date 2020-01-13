@@ -85,3 +85,7 @@ gem 'fog-aws'
 gem "font-awesome-sass"
 
 gem 'gretel'
+
+gem 'pry-rails'
+
+gem 'rails-controller-testing'
