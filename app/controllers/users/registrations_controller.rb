@@ -17,7 +17,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   end
 
   def create
-    @user = User.create(address_params)
+    @user = User.new(address_params)
     if @user.save 
       flash[:success] = '新しいユーザーを登録しました。'
       sign_in(@user)
