@@ -1,5 +1,5 @@
 crumb :root do
-  link "fmarket", root_path
+  link "Fmarket", root_path
 end
 
 crumb :homes do
@@ -8,17 +8,17 @@ crumb :homes do
 end
 
 crumb :profile do
-  link "プロフィール"
+  link "プロフィール", homes_edit_path
   parent :homes
 end
 
 crumb :identification do
-  link "本人情報の登録"
+  link "本人情報の登録", homes_identification_path
   parent :homes
 end
 
 crumb :logout do
-  link "ログアウト"
+  link "ログアウト",  destroy_user_session_path
   parent :homes
 end
 
