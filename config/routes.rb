@@ -37,7 +37,7 @@ Rails.application.routes.draw do
   get 'details/index'
   get 'homes/identification'
 
-  devise_for :users
+  
   get 'items/index'
   get 'buy/index'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

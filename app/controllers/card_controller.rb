@@ -2,8 +2,8 @@ class CardController < ApplicationController
   require "payjp"
   
   def new
-    card = Card.where(user_id: current_user.id)
-    redirect_to action: "show" if card.exists?
+    @card = Card.where(user_id: current_user.id)
+    redirect_to action: "show" if @card.exists?
   end
 
   def confirm
@@ -42,7 +42,7 @@ class CardController < ApplicationController
   end
 
   def show 
-    card = Card.where(user_id: current_user.id).first
+    card = Card.find_by(user_id: current_user.id).first
     if card.blank?
       redirect_to action: "new" 
     else
