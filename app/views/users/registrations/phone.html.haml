@@ -1,0 +1,48 @@
+.su_header
+  %h3
+    = link_to "","#"
+    = embedded_svg("fmarket_logo_red.svg", class: "top-logo-svg") 
+  %nav.progress-bar.signup-bar
+    %ol.clearfix
+      %li.not_active
+        会員情報
+        .place.t_place.through
+      %li.active
+        電話番号認証
+        .place.callent
+      %li.not_active
+        お届け先住所入力
+        .place
+      %li.not_active
+        支払い方法
+        .place
+      %li.not_active
+        完了
+        .place.e_place
+
+.ph_main
+  .ph_main__container
+    .ph_main__container__title
+      電話番号の確認
+    .ph_main__container__form
+      .ph_main__container__form__content
+        = form_for(@user, url: address_path(resource)) do |f|
+          = f.hidden_field :nickname
+          = f.hidden_field :email
+          = f.hidden_field :password
+          = f.hidden_field :family_name
+          = f.hidden_field :first_name
+          = f.hidden_field :family_name_kana
+          = f.hidden_field :first_name_kana
+          = f.hidden_field :birth_day
+          .ph_main__container__form__content__group
+            = f.label :tell, "携帯電話の番号"
+            %br/
+            = f.telephone_field :tell,autocomplete: "電話番号", class: "input-default has-error", placeholder: "携帯電話の番号を入力"
+            %p 本人確認のため、携帯電話のSMS(ショートメッセージサービス)を利用して認証を行います。
+            = f.submit "次へ進む",class: "btn-default btn-red"
+            %p ※電話番号は本人確認や不正利用防止のために利用します。他のユーザーに公開されることはありません。
+          .ph_main__container__form__content__group.text-right
+            = link_to "電話番号確認が必要な理由>","#"
+.su_footer
+//footerはmasterに記載。masterにmergeした後追記
