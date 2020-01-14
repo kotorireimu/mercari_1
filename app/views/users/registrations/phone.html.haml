@@ -43,6 +43,6 @@
             = f.submit "次へ進む",class: "btn-default btn-red"
             %p ※電話番号は本人確認や不正利用防止のために利用します。他のユーザーに公開されることはありません。
           .ph_main__container__form__content__group.text-right
-            %a{href:"#"}電話番号確認が必要な理由>
+            = link_to "電話番号確認が必要な理由>","#"
 .su_footer
 //footerはmasterに記載。masterにmergeした後追記
