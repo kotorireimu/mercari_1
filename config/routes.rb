@@ -15,9 +15,13 @@ Rails.application.routes.draw do
   resources :items, except: :show
   resources :homes, except: :show
   resources :toppage, except: :show
-
-  root 'toppage#partial'
   resources :details, except: :show
-   
+  
+  
+  
+  root 'homes#index'
+  resources :edit, except: :show
+  resources :identification, except: :show
+  resources :destroy, except: :show
 
 end 
