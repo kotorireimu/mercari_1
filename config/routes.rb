@@ -15,7 +15,6 @@ Rails.application.routes.draw do
     post 'address', to: 'users/registrations#address'
     get 'phone', to: 'users/registrations#phone'
     post 'phone', to: 'users/registrations#phone'
-    root to: "users/sessions#new"
   end
   resources :users do
     resources :card, only: [:new, :show] do
