@@ -1,6 +1,6 @@
 .su_header
   %h3
-    %a(href="#")
+    = link_to "","#"
     = embedded_svg("fmarket_logo_red.svg", class: "top-logo-svg") 
   %nav.progress-bar.signup-bar
     %ol.clearfix
@@ -76,17 +76,17 @@
           .su_main__box__contents__form__alart
             %p.text 
             「次へ進む」のボタンを押すことにより、
-            %a{href:"#"}利用規約
+            = link_to "利用規約",#
             に同意したものとみなします
           .su_main__box__contents__form__submit
             = f.submit "次へ進む",class: "btn-default btn-red"
           .su_main__box__contents__form__group.text-right
-            %a{href:"#"}本人情報の登録について>
+            = link_to "本人情報の登録について>", #
           .su_main__box__contents__form__group.privacy_policy
             %p.This site is protected by reCAPTCHA and the Google 
-            %a(href="#")Privacy Policy 
+            = link_to "Privacy Policy" 
             and 
-            %a(href="#")Terms of Service
+            = link_to "Terms of Service" ,#
             apply.
 .su_footer
 //footerはmasterに記載。masterにmergeした後追記
