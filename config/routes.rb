@@ -17,11 +17,15 @@ Rails.application.routes.draw do
   resources :toppage, except: :show
   resources :details, except: :show
   
-  
-  
   root 'homes#index'
   resources :edit, except: :show
   resources :identification, except: :show
   resources :destroy, except: :show
+
+  root 'details#index'
+  resources :buy, except: :show
+
+  root 'buy#index'
+  resources :toppage, except: :show
 
 end 
