@@ -13,8 +13,7 @@
   
   -# TOPページに戻る
   -# = link_to "イメージアイコン", "#", class: "sell-page__footer__link__logo"
-  %a.sell-page__footer__logo{href: "/"}
+  = link_to "/",class: "sell-page__footer__logo" do
     = image_tag("logo_gray.svg", height: "65", width: "80", alt: "Fmarket")
-    -# %img{alt: "Fmarket", src: "/assets/logo_gray.png", height: "65", width: "80"}
     %p
       %small ©Fmarket,Inc.
