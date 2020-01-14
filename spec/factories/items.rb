@@ -1,5 +1,7 @@
-FactoryBot.define do
+FactoryBot.define do 
+
   factory :item do
+
     name              {"バック"}
     price                 {600}
     text              {"安いよ"}
@@ -9,5 +11,6 @@ FactoryBot.define do
     handingtime_id   {1}
     user_id               {1}
     category_id {1}
+
   end
 end
