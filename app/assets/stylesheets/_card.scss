@@ -1,0 +1,93 @@
+// Place all the styles related to the card controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.ca_main {
+  background-color: rgb(245, 245, 245);
+  height: 600px;
+  &__container {
+    width: 700px;
+    margin: 0 auto;
+    text-align: center;
+    background-color: #ffffff;
+    &__title {
+      font-size: 22px;
+      padding: 32px;
+      border-bottom: 1px solid #f5f5f5;
+    }
+    &__form {
+      &__content {
+        width: 450px;
+        margin: 0 auto;
+        text-align: left;
+        padding:40px 40px 64px 40px;
+        #charge-form{ 
+          #card_number {
+            height: 48px;
+            padding: 10px 16px 8px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+            background: #fff;
+            line-height: 1.5;
+            font-size: 16px;
+            width: 100%;
+            margin: 8px 0 20px 0;
+          }
+          .form-flat {
+            display: flex;
+            justify-content: center;
+            select {
+              height: 48px;
+              padding: 10px 16px 8px;
+              border-radius: 4px;
+              border: 1px solid #ccc;
+              background: #fff;
+              line-height: 1.5;
+              font-size: 16px;
+              width: calc(50% - 10px);
+              margin: 8px 0 20px 0;
+            }
+            span {
+              padding-top: 20px;
+            }
+          }
+          .cvc {
+            height: 48px;
+            padding: 10px 16px 8px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+            background: #fff;
+            line-height: 1.5;
+            font-size: 16px;
+            width: 100%;
+            margin: 8px 0 20px 0;
+          }
+          label {
+            font-weight: 600;
+            
+          }
+          .form-require {
+            background-color: #ea352d;
+            margin: 0 0 0 8px;
+            padding: 2px 4px;
+            border-radius: 2px;
+            color: #fff;
+            font-size: 12px;
+            vertical-align: top;
+          }
+          #token_submit {
+            display: block;
+            width: 100%;
+            line-height: 48px;
+            font-size: 14px;
+            border: 1px solid transparent;
+            -webkit-transition: all ease-out .3s;
+            transition: all ease-out .3s;
+            cursor: pointer;
+            text-align: center;
+            margin-top: 32px;
+          }
+        }
+      }
+    }
+  }
+}

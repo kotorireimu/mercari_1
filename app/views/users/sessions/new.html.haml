@@ -1,0 +1,32 @@
+.li_header
+  %h3
+    = link_to "","#"
+    = embedded_svg("fmarket_logo_red.svg", class: "top-logo-svg") 
+.li_main
+  .li_main__form
+    .li_main__form__signup
+      %p アカウントをお持ちでない方はこちら
+      = link_to "新規会員登録", new_user_registration_path,class:"signup-btn"
+    .li_main__form__content
+      .li_main__form__content__loginform
+        %button#facebook-login.btn-default
+          Facebookでログイン
+          %i.fab.fa-facebook-square
+        %br/
+        %button#google-login.btn-default
+          Googleでログイン
+          = embedded_svg("icons8-google.svg",class:"google-logo-svg")
+      .li_main__form__content__loginform
+        = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+          .field
+            = f.email_field :email, autofocus: true, autocomplete: "email",placeholder: "メールアドレス",class: "input-default"
+          .field
+            = f.password_field :password, autocomplete: "current-password",placeholder: "パスワード",class: "input-default"
+          
+          = recaptcha_tags 
+          .actions
+            = f.submit "ログイン",class: "btn-default btn-red"
+          = link_to "パスワードをお忘れの方",new_password_path(resource_name)
+//footerはmasterに記載。masterにmergeした後追記
+
+
