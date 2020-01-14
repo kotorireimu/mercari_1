@@ -8,27 +8,27 @@ body{
   background: rgb(245, 245, 245);
 }
 
-h3{
-  font-size: 22px;
-}
+// h3{
+//   font-size: 22px;
+// }
 
-a{
-  text-decoration: none;
-}
+// a{
+//   text-decoration: none;
+// }
 
-ul{
-  list-style: none;
-  display: block;
-  margin-block-start: 1em;
-  margin-block-end: 1em;
-  margin-inline-start: 0px;
-  margin-inline-end: 0px;
-}
+// ul{
+//   list-style: none;
+//   display: block;
+//   margin-block-start: 1em;
+//   margin-block-end: 1em;
+//   margin-inline-start: 0px;
+//   margin-inline-end: 0px;
+// }
 
-li{
-  display: list-item;
-  text-align: -webkit-match-parent;
-}
+// li{
+//   display: list-item;
+//   text-align: -webkit-match-parent;
+// }
 
 .bold{
   font-weight: 600;
@@ -62,8 +62,9 @@ input[type="radio"] {
 .UP{
   &__contents{
     display: flex;
-    margin: 0 auto 0;
+    margin: 40px auto 0;
     width: 1020px;
+    padding: 0 0 40px;
     &__left{
       width: 280px;
       margin: 20px 40px 0 0;

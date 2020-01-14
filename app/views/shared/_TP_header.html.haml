@@ -12,21 +12,29 @@
       .TP__header__content__bottom__tag
         = render partial:'shared/tag-list',locals:{title:"カテゴリーから探す"}
         = render partial:'shared/tag-list',locals:{title:"ブランドから探す"}
-      %ul.TP__header__content__bottom__list
-        %li.TP__header__content__bottom__list__likehistory
-          = link_to "#" , class: "TP__header__content__bottom__list__likehistory__element" do
-            %i.far.fa-heart
-            いいね！一覧
-        %li.TP__header__content__bottom__list__notification
-          = link_to "#" , class: "TP__header__content__bottom__list__notification__element" do
-            %i.far.fa-bell
-              お知らせ
-        %li.TP__header__content__bottom__list__todo
-          = link_to "#" , class: "TP__header__content__bottom__list__todo__element" do
-            %i.fas.fa-check
-              やることリスト
-        %li.TP__header__content__bottom__list__mypage
-          = link_to "/homes" , class: "TP__header__content__bottom__list__mypage__element" do
-            %i.fas.fa-user-circle
-              マイページ
+      - if user_signed_in?
+        %ul.TP__header__content__bottom__list
+          %li.TP__header__content__bottom__list__likehistory
+            = link_to "#" , class: "TP__header__content__bottom__list__likehistory__element" do
+              %i.far.fa-heart
+              いいね！一覧
+          %li.TP__header__content__bottom__list__notification
+            = link_to "#" , class: "TP__header__content__bottom__list__notification__element" do
+              %i.far.fa-bell
+                お知らせ
+          %li.TP__header__content__bottom__list__todo
+            = link_to "#" , class: "TP__header__content__bottom__list__todo__element" do
+              %i.fas.fa-check
+                やることリスト
+          %li.TP__header__content__bottom__list__mypage
+            = link_to homes_index_path , class: "TP__header__content__bottom__list__mypage__element" do
+              %i.fas.fa-user-circle
+                マイページ
+      - else
+        %ul.TP__header__content__bottom__list
+          %li.TP__header__content__bottom__list__todo
+            = link_to "新規登録", new_user_registration_path
+                
+          %li.TP__header__content__bottom__list__mypage
+            = link_to "ログイン", new_user_session_path
 
