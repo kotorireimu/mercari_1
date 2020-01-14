@@ -118,7 +118,7 @@
 ## item_imagesテーブル
 |Column|Type|Options|
 |------|----|-------|
-|item_id|integer|null: false|
+|item_id|references|null: false|
 |image_url|string|null: false|
 
 ### Association

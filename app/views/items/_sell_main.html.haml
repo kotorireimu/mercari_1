@@ -74,7 +74,7 @@
       .sell-page__main__information__form__content.clearfix
         = render partial:"sell_form_head" ,locals:{text: "配送について"}
         -#  ？マークの部分テンプレート
-        = render "sell_question"
+        -# = render "sell_question"
         -# %a.form-question{:href => "/jp/help_center/article/68/", :target => "_blank"} ?
         .sell-page__main__information__form__content__status
           = render partial:"sell_group" ,locals:{text: "配送料の負担"}
@@ -156,7 +156,7 @@
       .sell-page__main__information__form__content.clearfix
         = render partial:"sell_form_head" ,locals:{text: "販売価格(300〜9,999,999)"}
         -# ？マークの部分テンプレート
-        = render "sell_question"
+        -# = render "sell_question"
         -# %a.form-question{:href => "/jp/help_center/article/64/", :target => "_blank"} ?
         .sell-page__main__information__form__content__status
           %ul.sell-page__main__information__form__content__status__price
@@ -200,11 +200,11 @@
 
         -# f 作成してない。 作成したら置き換え
         -# = f.submit '出品する', class: '.sell-page__main__information__form__content__btn.btn-red'
-        = link_to "出品する" ,"#" ,class: "sell-page__main__information__form__content__btn.btn-red"
-        -# %button.sell-page__main__information__form__content__btn.btn-red{type: "submit"}
-          -# 出品する
+        -# = link_to "出品する" ,"#" ,class: "sell-page__main__information__form__content__btn.btn-red"
+        %button.sell-page__main__information__form__content__btn.btn-red{type: "submit"}
+          出品する
 
-        = link_to "もどる" ,"#" ,class: "sell-page__main__information__form__content__btn btn-gray"
-        -# %a.btn-default.btn-gray もどる
+        -# = link_to "もどる" ,"#" ,class: "sell-page__main__information__form__content__btn btn-gray"
+        %a.sell-page__main__information__form__content__box.btn-gray もどる
 
 

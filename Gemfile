@@ -83,6 +83,7 @@ gem 'devise'
 gem 'carrierwave'
 gem 'fog-aws'
 
+
 gem "font-awesome-rails"
 
 gem 'payjp'
@@ -90,3 +91,11 @@ gem 'payjp'
 gem 'dotenv-rails'
 
 gem 'recaptcha', require: "recaptcha/rails"
+
+gem "font-awesome-sass"
+
+gem 'gretel'
+
+gem 'pry-rails'
+
+gem 'rails-controller-testing'

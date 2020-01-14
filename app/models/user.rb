@@ -13,6 +13,7 @@ class User < ApplicationRecord
 
   validates :birth_day, presence: true
   validates :nickname, presence: true, length: { maximum: 20 } 
+
   validates :tell, presence: true, uniqueness: true 
   # , format: { with: /\A\d{10,11}[0-9]+\z/, message: 'は半角数字で入力してください'}
   validates :family_name_kana, :first_name_kana, presence: true, format: { with: /\A[ァ-ヶ　ー－&&[^ -~｡-ﾟ]]+\z/, message: 'はカタカナで入力して下さい'}
@@ -38,5 +39,5 @@ class User < ApplicationRecord
   # end
 
   # private
-  
+
 end
