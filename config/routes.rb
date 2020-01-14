@@ -17,7 +17,7 @@ Rails.application.routes.draw do
 
   resources :toppage, except: :show
 
-  root 'toppage#partial'
+  # root 'toppage#partial'
   resources :details, except: :show
    
 

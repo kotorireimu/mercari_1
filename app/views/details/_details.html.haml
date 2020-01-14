@@ -18,25 +18,25 @@
             %td.product-details__main__content__table__td= @user.nickname
           %tr
             %th.product-details__main__content__table__th  カテゴリー
-            %td.product-details__main__content__table__td  テスト
+            %td.product-details__main__content__table__td= @item.category.name
           %tr
             %th.product-details__main__content__table__th  ブランド
             %td.product-details__main__content__table__td  テスト
           %tr
             %th.product-details__main__content__table__th  商品の状態
-            %td.product-details__main__content__table__td= @item.condition   
+            %td.product-details__main__content__table__td= @item.condition.name
           %tr
             %th.product-details__main__content__table__th  配送料の負担
-            %td.product-details__main__content__table__td  テスト
+            %td.product-details__main__content__table__td= @item.feeburden.name
           %tr
             %th.product-details__main__content__table__th  配送の方法
             %td.product-details__main__content__table__td  テスト
           %tr
             %th.product-details__main__content__table__th  配送元地域
-            %td.product-details__main__content__table__td  テスト
+            %td.product-details__main__content__table__td= @item.region.name
           %tr
             %th.product-details__main__content__table__th  発送日の目安
-            %td.product-details__main__content__table__td  テスト
+            %td.product-details__main__content__table__td= @item.handingtime.name
     .product-details__main__buttom
       .product-details__main__buttom__price-box
         %span.product-details__main__buttom__price-box__item-price= @item.price 
