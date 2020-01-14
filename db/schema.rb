@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_01_10_081011) do
+ActiveRecord::Schema.define(version: 2020_01_11_100908) do
 
   create_table "addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "user_id"
@@ -57,6 +57,24 @@ ActiveRecord::Schema.define(version: 2020_01_10_081011) do
     t.index ["user_id"], name: "index_comments_on_user_id"
   end
 
+  create_table "conditions", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "feeburdens", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "handingtimes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "item_images", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "item_id", null: false
     t.string "image_url", null: false
@@ -69,10 +87,19 @@ ActiveRecord::Schema.define(version: 2020_01_10_081011) do
     t.string "name", null: false
     t.integer "price", null: false
     t.string "text", null: false
-    t.string "condition", null: false
+    t.bigint "category_id", null: false
+    t.bigint "condition_id", null: false
+    t.bigint "feeburden_id", null: false
+    t.bigint "region_id", null: false
+    t.bigint "handingtime_id", null: false
     t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["category_id"], name: "index_items_on_category_id"
+    t.index ["condition_id"], name: "index_items_on_condition_id"
+    t.index ["feeburden_id"], name: "index_items_on_feeburden_id"
+    t.index ["handingtime_id"], name: "index_items_on_handingtime_id"
+    t.index ["region_id"], name: "index_items_on_region_id"
     t.index ["user_id"], name: "index_items_on_user_id"
   end
 
@@ -102,6 +129,12 @@ ActiveRecord::Schema.define(version: 2020_01_10_081011) do
     t.datetime "updated_at", null: false
     t.index ["item_id"], name: "index_orders_on_item_id"
     t.index ["user_id"], name: "index_orders_on_user_id"
+  end
+
+  create_table "regions", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "shippings", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -147,6 +180,11 @@ ActiveRecord::Schema.define(version: 2020_01_10_081011) do
   add_foreign_key "addresses", "users"
   add_foreign_key "comments", "items"
   add_foreign_key "comments", "users"
+  add_foreign_key "items", "categories"
+  add_foreign_key "items", "conditions"
+  add_foreign_key "items", "feeburdens"
+  add_foreign_key "items", "handingtimes"
+  add_foreign_key "items", "regions"
   add_foreign_key "items", "users"
   add_foreign_key "likes", "items"
   add_foreign_key "likes", "users"

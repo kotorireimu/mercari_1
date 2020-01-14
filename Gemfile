@@ -46,6 +46,8 @@ group :development, :test do
   gem 'capistrano3-unicorn'
   gem 'rspec-rails'
   gem 'factory_bot_rails'
+  gem 'rails-controller-testing'
+  gem 'faker'
 end
 
 group :development do
@@ -94,8 +96,11 @@ gem 'recaptcha', require: "recaptcha/rails"
 
 gem "font-awesome-sass"
 
+gem 'jquery-rails'
+
 gem 'gretel'
 
 gem 'pry-rails'
 
 gem 'rails-controller-testing'
+

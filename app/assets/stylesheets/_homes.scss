@@ -360,6 +360,9 @@ input[type="radio"] {
               margin: 8px 0 0;
               position: relative;
               background: #fff;
+              select{
+                margin: 8px 0 0 0;
+              }
               &__box{
                 width: 100%;
                 position: relative;
