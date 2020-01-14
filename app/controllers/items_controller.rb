@@ -1,16 +1,18 @@
 class ItemsController < ApplicationController
   def index
+    @item = Item.new
+    @item.item_images.new
     # @items = Item.includes(:images).order('created_at DESC')
   end
 
   def new
     @item = Item.new
     @item.item_images.new
-    @category = Category.order('id ASC').limit(4)
-    @condition = Condition.order('id ASC').limit(7)
-    @feeburden = Feeburden.order('id ASC').limit(3)
-    @region = Region.order('id ASC').limit(49)
-    @handingtime = Handingtime.order('id ASC').limit(4)
+    # @category = Category.order('id ASC').limit(4)
+    # @condition = Condition.order('id ASC').limit(7)
+    # @feeburden = Feeburden.order('id ASC').limit(3)
+    # @region = Region.order('id ASC').limit(49)
+    # @handingtime = Handingtime.order('id ASC').limit(4)
   end
 
   def create
@@ -18,7 +20,7 @@ class ItemsController < ApplicationController
     if @item.save
       redirect_to root_path
     else
-      render :new
+      render "/items/new"
     end
   end
 
