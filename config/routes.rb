@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
 
 
+  get 'purchase/index'
+  get 'purchase/done'
   devise_for :users, controllers: {
     sessions: 'users/sessions',
     passwords: 'users/passwords',
@@ -26,6 +28,14 @@ Rails.application.routes.draw do
         post 'confirm', to: 'card#confirm'
         
       end
+    end
+  end
+
+  resources :buy, only: [:index] do
+    collection do
+      get 'index', to: 'buy#index'
+      post 'pay', to: 'buy#pay'
+      get 'done', to: 'buy#done'
     end
   end
 
