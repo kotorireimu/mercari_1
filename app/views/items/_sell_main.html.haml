@@ -74,7 +74,7 @@
             .sell-page__main__information__form__content__status__select
               -# = render "status_box"
               -# = f.collection_select :category,  Category.order('id ASC').limit(4),:id,:name
-              = f.collection_select :category,  Category.order('id ASC').limit(4),:id,:name
+              = f.collection_select :category,  Category.all.order('ancestry ASC').limit(14),:id,:name
               -# %i.icon-arrow-bottom
               -# %select.status-select
               -# 表示する内容はこんな感じに
@@ -212,10 +212,27 @@
               %li.sell-page__main__information__form__content__status__price__group.clearfix
                 .sell-page__main__information__form__content__status__price__group__left
                   販売手数料 (10%)
-                .sell-page__main__information__form__content__status__price__group__percent -
+                .sell-page__main__information__form__content__status__price__group__percent
+                  :javascript
+                    $(".sell-page__main__information__form__content__status__price__group__right__input").on('change', function() {
+                      var target = document.getElementsByClassName('sell-page__main__information__form__content__status__price__group__right__input');
+                      target.innerText = document.forms.new_item.item_price.value;
+                      var x = target.innerText / 10;
+                      X = Math.floor(x);
+                      $(".sell-page__main__information__form__content__status__price__group__percent").append(X);
+                    });
               %li.sell-page__main__information__form__content__status__price__group.clearfix
-                .sell-page__main__information__form__content__status__price__clearfix__left 販売利益
-                .sell-page__main__information__form__content__status__price__clearfix__right -
+                .sell-page__main__information__form__content__status__price__group__lefts 販売利益
+                .sell-page__main__information__form__content__status__price__group__rights
+                  :javascript
+                    $(".sell-page__main__information__form__content__status__price__group__right__input").on('change', function() {
+                      var target = document.getElementsByClassName('sell-page__main__information__form__content__status__price__group__right__input');
+                      target.innerText = document.forms.new_item.item_price.value;
+                      var x = target.innerText / 10;
+                      X = Math.floor(x);
+                      Y = target.innerText - X;
+                      $(".sell-page__main__information__form__content__status__price__group__rights").append(Y);
+                    });
 
 
         .sell-page__main__information__form__content.sell-btn-box

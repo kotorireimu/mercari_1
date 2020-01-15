@@ -104,3 +104,4 @@ gem 'pry-rails'
 
 gem 'rails-controller-testing'
 
+gem 'ancestry'
