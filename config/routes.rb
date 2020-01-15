@@ -5,6 +5,9 @@ Rails.application.routes.draw do
   get 'homes/edit' 
   get 'details/index'
   get 'homes/identification'
+  get 'login' => "users#login_form"
+  post 'login' => "users#login"
+  post 'logout' => "users#logout"
 
   devise_for :users
   get 'items/index'
