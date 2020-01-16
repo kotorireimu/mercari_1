@@ -8,12 +8,12 @@ crumb :homes do
 end
 
 crumb :profile do
-  link "プロフィール", homes_edit_path
+  link "プロフィール", prof_homes_path
   parent :homes
 end
 
 crumb :identification do
-  link "本人情報の登録", homes_identification_path
+  link "本人情報の登録", identification_homes_path
   parent :homes
 end
 
@@ -23,7 +23,7 @@ crumb :logout do
 end
 
 crumb :card do
-  link "支払い方法", homes_card_path
+  link "支払い方法", card_homes_path
   parent :homes
 end
 

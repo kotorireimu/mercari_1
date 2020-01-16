@@ -1,7 +1,7 @@
 .UP__contents__left
   %nav.UP__contents__left__nav
     %ul.UP__contents__left__nav__list
-      = render partial: "UP_left_list", locals:{title: "マイページ", link_to: homes_index_path }
+      = render partial: "UP_left_list", locals:{title: "マイページ", link_to: homes_path }
       = render partial: "UP_left_list", locals:{title: "お知らせ", link_to: "#"}
       = render partial: "UP_left_list", locals:{title: "やることリスト", link_to: "#"}
       = render partial: "UP_left_list", locals:{title: "いいね！一覧", link_to: "#"}
@@ -25,10 +25,10 @@
 
     %h3.UP__contents__left__nav__head 設定
     %ul.UP__contents__left__nav__list
-      = render partial: "UP_left_list", locals:{title: "プロフィール", link_to: homes_edit_path }
+      = render partial: "UP_left_list", locals:{title: "プロフィール", link_to: prof_homes_path }
       = render partial: "UP_left_list", locals:{title: "発送元・お届け先住所変更", link_to: "#"}
-      = render partial: "UP_left_list", locals:{title: "支払い方法", link_to: homes_card_path}
+      = render partial: "UP_left_list", locals:{title: "支払い方法", link_to: card_homes_path}
       = render partial: "UP_left_list", locals:{title: "メール/パスワード", link_to: "#"}
-      = render partial: "UP_left_list", locals:{title: "本人情報", link_to:  homes_identification_path }
+      = render partial: "UP_left_list", locals:{title: "本人情報", link_to:  identification_homes_path }
       = render partial: "UP_left_list", locals:{title: "電話番号の確認", link_to: "#"}
-      = render partial: "UP_left_list", locals:{title: "ログアウト", link_to: homes_destroy_path }
+      = render partial: "UP_left_list", locals:{title: "ログアウト", link_to: logout_homes_path }

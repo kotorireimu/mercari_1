@@ -9,7 +9,7 @@ class HomesController < ApplicationController
   def create
   end
 
-  def edit
+  def prof
   end
 
   def update
