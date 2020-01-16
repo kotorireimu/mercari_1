@@ -1,13 +1,11 @@
 Rails.application.routes.draw do
 
-
-  get 'purchase/index'
-  get 'purchase/done'
   devise_for :users, controllers: {
     sessions: 'users/sessions',
     passwords: 'users/passwords',
     registrations: 'users/registrations',
-    confirmations: 'users/confirmations'
+    confirmations: 'users/confirmations',
+    omniauth_callbacks:  "users/omniauth_callbacks" 
   }
   
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
@@ -17,6 +15,7 @@ Rails.application.routes.draw do
     post 'address', to: 'users/registrations#address'
     get 'phone', to: 'users/registrations#phone'
     post 'phone', to: 'users/registrations#phone'
+    get 'select', to: 'users/registrations#select'
   end
   resources :users do
     resources :card, only: [:new, :show] do
