@@ -47,7 +47,7 @@ Rails.application.routes.draw do
   
   root 'toppage#index'
 
-  resources :items, except: :show
+  resources :items
   resources :homes, except: [:show, :edit] do
     collection do
       get 'prof', to: "homes#prof"

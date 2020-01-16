@@ -35,7 +35,6 @@ td {
 
   &__main {
     width: 700px;
-    height: 926px;
     color: #333333;
     font-size: 14px;
     background-color: #ffffff;
@@ -53,7 +52,7 @@ td {
     }
     &__content {
       width: 620px;
-      height: 420px;
+      // height: 420px;
       margin-top: 16px;
       display: flex;
 
@@ -139,15 +138,15 @@ td {
 
       &__item-description {
         width: 620px;
-        height: 194px;
-        padding-top: 32px; 
+        // height: 194px;
+        padding: 32px 0; 
         line-height: 1.5;
         color: #333333;
 
-        &__elemnt {
-          text-align: right;
+        p {
+          text-align: left;
           white-space: pre-wrap;
-
+          font-size: 20px;
         }
       }
     }
@@ -190,6 +189,50 @@ td {
         margin: 1px, 0px, 0px, 8px;
 
         
+      }
+    }
+  }
+  &__form {
+    width: 700px;
+    margin: 0 auto;
+    background: #fff;
+    &__box {
+      margin: 24px 0 24px 0;
+      background: #fff;
+      padding: 8px 16px 8px 16px;
+      text-align: center;
+      .btn-edit {
+        margin: 16px 0 16px 0;
+        background: #ea352d;
+        border: 1px solid #ea352d;
+        color: #fff;
+        display: block;
+        width: 100%;
+        line-height: 48px;
+        font-size: 14px;
+        border: 1px solid transparent;
+        -webkit-transition: all ease-out .3s;
+        transition: all ease-out .3s;
+        cursor: pointer;
+        text-align: center;
+      }
+      p {
+        font-size: 16px;
+      }
+      .btn-others {
+        margin: 16px 0 16px 0;
+        background: #aaa;
+        border: 1px solid #aaa;
+        color: #fff;
+        display: block;
+        width: 100%;
+        line-height: 48px;
+        font-size: 14px;
+        border: 1px solid transparent;
+        -webkit-transition: all ease-out .3s;
+        transition: all ease-out .3s;
+        cursor: pointer;
+        text-align: center;
       }
     }
   }

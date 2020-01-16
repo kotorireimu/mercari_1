@@ -33,6 +33,11 @@ class ItemsController < ApplicationController
     end
   end
 
+  def show
+    @user = User.find(current_user.id)
+    @item = Item.find(1)
+  end
+
   def edit
   end
 
@@ -40,6 +45,9 @@ class ItemsController < ApplicationController
   end
 
   def destroy
+    @item = Item.find(params[:id])
+    @item.destroy
+    redirect_to root_path
   end
 end
 
