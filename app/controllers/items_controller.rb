@@ -3,11 +3,6 @@ class ItemsController < ApplicationController
     @item = Item.new
     @item.item_images.new
 
-    @category = Category.all.order('ancestry ASC').limit(14)
-    @condition = Condition.order('id ASC').limit(7)
-    @feeburden = Feeburden.order('id ASC').limit(3)
-    @region = Region.order('id ASC').limit(49)
-    @handingtime = Handingtime.order('id ASC').limit(4)
     # @items = Item.includes(:images).order('created_at DESC')
   end
 
@@ -15,11 +10,6 @@ class ItemsController < ApplicationController
     @item = Item.new
     @item.item_images.new
     
-    @category = Category.all.order('ancestry ASC').limit(14)
-    @condition = Condition.order('id ASC').limit(7)
-    @feeburden = Feeburden.order('id ASC').limit(3)
-    @region = Region.order('id ASC').limit(49)
-    @handingtime = Handingtime.order('id ASC').limit(4)
   end
 
   def get_category_children
@@ -35,11 +25,6 @@ class ItemsController < ApplicationController
 
 
   def create
-    @category = Category.all.order('ancestry ASC').limit(14)
-    @condition = Condition.order('id ASC').limit(7)
-    @feeburden = Feeburden.order('id ASC').limit(3)
-    @region = Region.order('id ASC').limit(49)
-    @handingtime = Handingtime.order('id ASC').limit(4)
     @item = Item.new(item_params)
     if @item.save
       redirect_to root_path
