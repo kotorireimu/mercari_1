@@ -22,3 +22,8 @@ crumb :logout do
   parent :homes
 end
 
+crumb :card do
+  link "支払い方法", homes_card_path
+  parent :homes
+end
+

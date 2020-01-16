@@ -45,7 +45,7 @@ Rails.application.routes.draw do
   get 'homes/edit' 
   get 'details/index'
   get 'homes/identification'
-
+  get 'homes/card'
   
   get 'items/index'
 
