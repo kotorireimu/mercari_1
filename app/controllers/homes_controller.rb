@@ -28,4 +28,9 @@ class HomesController < ApplicationController
     customer = Payjp::Customer.retrieve(card.customer_id)
     @default_card_information = customer.cards.retrieve(card.card_id)
   end
+
+  def exhibition
+    @user = User.find(current_user.id)
+    @items = Item.where(user_id: current_user.id)
+  end
 end

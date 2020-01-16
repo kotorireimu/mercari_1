@@ -54,6 +54,7 @@ Rails.application.routes.draw do
       get 'logout', to: "homes#destroy"
       get 'identification', to: "homes#identification"
       get 'card', to: "homes#card"
+      get 'exhibition', to: "homes#exhibition"
     end
   end
   
