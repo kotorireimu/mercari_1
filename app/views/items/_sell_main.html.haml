@@ -74,7 +74,7 @@
             .sell-page__main__information__form__content__status__select
               -# = render "status_box"
               -# = f.collection_select :category,  Category.order('id ASC').limit(4),:id,:name
-              = f.collection_select :category,  Category.all.order('ancestry ASC').limit(14),:id,:name
+              = f.collection_select :category,  @category,:id,:name
               -# %i.icon-arrow-bottom
               -# %select.status-select
               -# 表示する内容はこんな感じに
@@ -94,7 +94,7 @@
                 -# %option{value: "10"} その他
             = render partial:"sell_group" ,locals:{text: "商品の状態"}
             -# conditionテーブルが必要
-            = f.collection_select :condition,  Condition.order('id ASC').limit(7),:id,:name
+            = f.collection_select :condition,  @condition,:id,:name
             -# = render "status_box"
             -# .select-status-box
               -# %i.icon-arrow-bottom
@@ -117,7 +117,7 @@
           .sell-page__main__information__form__content__status
             = render partial:"sell_group" ,locals:{text: "配送料の負担"}
             -# = render "status_box"
-            = f.collection_select :feeburden,  Feeburden.order('id ASC').limit(3),:id,:name
+            = f.collection_select :feeburden,  @feeburden,:id,:name
             -# .select-status-box
               -# %i.icon-arrow-bottom
               -# %select.status-select
@@ -127,7 +127,7 @@
                 -# %option{value: "1"} 着払い(購入者負担)
             = render partial:"sell_group" ,locals:{text: "発送元の地域"}
             -# = render "status_box"
-            = f.collection_select :region,  Region.order('id ASC').limit(49),:id,:name
+            = f.collection_select :region,  @region,:id,:name
             -# .select-status-box
               -# %i.icon-arrow-bottom
               -# %select.status-select
@@ -183,7 +183,7 @@
                 -# %option{value: "99"} 未定
             = render partial:"sell_group" ,locals:{text: "発送までの日数"}
             -# = render "status_box"
-            = f.collection_select :handingtime,  Handingtime.order('id ASC').limit(4),:id,:name
+            = f.collection_select :handingtime,  @handingtime,:id,:name
             -# .select-status-box
               -# %i.icon-arrow-bottom
               -# %select.status-select

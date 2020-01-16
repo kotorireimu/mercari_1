@@ -44,6 +44,7 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   
   root 'toppage#index'
+  
   resources :items, except: :show do
     collection do
       get 'get_category_children', defaults: { format: 'json' }
@@ -51,7 +52,7 @@ Rails.application.routes.draw do
     end
   end
 
-  
+
   resources :homes, except: :show
 
   resources :toppage, except: :show
