@@ -24,7 +24,7 @@ class Item < ApplicationRecord
 validates :price, presence: true ,numericality: { greater_than_or_equal_to: 300 , less_than_or_equal_to: 9999999 , message: '値段は300~9999999以内で、半角数字で入力してください'}
 validates :name, presence: true, length: { maximum: 40 } 
 validates :text, presence: true, length: { maximum: 1000 } 
-validates :category_id , :condition_id, :feeburden_id, :handingtime_id, :region_id, presence: true, numericality: { greater_than: 0 , message: '選択してください'}
+validates :category_id , :condition_id, :feeburden_id, :handingtime_id, :region_id, presence: true, numericality: { greater_than: 1 , message: '選択してください'}
 
 
 end
