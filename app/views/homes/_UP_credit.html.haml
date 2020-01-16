@@ -6,12 +6,18 @@
         %h3 クレジットカード一覧
       .UP__card__content__inner__form
         .UP__card__content__inner__form__container
-          = "**** **** **** " + @default_card_information.last4
-          - exp_month = @default_card_information.exp_month.to_s
-          - exp_year = @default_card_information.exp_year.to_s.slice(2,3)
-          %br/
-          %br/
-          = exp_month + " / " + exp_year
-          %botton.remove 削除する
+          .btn-default
+          - if @default_card_information.blank? 
+            =link_to user_card_index_path(@user) do
+              %i.far.fa-credit-card
+              クレジットカードを追加する
+          - else
+            = "**** **** **** " + @default_card_information.last4
+            - exp_month = @default_card_information.exp_month.to_s
+            - exp_year = @default_card_information.exp_year.to_s.slice(2,3)
+            %br/
+            %br/
+            = exp_month + " / " + exp_year
+            %botton.remove 削除する
       .UP__card__content__inner__link
-        = link_to "支払い方法について ＞"
+        = link_to "支払い方法について ＞","#"
