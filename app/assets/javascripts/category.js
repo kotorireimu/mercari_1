@@ -7,13 +7,12 @@ $(function(){
   // 子カテゴリーの表示作成
   function appendChidrenBox(insertHTML){
     var childSelectHtml = '';
-    childSelectHtml = `<div class='listing-select-wrapper__added' id= 'children_wrapper'>
-                        <div class='listing-select-wrapper__box'>
+    childSelectHtml = `<div class='sell-page__main__information__form__content__status__select__added' id= 'item_category_children'>
+                        <div class='sell-page__main__information__form__content__status__select__added__box'>
                           <select class="sell-page__main__information__form__content__status__select" id="child_category" name="category_id">
                             <option value="---" data-category="---">---</option>
                             ${insertHTML}
                           <select>
-                          
                         </div>
                       </div>`;
     $('.sell-page__main__information__form__content__status__select').append(childSelectHtml);
@@ -21,13 +20,12 @@ $(function(){
   // 孫カテゴリーの表示作成
   function appendGrandchidrenBox(insertHTML){
     var grandchildSelectHtml = '';
-    grandchildSelectHtml = `<div class='listing-select-wrapper__added' id= 'grandchildren_wrapper'>
-                              <div class='listing-select-wrapper__box'>
+    grandchildSelectHtml = `<div class='sell-page__main__information__form__content__status__select__added' id= 'item_category_grandchildren'>
+                              <div class='sell-page__main__information__form__content__status__select__added__box'>
                                 <select class="sell-page__main__information__form__content__status__select" id="grandchild_category" name="category_id">
                                   <option value="---" data-category="---">---</option>
                                   ${insertHTML}
                                 </select>
-                                
                               </div>
                             </div>`;
     $('.sell-page__main__information__form__content__status__select').append(grandchildSelectHtml);
