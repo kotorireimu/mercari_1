@@ -1,6 +1,6 @@
 .UP__contents__right
   .UP__contents__right__logout
-    %form.UP__contents__right__logout__inner{action: "#", method: "#", novalidate: "novalidate"}
+    .UP__contents__right__logout__inner
       .UP__contents__right__logout__inner__content
-        %button.UP__contents__right__logout__inner__content__btn.btn-red{type: "submit"} ログアウト
+        = link_to "ログアウト", destroy_user_session_path, class: "UP__contents__right__logout__inner__content__btn btn-red", method: :delete
 
