@@ -15,7 +15,7 @@
         %tbody
           %tr
             %th.product-details__main__content__table__th  出品者
-            %td.product-details__main__content__table__td= @user.nickname
+            %td.product-details__main__content__table__td= current_user.nickname
           %tr
             %th.product-details__main__content__table__th  カテゴリー
             %td.product-details__main__content__table__td= @item.category.name

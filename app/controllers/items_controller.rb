@@ -34,7 +34,7 @@ class ItemsController < ApplicationController
   end
 
   def show
-    @user = User.find(current_user.id)
+    
     @item = Item.find(1)
   end
 
