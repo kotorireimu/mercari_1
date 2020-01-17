@@ -247,87 +247,94 @@ div{
           }
 
           &__label{
-            &__photo{
+            &__element{
               margin: -10px;
-              display: flex;
               flex-wrap: wrap;
-              &__one{
-                width: 20%;
+              display: flex;
+              &__photo{
+                width: 100%;
                 padding: 10px;
-                &__link{
+                &__one{
                   width: 100%;
-                  cursor: pointer;
-                  display: inline-block;
-                  position: relative;
-                  text-decoration: none;
-                  vertical-align: top;
-                  &__figure{
-                    width: 100%;
+                  .parent {
                     display: flex;
-                    align-items: center;
-                    -webkit-box-align: center;
-                    background-color: #fff;
-                    box-shadow: 0 2px 4px rgba(0,0,0,.18);
-                    -webkit-box-orient: vertical;
-                    -webkit-box-direction: reverse;
-                    flex-direction: column-reverse;
-                    margin: 0;
-                    overflow: hidden;
-                    z-index: 0;
-                    margin-block-start: 1em;
-                    margin-block-end: 3em;
-                    figcaption{
-                      box-sizing: border-box;
-                      color: #222;
-                      font-size: 14px;
-                      height: 64px;
-                      line-height: 1.4em;
-                      padding: 0 12px;
-                      white-space: normal;
-                      word-break: break-word;
-                      -webkit-box-align: center;
-                      align-items: center;
+                  }
+                  &__link{
+                    width: 20%;
+                    display: block;
+                    cursor: pointer;
+                    position: relative;
+                    text-decoration: none;
+                    vertical-align: top;
+                    margin-right: 10px;
+                    &__figure{
+                      width: 100%;
                       display: flex;
-                      width: 100%;
-                      span{
-                        display: inline-block;
-                        height: 2.8em;
-                        overflow: hidden;
-                        position: relative;
-                      }
-                    }
-                    &__price{
-                      height: 0;
+                      align-items: center;
+                      -webkit-box-align: center;
+                      background-color: #fff;
+                      box-shadow: 0 2px 4px rgba(0,0,0,.18);
+                      -webkit-box-orient: vertical;
+                      -webkit-box-direction: reverse;
+                      flex-direction: column-reverse;
+                      margin: 0;
                       overflow: hidden;
-                      padding: 0 0 100%;
-                      position: relative;
-                      width: 100%;
-                      span{
+                      z-index: 0;
+                      margin-block-start: 1em;
+                      margin-block-end: 3em;
+                      figcaption{
+                        box-sizing: border-box;
+                        color: #222;
+                        font-size: 14px;
+                        height: 64px;
+                        line-height: 1.4em;
+                        padding: 0 12px;
+                        white-space: normal;
+                        word-break: break-word;
                         -webkit-box-align: center;
                         align-items: center;
-                        background: rgba(0,0,0,.4);
-                        border-radius: 0 14px 14px 0;
-                        bottom: 8px;
-                        box-sizing: border-box;
-                        color: #fff;
-                        display: inline-flex;
-                        font-size: 17px;
-                        height: 28px;
-                        letter-spacing: .02em;
-                        margin: 0;
-                        padding: 0 12px;
-                        position: absolute;
-                        z-index: 2;
-                      }
-                      img{
-                        height: 100%;
+                        display: flex;
                         width: 100%;
-                        object-fit: cover;
-                        vertical-align: top;
-                        z-index: 1;
-                        bottom: 0;
-                        position: absolute;
-                        top: 0;
+                        span{
+                          display: inline-block;
+                          height: 2.8em;
+                          overflow: hidden;
+                          position: relative;
+                        }
+                      }
+                      &__price{
+                        height: 0;
+                        overflow: hidden;
+                        padding: 0 0 100%;
+                        position: relative;
+                        width: 100%;
+                        span{
+                          -webkit-box-align: center;
+                          align-items: center;
+                          background: rgba(0,0,0,.4);
+                          border-radius: 0 14px 14px 0;
+                          bottom: 8px;
+                          box-sizing: border-box;
+                          color: #fff;
+                          display: inline-flex;
+                          font-size: 17px;
+                          height: 28px;
+                          letter-spacing: .02em;
+                          margin: 0;
+                          padding: 0 12px;
+                          position: absolute;
+                          z-index: 2;
+                        }
+                        img{
+                          height: 100%;
+                          width: 100%;
+                          object-fit: cover;
+                          vertical-align: top;
+                          z-index: 1;
+                          bottom: 0;
+                          position: absolute;
+                          top: 0;
+                        }
                       }
                     }
                   }
