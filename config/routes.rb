@@ -49,7 +49,6 @@ Rails.application.routes.draw do
   
   root 'toppage#index'
 
-  resources :items
   resources :homes, except: [:show, :edit] do
     collection do
       get 'prof', to: "homes#prof"
@@ -60,7 +59,7 @@ Rails.application.routes.draw do
     end
   end
   
-  resources :items, except: :show do
+  resources :items do
     collection do
       get 'get_category_children', defaults: { format: 'json' }
       get 'get_category_grandchildren', defaults: { format: 'json' }
