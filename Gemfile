@@ -104,3 +104,10 @@ gem 'pry-rails'
 
 gem 'rails-controller-testing'
 
+
+gem 'ancestry'
+
+gem 'omniauth-facebook'
+gem 'omniauth-twitter'
+gem 'omniauth-google-oauth2'
+
