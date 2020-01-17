@@ -1,9 +1,9 @@
 class DetailsController < ApplicationController
   
   def index
-    @item = Item.find(1)
+    @item = Item.find(params[:id])
     @item_image = ItemImage.all
-    @user = User.find(1)
+    @user = User.find(current_user.id)
   end
   
 end
