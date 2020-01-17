@@ -4,41 +4,49 @@
     .product-details__main__content 
       .product-details__main__content__image
         .product-details__main__content__image__main
-          = image_tag "https://3.bp.blogspot.com/-itNZS93p4h4/UgsrvyfQtzI/AAAAAAAAXJ4/NXi_fofGUSg/s400/travel_bag.png", width: "300", heiget:"300"
-        .product-details__main__content__image__sub
-          = image_tag "https://4.bp.blogspot.com/-N-uz3mt68fA/U55IzPpReyI/AAAAAAAAheE/M7XZJUicHL4/s400/pyoko5_goldenweek.png", width: "60", height: "60"
-          = image_tag "https://2.bp.blogspot.com/-3Gecu9nO-ro/WRaTLxZEE_I/AAAAAAABEO4/VD54AW0An9kvea0f4yxSdsT62kUoPaS9wCLcB/s400/ita_bag_cover.png", width: "60",heiget: "60"
-          = image_tag "https://4.bp.blogspot.com/-8AmLMy5IC-Q/Ws2wUvhSkcI/AAAAAAABLcM/YAEjOigiMLwKxWmiEN0StwYVKlmUWcYhwCLcBGAs/s400/travel_suitcase_sticker.png", width: "60",heiget: "60"
+          = image_tag @item_image.image_url.url , width: "300", heiget:"300"
+        -# .product-details__main__content__image__sub
+        -#   = image_tag @item_image[1].url , width: "60", height: "60"
+        -#   = image_tag @item_image[2].url , width: "60",heiget: "60"
+        -#   = image_tag @item_image[3].url , width: "60",heiget: "60"
           
       %table.product-details__main__content__table
         %tbody
           %tr
             %th.product-details__main__content__table__th  出品者
-            %td.product-details__main__content__table__td= @user.nickname
+            %td.product-details__main__content__table__td
+              -# = @user.nickname
           %tr
             %th.product-details__main__content__table__th  カテゴリー
-            %td.product-details__main__content__table__td= @item.category.name
+            %td.product-details__main__content__table__td
+              = @item.category.name
           %tr
             %th.product-details__main__content__table__th  ブランド
             %td.product-details__main__content__table__td  
           %tr
             %th.product-details__main__content__table__th  商品の状態
-            %td.product-details__main__content__table__td= @item.condition.name
+            %td.product-details__main__content__table__td
+              = @item.condition.name
           %tr
             %th.product-details__main__content__table__th  配送料の負担
-            %td.product-details__main__content__table__td= @item.feeburden.name
+            %td.product-details__main__content__table__td
+              = @item.feeburden.name
           %tr
             %th.product-details__main__content__table__th  配送の方法
             %td.product-details__main__content__table__td  
           %tr
             %th.product-details__main__content__table__th  配送元地域
-            %td.product-details__main__content__table__td= @item.region.name
+            %td.product-details__main__content__table__td
+              = @item.region.name
           %tr
             %th.product-details__main__content__table__th  発送日の目安
-            %td.product-details__main__content__table__td= @item.handingtime.name
+            %td.product-details__main__content__table__td
+              = @item.handingtime.name
     .product-details__main__buttom
       .product-details__main__buttom__price-box
-        %span.product-details__main__buttom__price-box__item-price= @item.price 
+        %span.product-details__main__buttom__price-box__item-price
+          ¥
+          = @item.price 
         %span.product-details__main__buttom__price-box__item-consumptiontax (税込)
         %span.product-details__main__buttom__price-box__item-postage 送料込み
       = link_to "#", class:"product-details__main__buttom__purchase-btn" do
