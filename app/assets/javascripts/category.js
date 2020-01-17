@@ -33,7 +33,7 @@ $(function(){
   // 親カテゴリー選択後のイベント
   $('#item_category').on('change', function(){
     var parentCategory = document.getElementById('item_category').value; //選択された親カテゴリーの名前を取得
-    if (parentCategory != "---" ){ //親カテゴリーが初期値でないことを確認
+    if (parentCategory != 1 ){ //親カテゴリーが初期値でないことを確認
       $.ajax({
         url: 'get_category_children',
         type: 'GET',

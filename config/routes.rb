@@ -39,7 +39,7 @@ Rails.application.routes.draw do
   end
 
 
-  get 'toppage/index'
+
   get 'homes/index'
   get 'homes/destroy'
   get 'homes/edit' 
@@ -69,7 +69,7 @@ Rails.application.routes.draw do
   
   
   
-  root 'homes#index'
+
   resources :edit, except: :show
   resources :identification, except: :show
   resources :destroy, except: :show

@@ -9,7 +9,7 @@ class ItemsController < ApplicationController
   def new
     @item = Item.new
     @item.item_images.new
-    
+
   end
 
   def get_category_children
@@ -26,6 +26,7 @@ class ItemsController < ApplicationController
 
   def create
     @item = Item.new(item_params)
+  
     if @item.save
       redirect_to root_path
     else
@@ -34,6 +35,9 @@ class ItemsController < ApplicationController
   end
 
   def edit
+    # @item = Item.find(params[:id])
+    # gon.item = @item
+    # gon.item_images = @item.item_images
   end
 
   def update
