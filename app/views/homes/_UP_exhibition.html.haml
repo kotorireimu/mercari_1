@@ -1,0 +1,23 @@
+.exh_container
+  %h2 出品した商品
+  %ul.listing-tabs
+    %li.active
+      %h3
+        =link_to "出品中","#"
+    %li
+      %h3
+        = link_to "取引中","#"
+    %li
+      %h3
+        = link_to "売却済","#"
+  .exh_container__content
+    %ul.exh_container__content__list
+      - @items.each do |item|
+        %li
+          = link_to item_path(item),class:"item-link" do
+            %figure
+              = image_tag (url_for(item.item_images.image_url)), alt: 'img', class: 'lazyloaded'
+            .mypage-item-body
+              #{item.name}
+            %i.far.fa-angle-right
+    

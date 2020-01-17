@@ -40,19 +40,25 @@ Rails.application.routes.draw do
 
 
 
-  get 'homes/index'
-  get 'homes/destroy'
-  get 'homes/edit' 
+  get 'toppage/index'
+
   get 'details/index'
-  get 'homes/identification'
-
-  
   get 'items/index'
-
   get 'buy/index'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   
   root 'toppage#index'
+
+  resources :items
+  resources :homes, except: [:show, :edit] do
+    collection do
+      get 'prof', to: "homes#prof"
+      get 'logout', to: "homes#destroy"
+      get 'identification', to: "homes#identification"
+      get 'card', to: "homes#card"
+      get 'exhibition', to: "homes#exhibition"
+    end
+  end
   
   resources :items, except: :show do
     collection do
@@ -62,13 +68,10 @@ Rails.application.routes.draw do
   end
 
 
-  resources :homes, except: :show
+  
 
   resources :toppage, except: :show
   resources :details, except: :show
-  
-  
-  
 
   resources :edit, except: :show
   resources :identification, except: :show
