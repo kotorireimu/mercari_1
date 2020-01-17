@@ -4,17 +4,17 @@
       = title
     -# %a.TP__main__content__list__element__info__link{href: "#"} もっと見る
   .TP__main__content__list__element__label
-    %div
-      %ul.TP__main__content__list__element__label__photo
-        %li.TP__main__content__list__element__label__photo__one
-          %div{:style => "visibility: visible; transition: all 0.5s ease 0s; opacity: 1;"}
-            %a.TP__main__content__list__element__label__photo__one__link{href: "/details"}
-              %figure.TP__main__content__list__element__label__photo__one__link__figure
-                %figcaption
-                  %span 
-                    = text
-                .TP__main__content__list__element__label__photo__one__link__figure__price
-                  %span{"aria-label" => "Price"} 
-                    = price
-                  %img{alt:"", src: "/assets/logo_white.png"}
-          
+    %div.TP__main__content__list__element__label__element
+      %ul.TP__main__content__list__element__label__element__photo
+        %li.TP__main__content__list__element__label__element__photo__one
+          .parent
+            - @item.first(5).each do |item|
+              = link_to details_index_path(item), class: "TP__main__content__list__element__label__element__photo__one__link" do
+                %figure.TP__main__content__list__element__label__element__photo__one__link__figure
+                  %figcaption
+                    %span 
+                      = item.name
+                  .TP__main__content__list__element__label__element__photo__one__link__figure__price
+                    %span{"aria-label" => "Price"} 
+                      = item.price  
+                    = image_tag(show_image_image_path(item))

@@ -1,6 +1,5 @@
-%section.product-details
-  .product-details__main
-    
+%section.product-details 
+  .product-details__main 
     %h1.product-details__main__item-name= @item.name
     .product-details__main__content 
       .product-details__main__content__image
@@ -21,7 +20,7 @@
             %td.product-details__main__content__table__td= @item.category.name
           %tr
             %th.product-details__main__content__table__th  ブランド
-            %td.product-details__main__content__table__td  テスト
+            %td.product-details__main__content__table__td  
           %tr
             %th.product-details__main__content__table__th  商品の状態
             %td.product-details__main__content__table__td= @item.condition.name
@@ -30,7 +29,7 @@
             %td.product-details__main__content__table__td= @item.feeburden.name
           %tr
             %th.product-details__main__content__table__th  配送の方法
-            %td.product-details__main__content__table__td  テスト
+            %td.product-details__main__content__table__td  
           %tr
             %th.product-details__main__content__table__th  配送元地域
             %td.product-details__main__content__table__td= @item.region.name

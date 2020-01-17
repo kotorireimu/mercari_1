@@ -2,14 +2,12 @@ class ItemsController < ApplicationController
   def index
     @item = Item.new
     @item.item_images.new
-
-    # @items = Item.includes(:images).order('created_at DESC')
   end
 
   def new
     @item = Item.new
     @item.item_images.new
-    
+
   end
 
   def get_category_children
@@ -21,11 +19,13 @@ class ItemsController < ApplicationController
   def get_category_grandchildren
     #選択された子カテゴリーに紐付く孫カテゴリーの配列を取得
     @category_grandchildren = Category.find("#{params[:child_id]}").children
+
   end
 
 
   def create
     @item = Item.new(item_params)
+  
     if @item.save
       redirect_to root_path
     else
@@ -39,6 +39,9 @@ class ItemsController < ApplicationController
   end
 
   def edit
+    # @item = Item.find(params[:id])
+    # gon.item = @item
+    # gon.item_images = @item.item_images
   end
 
   def update
