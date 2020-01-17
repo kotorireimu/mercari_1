@@ -1,5 +1,6 @@
-%section.product-details 
-  .product-details__main 
+%section.product-details
+  .product-details__main
+    
     %h1.product-details__main__item-name= @item.name
     .product-details__main__content 
       .product-details__main__content__image
@@ -14,13 +15,13 @@
         %tbody
           %tr
             %th.product-details__main__content__table__th  出品者
-            %td.product-details__main__content__table__td= @user.nickname
+            %td.product-details__main__content__table__td= current_user.nickname
           %tr
             %th.product-details__main__content__table__th  カテゴリー
             %td.product-details__main__content__table__td= @item.category.name
           %tr
             %th.product-details__main__content__table__th  ブランド
-            %td.product-details__main__content__table__td  
+            %td.product-details__main__content__table__td  テスト
           %tr
             %th.product-details__main__content__table__th  商品の状態
             %td.product-details__main__content__table__td= @item.condition.name
@@ -29,7 +30,7 @@
             %td.product-details__main__content__table__td= @item.feeburden.name
           %tr
             %th.product-details__main__content__table__th  配送の方法
-            %td.product-details__main__content__table__td  
+            %td.product-details__main__content__table__td  テスト
           %tr
             %th.product-details__main__content__table__th  配送元地域
             %td.product-details__main__content__table__td= @item.region.name
@@ -41,23 +42,17 @@
         %span.product-details__main__buttom__price-box__item-price= @item.price 
         %span.product-details__main__buttom__price-box__item-consumptiontax (税込)
         %span.product-details__main__buttom__price-box__item-postage 送料込み
-      = link_to "#", class:"product-details__main__buttom__purchase-btn" do
-        購入画面に進む
       .product-details__main__buttom__item-description
         %p.product-details__main__buttom__item-description__element
           = @item.text
-    .product-details__main__button
-      .product-details__main__button__left
-        %button.product-details__main__button__left__item-button--like{name:"like!", type:"button"}
-          %i.far.fa-heart
-          %span いいね!
-        %a.product-details__main__button__left__item-button--report{"data-modal": "report-item", "data-open": "modal", href: ""}
-          %i.far.fa-flag
-          %span 不適切な商品の報告
-      .product-details__main__button__right
-        = link_to "#",target:"_blank"  do
-          %i.far.fa-lock-open
-          %span あんしん・あんぜんへの取り組み
+  .product-details__form
+    .product-details__form__box
+      = link_to "商品の編集",root_path,class: "btn-edit"
+      %p or
+      = link_to "出品を停止する",root_path,class: "btn-others"
+      %br/
+      = link_to "この商品を削除する",item_path(@item),method: :delete ,class: "btn-others"
+  
   .product-details__message
     .product-details__message__content
       %form.product-details__message__content__form{action:"#", method:"POST"}
@@ -68,6 +63,7 @@
         %textarea.product-details__message__content__form__defaultvalue{name:"body", type:"text"}
         %button.product-details__message__content__form__message-btn{type:"submit"}
           %span コメントする
+  
   .product-details__media
     %ul.product-details__media__list
       %li.product-details__media__list__element 
@@ -83,4 +79,3 @@
         = link_to "https://www.pinterest.jp/",target:"_blank",class:"sns-btn" do
           %i.fab.fa-pinterest-square.fa-4x.pinterest-icon
           
-
