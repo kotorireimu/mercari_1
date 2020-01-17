@@ -2,7 +2,7 @@ class BuyController < ApplicationController
   require 'payjp'
 
   def index
-    @item = Item.find(1) #一覧から持ってこれないので持ってこれないので仮置き
+    @item = Item.find(params[:id]) #一覧から持ってこれないので持ってこれないので仮置き
     @user = User.find(current_user.id)
     card = Card.find_by(user_id: current_user.id)
     
@@ -16,7 +16,7 @@ class BuyController < ApplicationController
   end
 
   def pay
-    @item = Item.find(1)
+    @item = Item.find(params[:id])
     card = Card.find_by(user_id: current_user.id)
     Payjp.api_key =  'sk_test_274c8b939aa04632fc0cb6dd'
     Payjp::Charge.create(
