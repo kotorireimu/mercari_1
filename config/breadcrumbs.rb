@@ -27,3 +27,7 @@ crumb :card do
   parent :homes
 end
 
+crumb :exhibition do
+  link "出品した商品-出品中", exhibition_homes_path
+  parent :homes
+end

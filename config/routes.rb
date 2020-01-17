@@ -47,13 +47,14 @@ Rails.application.routes.draw do
   
   root 'toppage#index'
 
-  resources :items, except: :show
+  resources :items
   resources :homes, except: [:show, :edit] do
     collection do
       get 'prof', to: "homes#prof"
       get 'logout', to: "homes#destroy"
       get 'identification', to: "homes#identification"
       get 'card', to: "homes#card"
+      get 'exhibition', to: "homes#exhibition"
     end
   end
   

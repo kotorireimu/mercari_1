@@ -33,6 +33,11 @@ class ItemsController < ApplicationController
     end
   end
 
+  def show
+    
+    @item = Item.find(1)
+  end
+
   def edit
   end
 
@@ -40,6 +45,12 @@ class ItemsController < ApplicationController
   end
 
   def destroy
+    @item = Item.find(params[:id])
+    if @item.destroy
+      redirect_to root_path
+    else
+      render "homes/exhibition"
+    end
   end
 end
 
