@@ -15,7 +15,7 @@
           %tr
             %th.product-details__main__content__table__th  出品者
             %td.product-details__main__content__table__td
-              -# = @user.nickname
+              = @item.user.nickname
           %tr
             %th.product-details__main__content__table__th  カテゴリー
             %td.product-details__main__content__table__td
@@ -42,6 +42,7 @@
             %th.product-details__main__content__table__th  発送日の目安
             %td.product-details__main__content__table__td
               = @item.handingtime.name
+              
     .product-details__main__buttom
       .product-details__main__buttom__price-box
         %span.product-details__main__buttom__price-box__item-price
