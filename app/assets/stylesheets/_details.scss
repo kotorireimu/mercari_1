@@ -21,13 +21,6 @@ td {
   display: table-cell;
   vertical-align: inherit;
 } 
-// p {
-//   display: block;
-//   margin-block-start: 1em;
-//   margin-block-end: 1em;
-//   margin-inline-start: 0px;
-//   margin-inline-end: 0px;
-// }
 
 .product-details {
   width: 100%;
@@ -52,7 +45,6 @@ td {
     }
     &__content {
       width: 620px;
-      // height: 420px;
       margin-top: 16px;
       display: flex;
 
@@ -138,7 +130,6 @@ td {
 
       &__item-description {
         width: 620px;
-        // height: 194px;
         padding: 32px 0; 
         line-height: 1.5;
         color: #333333;
