@@ -39,7 +39,9 @@ Rails.application.routes.draw do
   end
 
 
+
   get 'toppage/index'
+
   get 'details/index'
   get 'items/index'
   get 'buy/index'
@@ -70,6 +72,7 @@ Rails.application.routes.draw do
 
   resources :toppage, except: :show
   resources :details, except: :show
+
   resources :edit, except: :show
   resources :identification, except: :show
   resources :destroy, except: :show
