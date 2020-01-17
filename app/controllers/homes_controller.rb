@@ -28,7 +28,6 @@ class HomesController < ApplicationController
   end
 
   def exhibition
-    @user = User.find(current_user.id)
     @items = Item.where(user_id: current_user.id)
   end
 end
