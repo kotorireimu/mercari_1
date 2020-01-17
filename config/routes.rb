@@ -45,9 +45,22 @@ Rails.application.routes.draw do
   get 'details/index'
   get 'items/index'
   get 'buy/index'
+
+  
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   
   root 'toppage#index'
+
+  resources :items, except: :show
+ 
+  resources :toppage, except: :show
+  resources :details, except: :show
+  
+  resources :images do
+    member do
+      get 'show_image'
+    end
+  end
 
   resources :homes, except: [:show, :edit] do
     collection do
