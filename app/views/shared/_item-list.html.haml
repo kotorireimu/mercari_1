@@ -9,7 +9,7 @@
         %li.TP__main__content__list__element__label__element__photo__one
           .parent
             - @item.first(5).each do |item|
-              = link_to , class: "TP__main__content__list__element__label__element__photo__one__link" do
+              = link_to details_index_path(item), class: "TP__main__content__list__element__label__element__photo__one__link" do
                 %figure.TP__main__content__list__element__label__element__photo__one__link__figure
                   %figcaption
                     %span 
