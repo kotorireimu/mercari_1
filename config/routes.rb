@@ -89,5 +89,7 @@ Rails.application.routes.draw do
   resources :identification, except: :show
   resources :destroy, except: :show
 
+  root 'dateils#index'
+  resources :details
 end 
 
