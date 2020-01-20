@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  root 'toppage#index'
+
   devise_for :users, controllers: {
     sessions: 'users/sessions',
     passwords: 'users/passwords',
@@ -17,6 +19,7 @@ Rails.application.routes.draw do
     post 'phone', to: 'users/registrations#phone'
     get 'select', to: 'users/registrations#select'
   end
+
   resources :users do
     resources :card, only: [:new, :show] do
       collection do
@@ -30,6 +33,8 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :toppage, except: :show
+
   resources :buy, only: [:index] do
     collection do
       get 'index', to: 'buy#index'
@@ -38,24 +43,6 @@ Rails.application.routes.draw do
     end
   end
 
-
-
-  get 'toppage/index'
-
-  get 'details/index'
-  get 'items/index'
-  get 'buy/index'
-
-  
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  
-  root 'toppage#index'
-
-  resources :items, except: :show
- 
-  resources :toppage, except: :show
-  resources :details, except: :show
-  
   resources :images do
     member do
       get 'show_image'
@@ -71,7 +58,7 @@ Rails.application.routes.draw do
       get 'exhibition', to: "homes#exhibition"
     end
   end
-  
+
   resources :items do
     collection do
       get 'get_category_children', defaults: { format: 'json' }
@@ -79,15 +66,15 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :details
 
+
+
+  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   
-
-  resources :toppage, except: :show
-  resources :details, except: :show
-
-  resources :edit, except: :show
-  resources :identification, except: :show
-  resources :destroy, except: :show
+  # resources :edit, except: :show
+  # resources :identification, except: :show
+  # resources :destroy, except: :show
 
 end 
 

@@ -13,10 +13,10 @@
         = render partial:'shared/item-tag', locals:{name: "おもちゃ・ホビー・グッズ" ,link_to: "#"}
 
     .TP__main__content__list
-      = render partial:"shared/item-list",locals:{title:"レディース新着アイテム", item:@item}
-      = render partial:"shared/item-list",locals:{title:"メンズ新着アイテム", item:@item}
-      = render partial:"shared/item-list",locals:{title:"家電・スマホ・カメラ新着アイテム", item:@item}
-      = render partial:"shared/item-list",locals:{title:"おもちゃ・ホビー・グッズ新着アイテム", item:@item}
+      = render partial:"shared/item-list",locals:{title:"レディース新着アイテム"}
+      -# = render partial:"shared/item-list",locals:{title:"メンズ新着アイテム"}
+      -# = render partial:"shared/item-list",locals:{title:"家電・スマホ・カメラ新着アイテム"}
+      -# = render partial:"shared/item-list",locals:{title:"おもちゃ・ホビー・グッズ新着アイテム"}
   
     -# 広告入れる場所
     .TP__main__content__ad2
