@@ -8,13 +8,14 @@
       %ul.TP__main__content__list__element__label__element__photo
         %li.TP__main__content__list__element__label__element__photo__one
           .parent
-            - @item.first(5).each do |item|
-              = link_to details_index_path(item), class: "TP__main__content__list__element__label__element__photo__one__link" do
+            - @item.each do |item|
+              = link_to detail_path(item), class: "TP__main__content__list__element__label__element__photo__one__link" do
                 %figure.TP__main__content__list__element__label__element__photo__one__link__figure
                   %figcaption
                     %span 
                       = item.name
                   .TP__main__content__list__element__label__element__photo__one__link__figure__price
                     %span{"aria-label" => "Price"} 
-                      = item.price  
-                    = image_tag(show_image_image_path(item))
+                      ¥
+                      = item.price
+                    = image_tag item.item_images[0].image_url.url

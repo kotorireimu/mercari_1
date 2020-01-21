@@ -1,9 +1,9 @@
 class DetailsController < ApplicationController
   
-  def index
-    @item = Item.find(params[:format])
-    @item_image = @item.item_images
-    @user = User.find(current_user.id)
+  def show
+    @item = Item.find(params[:id])
+    @item_image = ItemImage.find(params[:id])
+
   end
   
 end

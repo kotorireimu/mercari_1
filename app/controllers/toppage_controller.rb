@@ -1,7 +1,6 @@
 class ToppageController < ApplicationController
   def index
-    @item = Item.includes(:images).order('created_at DESC')
-    @item = Item.last(3)
+    @item = Item.includes(:item_images).last(5)
   end
 
   def new
