@@ -34,17 +34,23 @@ class ItemsController < ApplicationController
   end
 
   def show
-    
     @item = Item.find(params[:id])
+    @item_image = ItemImage.find(params[:id])
   end
 
   def edit
-    # @item = Item.find(params[:id])
+    @item = Item.find(params[:id])
+    @item_image = ItemImage.find(params[:id])
     # gon.item = @item
     # gon.item_images = @item.item_images
   end
 
   def update
+    if @item.update(item_params)
+      redirect_to root_path
+    else
+      render :edit
+    end
   end
 
   def destroy

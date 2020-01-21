@@ -2,7 +2,7 @@
   .TP__header__content
     .TP__header__content__top
       .TP__header__content__top__campany
-        = link_to "/toppage", class:"TP__header__content__top__campany__logo" do
+        = link_to root_path , class:"TP__header__content__top__campany__logo" do
           = image_tag("fmarket_logo_red.svg", height: "49", width: "185", alt: "Fmarket")
       .TP__header__content__top__search 
         %input.TP__header__content__top__search__form{type: "search", name: "kyeword", placeholder: "何かお探しですか？", autocomplete: "off", value: ""} 
