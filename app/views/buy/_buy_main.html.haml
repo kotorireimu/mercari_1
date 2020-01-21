@@ -5,7 +5,7 @@
       .buy-page__main__contents__item__inner
         .buy-page__main__contents__item__inner__box
           %h3.buy-page__main__contents__item__inner__box__image
-            = image_tag("logo_white.svg", height: "80", width: "80", class: "buy-page__main__contents__item__inner__box__image__photo")
+            = image_tag @item.item_images[0].image_url.url , height: "80", width: "80", class: "buy-page__main__contents__item__inner__box__image__photo"
             -# %img.buy-page__main__contents__item__inner__box__image__photo{alt: "", src: "/assets/logo_white.png", height: "80", width: "80"}
           .buy-page__main__contents__item__inner__box__text
             %p.buy-page__main__contents__item__inner__box__text__name #{@item.name}
