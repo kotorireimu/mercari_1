@@ -1,5 +1,7 @@
 $(function(){
   $(".sell-page__main__information__form__content__status__price__group__right__input").on('change', function() {
+    $('.sell-page__main__information__form__content__status__price__group__percent').empty();
+    $('.sell-page__main__information__form__content__status__price__group__rights').empty();
     var target = document.getElementsByClassName('sell-page__main__information__form__content__status__price__group__right__input');
     target.innerText = document.forms.new_item.item_price.value;
     var x = target.innerText / 10;

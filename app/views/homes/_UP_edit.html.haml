@@ -5,7 +5,7 @@
       %figure
         = image_tag("man_logo.svg", height: "60", width: "60")
         -# %img{height: "60", src: "/assets/oldman_84.png", width: "60"}
-      %input.UP__contents__right__edit__head__profile__input{name: "nickname", placeholder: "例)AYA☆セール中", type: "text", value: "ダンブルドア"}
+      %input.UP__contents__right__edit__head__profile__input{name: "nickname", placeholder: "例)AYA☆セール中", type: "text", value: current_user.nickname}
     .UP__contents__right__edit__content
       %textarea.UP__contents__right__edit__content__textarea{name: "introduction", placeholder: "例）こんにちは☆ ご覧いただきありがとうございます！かわいいものやきれいめオフィスカジュアル中心に出品しています。服のサイズは主に9号です。気持ちよくお取引できるよう心がけていますので、商品や発送方法などご質問がありましたらお気軽にどうぞ♪"}
       %button.UP__contents__right__edit__content__btn.btn-red{type: "submit"} 変更する
