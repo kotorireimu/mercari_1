@@ -50,8 +50,12 @@
           = @item.price 
         %span.product-details__main__buttom__price-box__item-consumptiontax (税込)
         %span.product-details__main__buttom__price-box__item-postage 送料込み
-      = link_to buy_index_path(@item), class:"product-details__main__buttom__purchase-btn" do
-        購入画面に進む
+      - if @item.buyer_id == nil
+        = link_to buy_index_path(@item), class:"product-details__main__buttom__purchase-btn" do
+          購入画面に進む
+      - else
+        .product-details__main__buttom__purchase-btn
+          売り切れました
       .product-details__main__buttom__item-description
         %p.product-details__main__buttom__item-description__element
           = @item.text
