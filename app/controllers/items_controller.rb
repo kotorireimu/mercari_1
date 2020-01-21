@@ -1,4 +1,5 @@
 class ItemsController < ApplicationController
+  before_action :set_array ,only: [:edit,:update]
   def index
     @item = Item.new
     @item.item_images.new
@@ -41,11 +42,17 @@ class ItemsController < ApplicationController
   def edit
     @item = Item.find(params[:id])
     @item_image = ItemImage.find(params[:id])
-    # gon.item = @item
-    # gon.item_images = @item.item_images
+    
+
+    # itemに紐づいていいる孫カテゴリーの親である子カテゴリが属している子カテゴリーの一覧を配列で取得
+    @category_child_array = @item.category.parent.parent.children
+
+    # itemに紐づいていいる孫カテゴリーが属している孫カテゴリーの一覧を配列で取得
+    @category_grandchild_array = @item.category.parent.children
   end
 
   def update
+    @item = Item.find(params[:id])
     if @item.update(item_params)
       redirect_to root_path
     else
@@ -66,5 +73,14 @@ end
 private
 
 def item_params
-  params.require(:item).permit(:name, :price, :text, item_images_attributes: [:image_url , :_destroy, :id]).merge(user_id: current_user.id, category_id: params[:item][:category], condition_id: params[:item][:condition], feeburden_id: params[:item][:feeburden] , region_id: params[:item][:region], handingtime_id: params[:item][:handingtime])
+  params.require(:item).permit(:name, :price, :text, item_images_attributes: [:image_url , :_destroy, :id]).merge(user_id: current_user.id, category_id: params[:category_id], condition_id: params[:item][:condition], feeburden_id: params[:item][:feeburden] , region_id: params[:item][:region], handingtime_id: params[:item][:handingtime])
+end
+
+
+def set_array
+  @category_parent_array = []
+  # categoriesテーブルから親カテゴリーのみを抽出、配列に格納
+  Category.where(ancestry: nil).each do |parent|
+    @category_parent_array << parent.name
+  end
 end
