@@ -37,6 +37,9 @@
   &__content {
     &__list {
       display: block;
+      a:hover {
+        background-color: rgb(248, 248, 248);
+      }
       li {
         border-bottom: 1px solid #eee;
         position: relative;
@@ -64,6 +67,26 @@
           }
           .mypage-item-body {
             margin: 0 40px 0 68px;
+            &__icon {
+              padding-top: 20px;
+              
+              display: inline-flex;
+              color: #888;
+              i {
+                margin-top: 3px;
+              }
+              .count {
+                margin:3px 10px 0 10px;
+              }
+              .status {
+                background-color: #0099e8;
+                color: #ffffff;
+                padding: 3px;
+                border-radius: 2px;
+                font-weight: bold;
+                font-size: 14px;
+              }
+            }
           }
           .fa-angle-right {
             overflow: hidden;
@@ -74,9 +97,20 @@
             -webkit-box-orient: vertical;
             text-overflow: ellipsis;
             line-height: 1.5;
+            position: absolute;
+            top: 50%;
+            right: 16px;
+            -webkit-transform: translate(0, -50%);
+            transform: translate(0, -50%);
+            font-size: 20px;
           }
         }
       }
+      // li:hover {
+      //   background-color: ;
+      //   color: #fff;
+      //   text-shadow: none;
+      // }
     }
   }
 }
