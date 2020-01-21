@@ -3,7 +3,7 @@
   %ul.listing-tabs
     %li.active
       %h3
-        =link_to "出品中","#"
+        =link_to "出品中", exhibition_homes_path
     %li
       %h3
         = link_to "取引中","#"
@@ -17,8 +17,18 @@
           = link_to item_path(item),class:"item-link" do
             %figure
               .lazyloaded
-                -# = image_tag (url_for(item.item_images.image_url)), alt: 'img', class: 'lazyloaded'
+                = image_tag item.item_images[0].image_url.url
             .mypage-item-body
-              #{item.name}
-            %i.far.fa-angle-right
+              .mypage-item-body__name
+                #{item.name}
+              .mypage-item-body__icon
+                %i.far.fa-heart 
+                .count
+                  0
+                %i.far.fa-comment-alt
+                .count
+                  0
+                .status
+                  出品中
+            %i.fas.fa-angle-right
     
