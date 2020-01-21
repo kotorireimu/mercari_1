@@ -41,8 +41,6 @@ class ItemsController < ApplicationController
   def edit
     @item = Item.find(params[:id])
     @item_image = ItemImage.find(params[:id])
-    # gon.item = @item
-    # gon.item_images = @item.item_images
   end
 
   def update
