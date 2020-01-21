@@ -1,5 +1,6 @@
 class ItemsController < ApplicationController
   before_action :set_array ,only: [:edit,:update]
+  before_action :set_item, only: [:show, :edit, :update, :destroy]
   def index
     @item = Item.new
     @item.item_images.new
@@ -35,12 +36,12 @@ class ItemsController < ApplicationController
   end
 
   def show
-    @item = Item.find(params[:id])
+   
     @item_image = ItemImage.find(params[:id])
   end
 
   def edit
-    @item = Item.find(params[:id])
+  
     @item_image = ItemImage.find(params[:id])
     
 
@@ -52,7 +53,7 @@ class ItemsController < ApplicationController
   end
 
   def update
-    @item = Item.find(params[:id])
+    
     if @item.update(item_params)
       redirect_to root_path
     else
@@ -61,7 +62,7 @@ class ItemsController < ApplicationController
   end
 
   def destroy
-    @item = Item.find(params[:id])
+  
     if @item.destroy
       redirect_to root_path
     else
@@ -83,4 +84,8 @@ def set_array
   Category.where(ancestry: nil).each do |parent|
     @category_parent_array << parent.name
   end
+end
+
+def set_item
+  @item = Item.find(params[:id])
 end

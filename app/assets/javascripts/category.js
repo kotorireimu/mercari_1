@@ -1,10 +1,10 @@
 $(function(){
-  // カテゴリーセレクトボックスのオプションを作成
+  
   function appendOption(category){
     var html = `<option value="${category.id}" data-category="${category.id}" >${category.name}</option>`;
     return html;
   }
-  // 子カテゴリーの表示作成
+  
   function appendChidrenBox(insertHTML){
     var childSelectHtml = '';
     childSelectHtml = `<div class='sell-page__main__information__form__content__status__select__added' id= 'item_category_children'>
@@ -17,7 +17,7 @@ $(function(){
                       </div>`;
     $('.sell-page__main__information__form__content__status__select').append(childSelectHtml);
   }
-  // 孫カテゴリーの表示作成
+  
   function appendGrandchidrenBox(insertHTML){
     var grandchildSelectHtml = '';
     grandchildSelectHtml = `<div class='sell-page__main__information__form__content__status__select__added' id= 'item_category_grandchildren'>
