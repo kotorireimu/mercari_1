@@ -15,7 +15,7 @@
               -# .sell-item
               .sell-upload-item
                 - if @item.persisted?
-                  - @item_image.each do |image , i|
+                  - @item_image.each_with_index do |image , i|
                     = image_tag @item_image.image_url.url, data: { index: i }, width: "100", height: '100'
 
                 -# = f.fields_for :item_images do |i|
