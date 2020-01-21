@@ -53,5 +53,6 @@
               %br/
               #{@user.family_name} #{@user.first_name}
         %section.buy-page__main__contents__item__inner__decision
-          = form_tag(action: :pay, method: :post) do
+          = form_tag( pay_buy_index_path(@item),method: :post) do
+            = hidden_field_tag :buyer_id, value: current_user.id
             %button.buy-page__main__contents__item__inner__decision__btn{type: "submit"} 購入する
