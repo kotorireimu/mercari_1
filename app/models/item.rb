@@ -7,6 +7,7 @@ class Item < ApplicationRecord
   belongs_to :feeburden , optional: true
   belongs_to :handingtime , optional: true
   belongs_to :region , optional: true
+  belongs_to :tag
   # belongs_to :brand
 
   # has_many :comments, dependent: :destroy

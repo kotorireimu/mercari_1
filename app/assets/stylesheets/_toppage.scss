@@ -92,19 +92,82 @@ div{
           position: relative;
           z-index: 3;
           padding: 0px 10px;
-          &__list{
-            padding-left: 0px;
-            cursor: pointer;
-            height: 44px;
             position: relative;
-            z-index: 3;
-            padding: 0px 10px;
-            &__element{
-              display: block;
-              font-size: 14px;
-              font-weight: 600;
-              line-height: 36px;
-              white-space: nowrap;
+          &__list {
+            display: flex;
+            height: 2rem;
+            margin: 0 auto;
+            width: 500px;
+            > li {
+              width: 50%;
+            }
+            li {
+              list-style: none;
+              position: relative;
+              a {
+                background: #fff;
+                border-right: 1px solid #eee;
+                color:black;
+                display: block;
+                height: 2rem;
+                line-height: 2rem;
+                text-align: center;
+                text-decoration: none;
+                width: 100%;
+              }
+              li {
+                height: 0;
+                overflow: hidden;
+                transition: .5s;
+          
+                a {
+                  border-top: 1px solid #eee;
+                }
+              }
+              &:hover > ul > li {
+                height: 2rem;
+                overflow: visible;
+              }
+              ul li ul {
+                left: 100%;
+                position: absolute;
+                top: 0;
+                width: 100%;
+              }
+          
+              &:hover a {
+                background: #fff;
+              }
+          
+              li {
+                a {
+                  background: #ffffff;
+                }
+          
+                &:hover a {
+                  background: #ffffff;
+                }
+              }
+          
+              ul li ul li {
+                a {
+                  background: #ffffff;
+                }
+          
+                &:hover a {
+                  background:  #ffffff;
+                }
+          
+                ul li {
+                  a {
+                    background: #ffffff;
+                  }
+          
+                  &:hover > a {
+                    background:  #ffffff;
+                  }
+                }
+              }
             }
           }
         }

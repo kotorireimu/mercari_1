@@ -10,8 +10,7 @@
             %i.fas.fa-search
     .TP__header__content__bottom
       .TP__header__content__bottom__tag
-        = render partial:'shared/tag-list',locals:{title:"カテゴリーから探す"}
-        = render partial:'shared/tag-list',locals:{title:"ブランドから探す"}
+        = render partial:'shared/tag-list'
       - if user_signed_in?
         %ul.TP__header__content__bottom__list
           %li.TP__header__content__bottom__list__likehistory
