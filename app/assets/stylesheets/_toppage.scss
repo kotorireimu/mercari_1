@@ -217,7 +217,7 @@ div{
         height: 200px;
         position: relative;
         padding: 20px;
-        background: olivedrab;
+        width: 100%;
       }
 
       &__category{
@@ -373,7 +373,6 @@ div{
                     }
                     figure:hover {
                       border:1px solid #0099e8;
-                      box-shadow: none;
                       transform: translate(-1px,-1px);
                     }
                   }
