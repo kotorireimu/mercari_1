@@ -88,8 +88,11 @@ div{
         a {
           color: #000;
         }
-        a:hover {
+        a:hover{
           color: #0099e8;
+          i {
+            color: #0099e8;
+          }
         }
         &__tag{
           display: flex;
@@ -127,10 +130,16 @@ div{
         &__list{
           display: flex;
           position: relative;
+          
           &__likehistory{
             height: 44px;
             position: relative;
             padding: 0 14px;
+            .far {
+              color: rgb(204, 204, 204);
+              font-size: 20px;
+              margin-right: 10px;
+            }
             &__element{
               -webkit-box-align: center;
               align-items: center;
@@ -138,13 +147,18 @@ div{
               font-size: 14px;
               height: 32px;
               transform: scale(1);
-              transition: all 0.3s ease-out 0s;
+              
             }
           }
           &__notification{
             height: 44px;
             position: relative;
             padding: 0 14px;
+            .far {
+              color: rgb(204, 204, 204);
+              font-size: 20px;
+              margin-right: 10px;
+            }
             &__element{
               -webkit-box-align: center;
               align-items: center;
@@ -152,13 +166,18 @@ div{
               font-size: 14px;
               height: 32px;
               transform: scale(1);
-              transition: all 0.3s ease-out 0s;
+              
             }
           }
           &__todo{
             height: 44px;
             position: relative;
             padding: 0 14px;
+            .fas {
+              color: rgb(204, 204, 204);
+              font-size: 17px;
+              margin-right: 10px;
+            }
             &__element{
               -webkit-box-align: center;
               align-items: center;
@@ -166,7 +185,7 @@ div{
               font-size: 14px;
               height: 32px;
               transform: scale(1);
-              transition: all 0.3s ease-out 0s;
+              
             }
           }
           &__mypage{
@@ -180,7 +199,7 @@ div{
               font-size: 14px;
               height: 32px;
               transform: scale(1);
-              transition: all 0.3s ease-out 0s;
+              
             }
           }
         }
@@ -198,7 +217,7 @@ div{
         height: 200px;
         position: relative;
         padding: 20px;
-        background: olivedrab;
+        width: 100%;
       }
 
       &__category{
@@ -238,6 +257,7 @@ div{
                 font-weight: 600;
                 border-radius: 15px;
                 padding: 8px 16px;
+                color: #000;
               }
             }
           }
@@ -350,6 +370,10 @@ div{
                           top: 0;
                         }
                       }
+                    }
+                    figure:hover {
+                      border:1px solid #0099e8;
+                      transform: translate(-1px,-1px);
                     }
                   }
                 }

@@ -2,7 +2,7 @@
   .TP__main__content
     -# 広告入れる場所
     .TP__main__content__ad1
-      
+      = image_tag("17245_Ph1.svg", height: "100%", width: "100%", alt: "Fmarket")
     .TP__main__content__category
       %h2.TP__main__content__category__title
         人気のカテゴリー
@@ -13,7 +13,7 @@
         = render partial:'shared/item-tag', locals:{name: "おもちゃ・ホビー・グッズ" ,link_to: "#"}
 
     .TP__main__content__list
-      = render partial:"shared/item-list",locals:{title:"レディース新着アイテム"}
+      = render partial:"shared/item-list"
       -# = render partial:"shared/item-list",locals:{title:"メンズ新着アイテム"}
       -# = render partial:"shared/item-list",locals:{title:"家電・スマホ・カメラ新着アイテム"}
       -# = render partial:"shared/item-list",locals:{title:"おもちゃ・ホビー・グッズ新着アイテム"}
