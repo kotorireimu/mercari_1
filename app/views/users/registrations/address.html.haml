@@ -27,6 +27,7 @@
     .ad_main__container__form
       .ad_main__container__form__content
         = form_for( @user ,url: user_registration_path(resource)) do |f|
+          = render 'layouts/error_messages', model: f.object
           = f.hidden_field :nickname
           = f.hidden_field :email
           = f.hidden_field :password
@@ -34,9 +35,9 @@
           = f.hidden_field :first_name
           = f.hidden_field :family_name_kana
           = f.hidden_field :first_name_kana
-          = f.hidden_field :birth_day
+          = f.hidden_field :birth
           = f.hidden_field :tell
-          = f.fields_for :address do |i|
+          = f.fields_for :address, @user.build_address do |i|
             .form-group
               = i.label :post_number,"郵便番号"
               %span.form-require
@@ -48,13 +49,13 @@
               %span.form-require
                 必須
               %br/
-              = i.text_field :prefecture, class: "input-default half", placeholder: "例) 神奈川県"
+              = i.collection_select :prefecture,  Region.order('id ASC').limit(49),:id,:name, class: "input-default"
             .form-group
               = i.label :city,"市町村"
               %span.form-require
                 必須
               %br/
-              = i.text_field :city, class: "input-default half", placeholder: "例) 横浜市緑区"
+              = i.text_field :city, class: "input-default ", placeholder: "例) 横浜市緑区"
             .form-group
               = i.label :address_line,"番地"
               %span.form-require

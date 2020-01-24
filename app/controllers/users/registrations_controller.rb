@@ -9,14 +9,30 @@ class Users::RegistrationsController < Devise::RegistrationsController
   def new
     @user=  User.new
   end
+
+  def phone
+    @user = User.new(confirmation)
+    if @user.valid?
+      render :phone
+    else
+      render :new
+    end
+  end
+
+  def check
+    @user = User.new(confirmation)
+    if @user.tell.blank?
+      render :phone
+    elsif @user.valid?
+      render :address
+    else
+      render :phone
+    end
+  end
   
   def address
     @user = User.new(address_params)
     @user.build_address
-  end
-  
-  def phone
-    @user = User.new(address_params)
   end
 
   def create
@@ -27,7 +43,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
       redirect_to user_card_index_path(@user)
     else
       flash.now[:danger] = 'ユーザーの登録に失敗しました。'
-      render :new
+      render :address
     end
   end
 
@@ -43,12 +59,12 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   private
 
-  def user_params
-    params.require(:user).permit(:nickname,:email,:password,:family_name,:first_name,:family_name_kana,:first_name_kana,:birth_day,:tell)
+  def confirmation
+    params.require(:user).permit(:nickname,:email,:password,:family_name,:first_name,:family_name_kana,:first_name_kana,:birth,:tell)
   end
-  
+
   def address_params
-    params.require(:user).permit(:nickname,:email,:password,:family_name,:first_name,:family_name_kana,:first_name_kana,:birth_day,:tell,address_attributes:[:post_number,:prefecture,:city,:address_line,:building_name,:address_tell])
+    params.require(:user).permit(:nickname,:email,:password,:family_name,:first_name,:family_name_kana,:first_name_kana,:birth,:tell,address_attributes:[:post_number,:prefecture,:city,:address_line,:building_name,:address_tell])
   end
   # GET /resource/sign_up
   # def new
