@@ -50,7 +50,7 @@
             = render partial:"sell_group" ,locals:{text: "カテゴリー"}
             .sell-page__main__information__form__content__status__select
               .form-group-top
-                = f.select :category, options_for_select(@category_parent_array.map{|c|[c, {}]}, @item.category.parent.parent.name), {}, {class: 'select', id: 'item_category'}
+                = f.select :category, options_for_select(@category_parent_array.map{|c|[c[:name], c[:id]]}, @item.category.parent.parent.id), {}, {class: 'select', id: 'item_category'}
               .form_group#item_category_children
                 = f.select :category, options_for_select(@category_child_array.map{|c|[c[:name], c[:id], {'data-category': c[:id], 'id': c[:id]}]}, @item.category.parent.id), {}, {class: 'select' , id: "child_category"}
               .form_group#item_category_grandchildren

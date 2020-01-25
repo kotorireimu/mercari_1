@@ -6,7 +6,7 @@ $(function(){
     var target_1 = document.forms.new_item;
     console.log(target_1)
     if (target_1 == null){
-      target.innerText = document.forms.edit_item_26.item_price.value;
+      target.innerText = document.forms.edit_item_27.item_price.value;
     } else {
       target.innerText = document.forms.new_item.item_price.value;
     }
