@@ -8,7 +8,7 @@ class ItemsController < ApplicationController
 
   def new
     @item = Item.new
-    @item.item_images.new
+    @item.item_images.build
 
   end
 
@@ -27,11 +27,17 @@ class ItemsController < ApplicationController
 
   def create
     @item = Item.new(item_params)
-  
-    if @item.save
+    
+    if @item.item_images.blank?
+      @item = Item.new(item_params)
+      @item.item_images.build
+      render :new
+    elsif @item.save
       redirect_to root_path
     else
-      render "/items/new"
+      @item = Item.new(item_params)
+      @item.item_images.build
+      render :new
     end
   end
 
@@ -44,12 +50,6 @@ class ItemsController < ApplicationController
   
     @item_image = ItemImage.find(params[:id])
     
-
-    # itemに紐づいていいる孫カテゴリーの親である子カテゴリが属している子カテゴリーの一覧を配列で取得
-    @category_child_array = @item.category.parent.parent.children
-
-    # itemに紐づいていいる孫カテゴリーが属している孫カテゴリーの一覧を配列で取得
-    @category_grandchild_array = @item.category.parent.children
   end
 
   def update
@@ -57,7 +57,7 @@ class ItemsController < ApplicationController
     if @item.update(item_params)
       redirect_to root_path
     else
-      render :edit
+      render "items/edit",object: @item_image
     end
   end
 
