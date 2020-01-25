@@ -26,7 +26,8 @@
       電話番号の確認
     .ph_main__container__form
       .ph_main__container__form__content
-        = form_for(@user, url: address_path(resource)) do |f|
+        = form_for(@user, url: check_path(resource)) do |f|
+          = render 'layouts/error_messages', model: f.object
           = f.hidden_field :nickname
           = f.hidden_field :email
           = f.hidden_field :password
@@ -34,7 +35,7 @@
           = f.hidden_field :first_name
           = f.hidden_field :family_name_kana
           = f.hidden_field :first_name_kana
-          = f.hidden_field :birth_day
+          = f.hidden_field :birth
           .ph_main__container__form__content__group
             = f.label :tell, "携帯電話の番号"
             %br/

@@ -1,0 +1,19 @@
+ja:
+ activerecord:
+ models:
+ attributes:
+  nickname: ニックネーム
+  email: メールアドレス
+  family_name: お名前
+  first_name: お名前
+  family_name_kana: フリガナ
+  first_name_kana: フリガナ
+  birth: 生年月日
+  tell: 電話番号
+  password: パスワード
+  post_number: 郵便番号
+  city: 市町村
+  address_line: 番地
+  address_tell: 電話番号
+ user:
+ 

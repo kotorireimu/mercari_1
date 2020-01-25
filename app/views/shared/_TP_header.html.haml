@@ -23,20 +23,20 @@
           %li.TP__header__content__bottom__list__notification
             = link_to "#" , class: "TP__header__content__bottom__list__notification__element" do
               %i.far.fa-bell
-                お知らせ
+              お知らせ
           %li.TP__header__content__bottom__list__todo
             = link_to "#" , class: "TP__header__content__bottom__list__todo__element" do
               %i.fas.fa-check
-                やることリスト
+              やることリスト
           %li.TP__header__content__bottom__list__mypage
             = link_to homes_path , class: "TP__header__content__bottom__list__mypage__element" do
               %i.fas.fa-user-circle
-                マイページ
+              マイページ
       - else
         %ul.TP__header__content__bottom__list
-          %li.TP__header__content__bottom__list__todo
-            = link_to "新規登録", new_user_registration_path
+          %li.TP__header__content__bottom__list__signup
+            = link_to "新規会員登録", select_path
                 
-          %li.TP__header__content__bottom__list__mypage
+          %li.TP__header__content__bottom__list__signin
             = link_to "ログイン", new_user_session_path
 

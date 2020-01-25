@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   
   devise_scope :user do
+    post 'check', to: 'users/registrations#check'
     get 'address', to: 'users/registrations#address'
     post 'address', to: 'users/registrations#address'
     get 'phone', to: 'users/registrations#phone'

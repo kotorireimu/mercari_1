@@ -52,9 +52,9 @@
               .form-group-top
                 = f.select :category, options_for_select(@category_parent_array.map{|c|[c[:name], c[:id]]}, @item.category.parent.parent.id), {}, {class: 'select', id: 'item_category'}
               .form_group#item_category_children
-                = f.select :category, options_for_select(@category_child_array.map{|c|[c[:name], c[:id], {'data-category': c[:id], 'id': c[:id]}]}, @item.category.parent.id), {}, {class: 'select' , id: "child_category"}
+                = f.select :category, options_for_select(@item.category.parent.parent.children.map{|c|[c[:name], c[:id], {'data-category': c[:id], 'id': c[:id]}]}, @item.category.parent.id), {}, {class: 'select', id: 'child_category'}
               .form_group#item_category_grandchildren
-                = f.select :category, options_for_select(@category_grandchild_array.map{|c|[c[:name], c[:id], {'data-category': c[:id], 'id': c[:id]}]}, @item.category.id), {}, {class: 'select' ,id: "grandchild_category" ,name: "category_id"}
+                = f.select :category, options_for_select(@item.category.parent.children.map{|c|[c[:name], c[:id], {'data-category': c[:id], 'id': c[:id]}]}, @item.category.id), {}, {class: 'select', id: 'grandchild_category',name: "category_id"}
               = f.text_field :category_id, id: 'grand_child_result_id', type: 'hidden'
             = render partial:"sell_group" ,locals:{text: "商品の状態"}
             = f.collection_select :condition,  Condition.order('id ASC').limit(7),:id,:name, {  selected: @item.condition_id.to_i }
