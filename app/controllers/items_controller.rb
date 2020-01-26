@@ -25,6 +25,9 @@ class ItemsController < ApplicationController
   end
 
 
+  def get_delivery_method
+  end
+  
   def create
     @item = Item.new(item_params)
   

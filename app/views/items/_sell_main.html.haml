@@ -118,6 +118,8 @@
             = render partial:"sell_group" ,locals:{text: "配送料の負担"}
             -# = render "status_box"
             = f.collection_select :feeburden,  Feeburden.order('id ASC').limit(3),:id,:name
+            
+            #delivery_method-parent
             -# .select-status-box
               -# %i.icon-arrow-bottom
               -# %select.status-select
