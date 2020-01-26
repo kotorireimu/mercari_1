@@ -10,7 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_01_25_094400) do
+
+ActiveRecord::Schema.define(version: 2020_01_24_065547) do
+
 
   create_table "addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "user_id"
@@ -168,11 +170,10 @@ ActiveRecord::Schema.define(version: 2020_01_25_094400) do
     t.string "first_name", null: false
     t.string "family_name_kana", null: false
     t.string "first_name_kana", null: false
-    t.string "tell", null: false
-    t.integer "birth_day", null: false
+    t.string "tell", default: "", null: false
     t.integer "sales", default: 0, null: false
     t.text "image"
-    t.string "email", null: false
+    t.string "email"
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
@@ -181,7 +182,7 @@ ActiveRecord::Schema.define(version: 2020_01_25_094400) do
     t.datetime "updated_at", null: false
     t.string "provider"
     t.string "uid"
-    t.index ["email"], name: "index_users_on_email", unique: true
+    t.date "birth"
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 

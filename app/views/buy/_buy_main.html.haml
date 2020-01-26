@@ -12,9 +12,9 @@
             %p.buy-page__main__contents__item__inner__box__text__price
               %span ¥ #{@item.price}
               %span.buy-page__main__contents__item__inner__box__text__price__postage
-              - if @item.feeburden_id == 1
+              - if @item.feeburden_id == 2
                 (税込)  送料込み
-              - elsif @item.feeburden_id == 2
+              - elsif @item.feeburden_id == 3
                 (税込)  着払い
     .buy-page__main__contents__item
       .buy-page__main__contents__item__inner

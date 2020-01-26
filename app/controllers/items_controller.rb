@@ -8,20 +8,20 @@ class ItemsController < ApplicationController
 
   def new
     @item = Item.new
-    @item.item_images.new
+    @item.item_images.build
 
   end
 
   def get_category_children
-    #選択された親カテゴリーに紐付く子カテゴリーの配列を取得
-    @category_children = Category.find_by(id: "#{params[:parent_name]}", ancestry: nil).children
+      #選択された親カテゴリーに紐付く子カテゴリーの配列を取得
+      @category_children = Category.find_by(id: "#{params[:parent_name]}", ancestry: nil).children
+    
   end
 
  # 子カテゴリーが選択された後に動くアクション
   def get_category_grandchildren
     #選択された子カテゴリーに紐付く孫カテゴリーの配列を取得
     @category_grandchildren = Category.find("#{params[:child_id]}").children
-
   end
 
 
@@ -30,11 +30,17 @@ class ItemsController < ApplicationController
   
   def create
     @item = Item.new(item_params)
-  
-    if @item.save
+    
+    if @item.item_images.blank?
+      @item = Item.new(item_params)
+      @item.item_images.build
+      render :new
+    elsif @item.save
       redirect_to root_path
     else
-      render "/items/new"
+      @item = Item.new(item_params)
+      @item.item_images.build
+      render :new
     end
   end
 
@@ -47,12 +53,6 @@ class ItemsController < ApplicationController
   
     @item_image = ItemImage.find(params[:id])
     
-
-    # itemに紐づいていいる孫カテゴリーの親である子カテゴリが属している子カテゴリーの一覧を配列で取得
-    @category_child_array = @item.category.parent.parent.children
-
-    # itemに紐づいていいる孫カテゴリーが属している孫カテゴリーの一覧を配列で取得
-    @category_grandchild_array = @item.category.parent.children
   end
 
   def update
@@ -60,7 +60,7 @@ class ItemsController < ApplicationController
     if @item.update(item_params)
       redirect_to root_path
     else
-      render :edit
+      render "items/edit",object: @item_image
     end
   end
 
@@ -85,7 +85,7 @@ def set_array
   @category_parent_array = []
   # categoriesテーブルから親カテゴリーのみを抽出、配列に格納
   Category.where(ancestry: nil).each do |parent|
-    @category_parent_array << parent.name
+    @category_parent_array << {name: parent.name, id: parent.id}
   end
 end
 

@@ -50,11 +50,11 @@
             = render partial:"sell_group" ,locals:{text: "カテゴリー"}
             .sell-page__main__information__form__content__status__select
               .form-group-top
-                = f.select :category, options_for_select(@category_parent_array.map{|c|[c, {}]}, @item.category.parent.parent.name), {}, {class: 'select', id: 'parent_category'}
-              .form_group#children
-                = f.select :category, options_for_select(@category_child_array.map{|c|[c[:name], c[:id], {'data-category': c[:id], 'id': c[:id]}]}, @item.category.parent.id), {}, {class: 'select', id: 'child_category'}
-              .form_group#grandchildren
-                = f.select :category, options_for_select(@category_grandchild_array.map{|c|[c[:name], c[:id], {'data-category': c[:id], 'id': c[:id]}]}, @item.category.id), {}, {class: 'select', id: 'grandchild_category',name: "category_id"}
+                = f.select :category, options_for_select(@category_parent_array.map{|c|[c[:name], c[:id]]}, @item.category.parent.parent.id), {}, {class: 'select', id: 'item_category'}
+              .form_group#item_category_children
+                = f.select :category, options_for_select(@item.category.parent.parent.children.map{|c|[c[:name], c[:id], {'data-category': c[:id], 'id': c[:id]}]}, @item.category.parent.id), {}, {class: 'select', id: 'child_category'}
+              .form_group#item_category_grandchildren
+                = f.select :category, options_for_select(@item.category.parent.children.map{|c|[c[:name], c[:id], {'data-category': c[:id], 'id': c[:id]}]}, @item.category.id), {}, {class: 'select', id: 'grandchild_category',name: "category_id"}
               = f.text_field :category_id, id: 'grand_child_result_id', type: 'hidden'
             = render partial:"sell_group" ,locals:{text: "商品の状態"}
             = f.collection_select :condition,  Condition.order('id ASC').limit(7),:id,:name, {  selected: @item.condition_id.to_i }
@@ -92,7 +92,8 @@
                 .sell-page__main__information__form__content__status__price__group__percent
 
               %li.sell-page__main__information__form__content__status__price__group.clearfix
-                .sell-page__main__information__form__content__status__price__group__lefts 販売利益
+                .sell-page__main__information__form__content__status__price__group__lefts
+                  販売利益
                 .sell-page__main__information__form__content__status__price__group__rights
 
 

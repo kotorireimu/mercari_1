@@ -9,7 +9,7 @@ $(function(){
     var childSelectHtml = '';
     childSelectHtml = `<div class='sell-page__main__information__form__content__status__select__added' id= 'item_category_children'>
                         <div class='sell-page__main__information__form__content__status__select__added__box'>
-                          <select class="sell-page__main__information__form__content__status__select" id="child_category" name="category_id">
+                          <select class="sell-page__main__information__form__content__status__select__added" id="child_category" name="category_id">
                             <option value="---" data-category="---">---</option>
                             ${insertHTML}
                           <select>
@@ -22,7 +22,7 @@ $(function(){
     var grandchildSelectHtml = '';
     grandchildSelectHtml = `<div class='sell-page__main__information__form__content__status__select__added' id= 'item_category_grandchildren'>
                               <div class='sell-page__main__information__form__content__status__select__added__box'>
-                                <select class="sell-page__main__information__form__content__status__select" id="grandchild_category" name="category_id">
+                                <select class="sell-page__main__information__form__content__status__select__added__box" id="grandchild_category" name="category_id">
                                   <option value="---" data-category="---">---</option>
                                   ${insertHTML}
                                 </select>
@@ -35,7 +35,7 @@ $(function(){
     var parentCategory = document.getElementById('item_category').value; //選択された親カテゴリーの名前を取得
     if (parentCategory != 1 ){ //親カテゴリーが初期値でないことを確認
       $.ajax({
-        url: 'get_category_children',
+        url: '/items/get_category_children',
         type: 'GET',
         data: { parent_name: parentCategory },
         dataType: 'json'
@@ -63,10 +63,11 @@ $(function(){
   });
   // 子カテゴリー選択後のイベント
   $('.sell-page__main__information__form__content__status__select').on('change', '#child_category', function(){
+    // $('#item_category_grandchildren').remove(); 
     var childId = $('#child_category option:selected').data('category'); //選択された子カテゴリーのidを取得
     if (childId != "---"){ //子カテゴリーが初期値でないことを確認
       $.ajax({
-        url: 'get_category_grandchildren',
+        url: '/items/get_category_grandchildren',
         type: 'GET',
         data: { child_id: childId },
         dataType: 'json'
