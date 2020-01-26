@@ -64,12 +64,14 @@ Rails.application.routes.draw do
     collection do
       get 'get_category_children', defaults: { format: 'json' }
       get 'get_category_grandchildren', defaults: { format: 'json' }
+      get 'get_size', defaults: { format: 'json' }
+      get 'get_delivery_method'
     end
   end
 
   resources :details
 
-
+  
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   
