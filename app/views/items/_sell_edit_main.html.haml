@@ -58,13 +58,21 @@
               = f.text_field :category_id, id: 'grand_child_result_id', type: 'hidden'
             = render partial:"sell_group" ,locals:{text: "商品の状態"}
             = f.collection_select :condition,  Condition.order('id ASC').limit(7),:id,:name, {  selected: @item.condition_id.to_i }
-          
+
 
         .sell-page__main__information__form__content.clearfix
           = render partial:"sell_form_head" ,locals:{text: "配送について"}
           .sell-page__main__information__form__content__status
             = render partial:"sell_group" ,locals:{text: "配送料の負担"}
             = f.collection_select :feeburden,  Feeburden.order('id ASC').limit(3),:id,:name, {  selected: @item.feeburden_id.to_i }
+            -# #delivery_method-parent.sell-page__main__information__form__content__status
+            -#   %label.sell-page__main__information__form__content__status__label 配送方法
+            -#   %span.sell-require 必須
+            -#   .sell-page__main__information__form__content__status-wrapper__box
+            -#     .sell-page__main__information__form__content__status-wrapper
+                
+            -#       = f.select :shipping_method,  @array
+                 
 
             = render partial:"sell_group" ,locals:{text: "発送元の地域"}
             = f.collection_select :region,  Region.order('id ASC').limit(49),:id,:name, {  selected: @item.region_id.to_i }

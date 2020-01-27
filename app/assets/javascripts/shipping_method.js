@@ -42,7 +42,7 @@ $(function(){
                           <span class='sell-require '>必須</span> 
                             <div class='sell-page__main__information__form__content__status-wrapper__box'>
                               <div class='sell-page__main__information__form__content__status-wrapper'></div>
-                                <select class="sell-page__main__information__form__content__status-wrapper__box--select" id="delivery_charge">
+                                <select class="sell-page__main__information__form__content__status-wrapper__box--select" id="delivery_charge", name = "item[shipping_method]">
                                   <option value="---"></option>
                                   ${insertHTML}
                                 </select>

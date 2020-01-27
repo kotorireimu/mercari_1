@@ -95,6 +95,7 @@
             = render partial:"sell_group" ,locals:{text: "商品の状態"}
             -# conditionテーブルが必要
             = f.collection_select :condition,  Condition.order('id ASC').limit(7),:id,:name
+            = f.hidden_field :shipping_method
             -# = render "status_box"
             -# .select-status-box
               -# %i.icon-arrow-bottom

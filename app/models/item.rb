@@ -19,7 +19,7 @@ class Item < ApplicationRecord
   # has_one :order
 
   accepts_nested_attributes_for :item_images, allow_destroy: true
-  validates_associated :item_images
+ 
 
   validates :price, presence: true ,numericality: { greater_than_or_equal_to: 300 , less_than_or_equal_to: 9999999 , message: '値段は300~9999999以内で、半角数字で入力してください'}
   validates :name, presence: true, length: { maximum: 40 } 
