@@ -15,7 +15,6 @@ $(function(){
     var delivery_parentCategory = document.getElementById('item_feeburden').value;
     if (delivery_parentCategory  != 1 ){
 
-
       $.ajax({
         url: '/items/get_delivery_method',
         type: 'GET',
@@ -37,13 +36,13 @@ $(function(){
           });
         }
 
-        methodBoxHtml = `<div class="sell-page__main__information__form__content__status" id="delivery_method-parent"> 
+        methodBoxHtml = `<div class="sell-page__main__information__form__content__status" id="delivery_method-parent_two"> 
                           <label class='sell-page__main__information__form__content__status__label'> 配送の方法</label> 
                           <span class='sell-require '>必須</span> 
                             <div class='sell-page__main__information__form__content__status-wrapper__box'>
                               <div class='sell-page__main__information__form__content__status-wrapper'></div>
                                 <select class="sell-page__main__information__form__content__status-wrapper__box--select" id="delivery_charge", name = "item[shipping_method]">
-                                  <option value="---"></option>
+                                  <option value= "---" >---</option>
                                   ${insertHTML}
                                 </select>
                               </div>
@@ -54,7 +53,7 @@ $(function(){
 
       })
     }
-    else {$('#delivery_method-parent').remove();}
+    else {$('#delivery_method-parent_two').remove();}
 
   });
 

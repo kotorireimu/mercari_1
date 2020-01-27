@@ -72,7 +72,7 @@
             -#     .sell-page__main__information__form__content__status-wrapper
                 
             -#       = f.select :shipping_method,  @array
-                 
+            #delivery_method-parent
 
             = render partial:"sell_group" ,locals:{text: "発送元の地域"}
             = f.collection_select :region,  Region.order('id ASC').limit(49),:id,:name, {  selected: @item.region_id.to_i }
