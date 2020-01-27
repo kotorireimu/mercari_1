@@ -12,6 +12,7 @@ ja:
   tell: 電話番号
   password: パスワード
   post_number: 郵便番号
+  prefecture: 都道府県
   city: 市町村
   address_line: 番地
   address_tell: 電話番号
