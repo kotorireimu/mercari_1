@@ -4,9 +4,8 @@ $(function(){
     $('.sell-page__main__information__form__content__status__price__group__rights').empty();
     var target = document.getElementsByClassName('sell-page__main__information__form__content__status__price__group__right__input');
     var target_1 = document.forms.new_item;
-    console.log(target_1)
     if (target_1 == null){
-      target.innerText = document.forms.edit_item_27.item_price.value;
+      target.innerText = $('#item_price').val();
     } else {
       target.innerText = document.forms.new_item.item_price.value;
     }
