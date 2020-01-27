@@ -7,9 +7,12 @@ class ItemsController < ApplicationController
   end
 
   def new
-    @item = Item.new
-    @item.item_images.build
-
+    if user_signed_in?
+      @item = Item.new
+      @item.item_images.build
+    else
+      redirect_to new_user_session_path
+    end
   end
 
   def get_category_children
@@ -50,7 +53,6 @@ class ItemsController < ApplicationController
   end
 
   def edit
-  
     @item_image = ItemImage.find_by(item_id: @item.id)
     @array1 = [ '未定','らくらくメルカリ便','ゆうメール','レターパック','普通郵便（定型、定型外）','クロネコヤマト','ゆうパック','クリックポスト','ゆうパケット' ]
     @array2 = ['未定','ゆうメール','クロネコヤマト','ゆうパック']
