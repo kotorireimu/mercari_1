@@ -49,7 +49,7 @@
               %span.form-require
                 必須
               %br/
-              = i.collection_select :prefecture,  Region.order('id ASC').limit(49),:id,:name, class: "input-default"
+              = i.text_field :city, class: "input-default ", placeholder: "例) 神奈川県"
             .form-group
               = i.label :city,"市町村"
               %span.form-require

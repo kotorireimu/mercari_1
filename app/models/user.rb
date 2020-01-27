@@ -8,7 +8,7 @@ class User < ApplicationRecord
          :omniauthable,omniauth_providers: [:facebook, :google_oauth2]
 
 
-
+  
   has_one :sns_credential
   has_one :address
   has_many :cards

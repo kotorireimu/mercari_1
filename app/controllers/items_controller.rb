@@ -46,13 +46,14 @@ class ItemsController < ApplicationController
 
   def show
    
-    @item_image = ItemImage.find(params[:id])
+    @item_image = ItemImage.find_by(item_id: @item.id)
   end
 
   def edit
   
-    @item_image = ItemImage.find(params[:id])
-    
+    @item_image = ItemImage.find_by(item_id: @item.id)
+    @array1 = [ '未定','らくらくメルカリ便','ゆうメール','レターパック','普通郵便（定型、定型外）','クロネコヤマト','ゆうパック','クリックポスト','ゆうパケット' ]
+    @array2 = ['未定','ゆうメール','クロネコヤマト','ゆうパック']
   end
 
   def update
@@ -77,7 +78,7 @@ end
 private
 
 def item_params
-  params.require(:item).permit(:name, :price, :text, item_images_attributes: [:image_url , :_destroy, :id]).merge(user_id: current_user.id, category_id: params[:category_id], condition_id: params[:item][:condition], feeburden_id: params[:item][:feeburden] , region_id: params[:item][:region], handingtime_id: params[:item][:handingtime])
+  params.require(:item).permit(:name, :price, :text,:shipping_method, item_images_attributes: [:image_url , :_destroy, :id]).merge(user_id: current_user.id, category_id: params[:category_id], condition_id: params[:item][:condition], feeburden_id: params[:item][:feeburden] , region_id: params[:item][:region], handingtime_id: params[:item][:handingtime])
 end
 
 
