@@ -46,12 +46,14 @@ class ItemsController < ApplicationController
 
   def show
    
-    @item_image = ItemImage.find(params[:id])
+    @item_image = ItemImage.find_by(item_id: @item.id )
+
   end
 
   def edit
   
-    @item_image = ItemImage.find(params[:id])
+    @item_image = ItemImage.find_by(item_id: @item.id )
+
     
   end
 
