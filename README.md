@@ -1,6 +1,7 @@
 # README
 
 
+
 ## usersテーブル
 
 |Column|Type|Options|
@@ -196,4 +197,3 @@
 
 ### Association
 - belongs_to :item
-- belongs_to :user
