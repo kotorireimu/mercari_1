@@ -34,16 +34,28 @@
           - if @ledys.length >= 6
             .parent
               - @ledys.slice(5..9).each do |item|
-                = link_to detail_path(item), class: "TP__main__content__list__element__label__element__photo__one__link" do
-                  %figure.TP__main__content__list__element__label__element__photo__one__link__figure
-                    %figcaption
-                      %span 
-                        = item.name
-                    .TP__main__content__list__element__label__element__photo__one__link__figure__price
-                      %span{"aria-label" => "Price"} 
-                        ¥
-                        = item.price
-                      = image_tag item.item_images[0].image_url.url
+                - if user_signed_in?
+                  = link_to detail_path(item), class: "TP__main__content__list__element__label__element__photo__one__link" do
+                    %figure.TP__main__content__list__element__label__element__photo__one__link__figure
+                      %figcaption
+                        %span 
+                          = item.name
+                      .TP__main__content__list__element__label__element__photo__one__link__figure__price
+                        %span{"aria-label" => "Price"} 
+                          ¥
+                          = item.price
+                        = image_tag item.item_images[0].image_url.url
+                - else
+                  = link_to new_user_session_path, class: "TP__main__content__list__element__label__element__photo__one__link" do
+                    %figure.TP__main__content__list__element__label__element__photo__one__link__figure
+                      %figcaption
+                        %span 
+                          = item.name
+                      .TP__main__content__list__element__label__element__photo__one__link__figure__price
+                        %span{"aria-label" => "Price"} 
+                          ¥
+                          = item.price
+                        = image_tag item.item_images[0].image_url.url
           - else
 
 .TP__main__content__list__element
@@ -57,19 +69,7 @@
         %li.TP__main__content__list__element__label__element__photo__one
           .parent
             - @mens.first(5).each do |item|
-              = link_to detail_path(item), class: "TP__main__content__list__element__label__element__photo__one__link" do
-                %figure.TP__main__content__list__element__label__element__photo__one__link__figure
-                  %figcaption
-                    %span 
-                      = item.name
-                  .TP__main__content__list__element__label__element__photo__one__link__figure__price
-                    %span{"aria-label" => "Price"} 
-                      ¥
-                      = item.price
-                    = image_tag item.item_images[0].image_url.url
-          - if @mens.length >= 6
-            .parent
-              - @mens.slice(5..9).each do |item|
+              - if user_signed_in?
                 = link_to detail_path(item), class: "TP__main__content__list__element__label__element__photo__one__link" do
                   %figure.TP__main__content__list__element__label__element__photo__one__link__figure
                     %figcaption
@@ -80,6 +80,42 @@
                         ¥
                         = item.price
                       = image_tag item.item_images[0].image_url.url
+              - else
+                = link_to new_user_session_path, class: "TP__main__content__list__element__label__element__photo__one__link" do
+                  %figure.TP__main__content__list__element__label__element__photo__one__link__figure
+                    %figcaption
+                      %span 
+                        = item.name
+                    .TP__main__content__list__element__label__element__photo__one__link__figure__price
+                      %span{"aria-label" => "Price"} 
+                        ¥
+                        = item.price
+                      = image_tag item.item_images[0].image_url.url
+          - if @mens.length >= 6
+            .parent
+              - @mens.slice(5..9).each do |item|
+                - if user_signed_in?
+                  = link_to detail_path(item), class: "TP__main__content__list__element__label__element__photo__one__link" do
+                    %figure.TP__main__content__list__element__label__element__photo__one__link__figure
+                      %figcaption
+                        %span 
+                          = item.name
+                      .TP__main__content__list__element__label__element__photo__one__link__figure__price
+                        %span{"aria-label" => "Price"} 
+                          ¥
+                          = item.price
+                        = image_tag item.item_images[0].image_url.url
+                - else
+                  = link_to new_user_session_path, class: "TP__main__content__list__element__label__element__photo__one__link" do
+                    %figure.TP__main__content__list__element__label__element__photo__one__link__figure
+                      %figcaption
+                        %span 
+                          = item.name
+                      .TP__main__content__list__element__label__element__photo__one__link__figure__price
+                        %span{"aria-label" => "Price"} 
+                          ¥
+                          = item.price
+                        = image_tag item.item_images[0].image_url.url
           - else
 
 .TP__main__content__list__element
@@ -93,19 +129,7 @@
         %li.TP__main__content__list__element__label__element__photo__one
           .parent
             - @appliances.first(5).each do |item|
-              = link_to detail_path(item), class: "TP__main__content__list__element__label__element__photo__one__link" do
-                %figure.TP__main__content__list__element__label__element__photo__one__link__figure
-                  %figcaption
-                    %span 
-                      = item.name
-                  .TP__main__content__list__element__label__element__photo__one__link__figure__price
-                    %span{"aria-label" => "Price"} 
-                      ¥
-                      = item.price
-                    = image_tag item.item_images[0].image_url.url
-          - if @appliances.length >= 6
-            .parent
-              - @appliances.slice(5..9).each do |item|
+              - if user_signed_in?
                 = link_to detail_path(item), class: "TP__main__content__list__element__label__element__photo__one__link" do
                   %figure.TP__main__content__list__element__label__element__photo__one__link__figure
                     %figcaption
@@ -116,6 +140,42 @@
                         ¥
                         = item.price
                       = image_tag item.item_images[0].image_url.url
+              - else
+                = link_to new_user_session_path, class: "TP__main__content__list__element__label__element__photo__one__link" do
+                  %figure.TP__main__content__list__element__label__element__photo__one__link__figure
+                    %figcaption
+                      %span 
+                        = item.name
+                    .TP__main__content__list__element__label__element__photo__one__link__figure__price
+                      %span{"aria-label" => "Price"} 
+                        ¥
+                        = item.price
+                      = image_tag item.item_images[0].image_url.url
+          - if @appliances.length >= 6
+            .parent
+              - @appliances.slice(5..9).each do |item|
+                - if user_signed_in?
+                  = link_to detail_path(item), class: "TP__main__content__list__element__label__element__photo__one__link" do
+                    %figure.TP__main__content__list__element__label__element__photo__one__link__figure
+                      %figcaption
+                        %span 
+                          = item.name
+                      .TP__main__content__list__element__label__element__photo__one__link__figure__price
+                        %span{"aria-label" => "Price"} 
+                          ¥
+                          = item.price
+                        = image_tag item.item_images[0].image_url.url
+                - else
+                  = link_to new_user_session_path, class: "TP__main__content__list__element__label__element__photo__one__link" do
+                    %figure.TP__main__content__list__element__label__element__photo__one__link__figure
+                      %figcaption
+                        %span 
+                          = item.name
+                      .TP__main__content__list__element__label__element__photo__one__link__figure__price
+                        %span{"aria-label" => "Price"} 
+                          ¥
+                          = item.price
+                        = image_tag item.item_images[0].image_url.url
           - else
 
 .TP__main__content__list__element
@@ -129,19 +189,7 @@
         %li.TP__main__content__list__element__label__element__photo__one
           .parent
             - @hobby.first(5).each do |item|
-              = link_to detail_path(item), class: "TP__main__content__list__element__label__element__photo__one__link" do
-                %figure.TP__main__content__list__element__label__element__photo__one__link__figure
-                  %figcaption
-                    %span 
-                      = item.name
-                  .TP__main__content__list__element__label__element__photo__one__link__figure__price
-                    %span{"aria-label" => "Price"} 
-                      ¥
-                      = item.price
-                    = image_tag item.item_images[0].image_url.url
-          - if @hobby.length >= 6
-            .parent
-              - @hobby.slice(5..9).each do |item|
+              - if user_signed_in?
                 = link_to detail_path(item), class: "TP__main__content__list__element__label__element__photo__one__link" do
                   %figure.TP__main__content__list__element__label__element__photo__one__link__figure
                     %figcaption
@@ -152,4 +200,40 @@
                         ¥
                         = item.price
                       = image_tag item.item_images[0].image_url.url
+              - else
+                = link_to new_user_session_path, class: "TP__main__content__list__element__label__element__photo__one__link" do
+                  %figure.TP__main__content__list__element__label__element__photo__one__link__figure
+                    %figcaption
+                      %span 
+                        = item.name
+                    .TP__main__content__list__element__label__element__photo__one__link__figure__price
+                      %span{"aria-label" => "Price"} 
+                        ¥
+                        = item.price
+                      = image_tag item.item_images[0].image_url.url
+          - if @hobby.length >= 6
+            .parent
+              - @hobby.slice(5..9).each do |item|
+                - if user_signed_in?
+                  = link_to detail_path(item), class: "TP__main__content__list__element__label__element__photo__one__link" do
+                    %figure.TP__main__content__list__element__label__element__photo__one__link__figure
+                      %figcaption
+                        %span 
+                          = item.name
+                      .TP__main__content__list__element__label__element__photo__one__link__figure__price
+                        %span{"aria-label" => "Price"} 
+                          ¥
+                          = item.price
+                        = image_tag item.item_images[0].image_url.url
+                - else
+                  = link_to new_user_session_path, class: "TP__main__content__list__element__label__element__photo__one__link" do
+                    %figure.TP__main__content__list__element__label__element__photo__one__link__figure
+                      %figcaption
+                        %span 
+                          = item.name
+                      .TP__main__content__list__element__label__element__photo__one__link__figure__price
+                        %span{"aria-label" => "Price"} 
+                          ¥
+                          = item.price
+                        = image_tag item.item_images[0].image_url.url
           - else

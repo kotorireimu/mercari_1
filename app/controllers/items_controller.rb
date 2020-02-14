@@ -50,6 +50,7 @@ class ItemsController < ApplicationController
   def show
    
     @item_image = ItemImage.find_by(item_id: @item.id)
+    @item_images = ItemImage.where(item_id: @item.id)
   end
 
   def edit

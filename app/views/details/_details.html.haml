@@ -5,6 +5,13 @@
       .product-details__main__content__image
         .product-details__main__content__image__main
           = image_tag @item_image.image_url.url , width: "300", heiget:"300"
+          - @item_images.first(5).each do |images|
+            = image_tag images.image_url.url , width: "60", heiget:"60"
+        - if @item_images.length >= 6
+          %br/
+          - @item_images.slice(5..9).each do |images|
+            = image_tag images.image_url.url , width: "60", heiget:"60"
+        - else
         -# .product-details__main__content__image__sub
         -#   = image_tag @item_image[1].url , width: "60", height: "60"
         -#   = image_tag @item_image[2].url , width: "60",heiget: "60"
