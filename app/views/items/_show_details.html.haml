@@ -6,6 +6,13 @@
       .product-details__main__content__image
         .product-details__main__content__image__main
           = image_tag @item_image.image_url.url , width: "300", heiget:"300"
+          - @item_images.first(5).each do |images|
+            = image_tag images.image_url.url , width: "60", heiget:"60"
+        - if @item_images.length >= 6
+          %br/
+          - @item_images.slice(5..9).each do |images|
+            = image_tag images.image_url.url , width: "60", heiget:"60"
+        - else
         -# .product-details__main__content__image__sub
         -#   = image_tag "https://4.bp.blogspot.com/-N-uz3mt68fA/U55IzPpReyI/AAAAAAAAheE/M7XZJUicHL4/s400/pyoko5_goldenweek.png", width: "60", height: "60"
         -#   = image_tag "https://2.bp.blogspot.com/-3Gecu9nO-ro/WRaTLxZEE_I/AAAAAAABEO4/VD54AW0An9kvea0f4yxSdsT62kUoPaS9wCLcB/s400/ita_bag_cover.png", width: "60",heiget: "60"
