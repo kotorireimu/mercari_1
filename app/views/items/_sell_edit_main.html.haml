@@ -29,7 +29,7 @@
 
               - if @item.persisted?
                 .js-file_group{"data-index": "#{@item.item_images.count}"}
-                  = file_field_tag :image_url, name: "item[images_attributes][#{@item.item_images.count}][image_url]", class: 'js-file'
+                  = file_field_tag :image_url, name: "item[item_images_attributes][#{@item.item_images.count}][image_url]", class: 'js-file'
                   .js-remove 削除
                   -# %input.sell-page__main__information__form__photo__box__area__file{multiple: "multiple", name: "image1", style: "display: none;", type: "file"}
               %pre.sell-page__main__information__form__photo__box__area__visible
